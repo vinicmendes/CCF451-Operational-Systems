@@ -6,3 +6,5 @@ typedef struct Tempo{
 }tempo;
 
 void inicializatempo(tempo *tempo);
+void atualizatempo(tempo *tempo);
+void desalocaStrtempo(tempo *tempo);
