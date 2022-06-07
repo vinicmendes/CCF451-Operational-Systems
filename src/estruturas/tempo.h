@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//estrutura para contar uma unidade de tempo
 typedef struct Tempo{
     int valor_tempo;
 }tempo;
