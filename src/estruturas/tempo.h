@@ -1,3 +1,7 @@
+#ifndef TEMPO_H
+#define TEMPO_H
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -9,3 +13,6 @@ typedef struct Tempo{
 void inicializatempo(tempo *tempo);
 void atualizatempo(tempo *tempo);
 void desalocaStrtempo(tempo *tempo);
+
+
+#endif

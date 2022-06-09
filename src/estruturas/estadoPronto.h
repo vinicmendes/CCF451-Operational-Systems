@@ -1,3 +1,7 @@
+#ifndef ESTADOPRONTO_H
+#define ESTADOPRONTO_H
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -22,3 +26,7 @@ void insereItememFilaEP(lista *lista, int item, int prioridade);
 int removeItemEP(lista *lista, int *item);
 int imprimeItensEP(lista *lista);
 void atualizaItensEP(lista *lista,int item);
+
+
+
+#endif
