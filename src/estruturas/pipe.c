@@ -6,6 +6,14 @@ void inicializaPipe(Pipe *p) {
     pipe(p->fd);
 }
 
+bool verificaPipe(Pipe *p){
+    if(pipe(p->fd) == -1){
+        perror(pipe);
+        return false;
+    }
+    return true;
+}
+
 void escrevePipe(Pipe *p, char instrucao) {
     write(p->fd[1], &instrucao, 1);
     if(instrucao == 'U'){
@@ -33,7 +41,6 @@ void lerPipe(Pipe *p, char **instrucao) {
         *instrucao = (char*) malloc(sizeof(char)*n);
         buffer[n] = 0;
         *instrucao = buffer;
-        // printf("read %d bytes from the pipe: %s\n", n, *inst);
     } else {
         **instrucao = '0';
         perror("read");
