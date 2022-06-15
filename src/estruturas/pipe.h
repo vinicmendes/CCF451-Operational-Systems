@@ -1,10 +1,7 @@
 #ifndef PIPE_H
 #define PIPE_H
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/types.h>
+
+#include "fork.h"
 
 typedef struct Pipe{
     int fd[2];
@@ -12,6 +9,7 @@ typedef struct Pipe{
 } Pipe;
 
 void inicializaPipe(Pipe *p);
+bool verificaPipe(Pipe *p);
 void escrevePipe(Pipe *p, char instrucao);
 void lerPipe(Pipe *p, char **instrucao);
 
