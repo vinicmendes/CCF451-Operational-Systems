@@ -1,7 +1,7 @@
 #ifndef PROCESSOSIMULADO_H
 #define PROCESSOSIMULADO_H
 
-#include "instrucao.h"
+#include "../estruturas/instrucao.h"
 
 typedef struct ProcessoSimulado{
     int id; //id do processo

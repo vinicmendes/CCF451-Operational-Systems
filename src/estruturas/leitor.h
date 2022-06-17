@@ -9,5 +9,5 @@
 
 void leArquivoPipe(Pipe *p, char *nomeArquivo);
 void leArquivoInstrucao(instrucao **inst, char *nomeArquivo);
-void lerArquivoProcessoS(instrucao *inst, char *nomeArquivo);
+void lerArquivoProcessoS(instrucao **inst, char *nomeArquivo);
 #endif

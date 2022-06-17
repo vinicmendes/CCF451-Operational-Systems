@@ -17,15 +17,15 @@ typedef struct elementoEB
 typedef struct Lista
 {
     elementoEB *apPrimeiro, *apUltimo;
-} lista;
+} listaEB;
 
-void inicializaListaEB(lista *lista);
-int lEhVaziaEB(lista *lista);
-void insereItemOrdenadoEB(lista *lista, int item, int prioridade);
-void insereItememFilaEB(lista *lista, int item, int prioridade);
-int removeItemEB(lista *lista, int *item);
-int imprimeItensEB(lista *lista);
-void atualizaItensEB(lista *lista, int item);
+void inicializaListaEB(listaEB *lista);
+int lEhVaziaEB(listaEB *lista);
+void insereItemOrdenadoEB(listaEB *lista, int item, int prioridade);
+void insereItememFilaEB(listaEB *lista, int item, int prioridade);
+int removeItemEB(listaEB *lista, int *item);
+int imprimeItensEB(listaEB *lista);
+void atualizaItensEB(listaEB *lista, int item);
 
 
 #endif
