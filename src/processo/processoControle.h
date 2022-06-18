@@ -10,35 +10,25 @@
 typedef struct {
     int unidadeTempo;
     cpu cpu;
-    ProcessoSimulado *tabelaDeProcessos;
+    processoSimulado *tabelaDeProcessos;
     listaEP estadoPronto;
     listaEB estadoBloqueado;
     int estadoExecucao;
-    int ultimoposicao; // marca a posição seguinte à última posição preenchida do vetor tabelaDeProcessos
-    int ultimoindice; // ultimo indice utilizado
+    int ultimaposicao; 
+    int ultimoindice;
     int tipoEscalonamento;
 }processoControle;
 
-void inicializaProcessoC(processoControle *gProc);
-
-void executaGerenciador(processoControle *gProc, Pipe *p);
-
-void executarProcessoSimulado(processoControle *gProc, char *instPipe);
-
-void comandoL(processoControle *gProc);
-
-void comandoB(processoControle *gProc);
-
-int trocaContexto(processoControle *gProc);
-
-void escalonar(processoControle *gProc); //devemos escolher o método *****************
-
-void escalonarProcessos(processoControle *gProc);
-
-void processoImpressao(processoControle *gProc);
-
-void insereProgramaNoProcessoSimulado(Instrucao *instProcess, Instrucao *ins);
-
-void retiraProcessoTabelaProcessos(processoControle *gProc, int indice);
+void inicializaProcessoC(processoControle *gerenciador);
+void executaGerenciador(processoControle *gerenciador, Pipe *p);
+void executarProcessoSimulado(processoControle *gerenciador, char *instPipe);
+void comandoL(processoControle *gerenciador);
+void comandoB(processoControle *gerenciador);
+int trocaContexto(processoControle *gerenciador);
+void escalonar(processoControle *gerenciador); //devemos escolher o método *****************
+void escalonarProcessos(processoControle *gerenciador);
+void processoImpressao(processoControle *gerenciador);
+void insereProgramaNoProcessoSimulado(instrucao *instProcess, instrucao *ins);
+void retiraProcessoTabelaProcessos(processoControle *gerenciador, int indice);
 
 #endif
