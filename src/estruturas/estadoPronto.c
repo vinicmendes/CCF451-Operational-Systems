@@ -59,7 +59,7 @@ void insereItememFilaEP(listaEP *lista, int item, int prioridade)
 int removeItemEP(listaEP *lista, int *item)
 {
     elementoEP *apAux;
-    if (lEhVazia(lista))
+    if (lEhVaziaEP(lista))
         return 1;
     *item = lista->apPrimeiro->apProx->idProcesso;
     apAux = lista->apPrimeiro;

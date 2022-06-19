@@ -1,20 +1,8 @@
 #include "pipe.h"
 
-// olhar : https://www.programacaoprogressiva.net/2014/09/Pipes-em-C-Comunicao-entre-Processos-IPC-Interprocess-Communication.html
-
 void inicializaPipe(Pipe *p)
 {
     pipe(p->fd);
-}
-
-bool verificaPipe(Pipe *p)
-{
-    if (pipe(p->fd) == -1)
-    {
-        perror(pipe);
-        return false;
-    }
-    return true;
 }
 
 void escrevePipe(Pipe *p, char instrucao)

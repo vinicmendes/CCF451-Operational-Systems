@@ -64,17 +64,17 @@ int leArquivoInstrucao(instrucao **inst, char *nomeArquivo)
         switch (c)
         {
         case 'N':
-            fscanf(file, "%d", (*inst)[ordemInstrucao].var1);
+            fscanf(file, "%d", &(*inst)[ordemInstrucao].var1);
         case 'D':
-            fscanf(file, "%d", (*inst)[ordemInstrucao].var1);
+            fscanf(file, "%d", &(*inst)[ordemInstrucao].var1);
         case 'V':
-            fscanf(file, "%d %d", (*inst)[ordemInstrucao].var1, (*inst)[ordemInstrucao].var2);
+            fscanf(file, "%d %d", &(*inst)[ordemInstrucao].var1, &(*inst)[ordemInstrucao].var2);
         case 'A':
-            fscanf(file, "%d %d", (*inst)[ordemInstrucao].var1, (*inst)[ordemInstrucao].var2);
+            fscanf(file, "%d %d", &(*inst)[ordemInstrucao].var1, &(*inst)[ordemInstrucao].var2);
         case 'S':
-            fscanf(file, "%d %d", (*inst)[ordemInstrucao].var1, (*inst)[ordemInstrucao].var2);
+            fscanf(file, "%d %d", &(*inst)[ordemInstrucao].var1, &(*inst)[ordemInstrucao].var2);
         case 'F':
-            fscanf(file, "%d", (*inst)[ordemInstrucao].var1);
+            fscanf(file, "%d", &(*inst)[ordemInstrucao].var1);
         case 'R':
             fscanf(file, "%s", (*inst)[ordemInstrucao].arqv);
         default:
@@ -92,7 +92,7 @@ void lerArquivoProcessoS(instrucao **inst, char *nomeArquivo)
     FILE *arq;
     char c;
     int ordemInstrucao = 0;
-    inst = (instrucao *)malloc(1000 * sizeof(instrucao));
+    (*inst) = (instrucao *)malloc(1000 * sizeof(instrucao));
     arq = fopen(nomeArquivo, "r");
     if (arq == NULL)
     {
@@ -106,17 +106,17 @@ void lerArquivoProcessoS(instrucao **inst, char *nomeArquivo)
         switch (c)
         {
         case 'N':
-            fscanf(arq, "%d", (*inst)[ordemInstrucao].var1);
+            fscanf(arq, "%d", &(*inst)[ordemInstrucao].var1);
         case 'D':
-            fscanf(arq, "%d", (*inst)[ordemInstrucao].var1);
+            fscanf(arq, "%d", &(*inst)[ordemInstrucao].var1);
         case 'V':
-            fscanf(arq, "%d %d", (*inst)[ordemInstrucao].var1, (*inst)[ordemInstrucao].var2);
+            fscanf(arq, "%d %d", &(*inst)[ordemInstrucao].var1, &(*inst)[ordemInstrucao].var2);
         case 'A':
-            fscanf(arq, "%d %d", (*inst)[ordemInstrucao].var1, (*inst)[ordemInstrucao].var2);
+            fscanf(arq, "%d %d", &(*inst)[ordemInstrucao].var1, &(*inst)[ordemInstrucao].var2);
         case 'S':
-            fscanf(arq, "%d %d", (*inst)[ordemInstrucao].var1, (*inst)[ordemInstrucao].var2);
+            fscanf(arq, "%d %d", &(*inst)[ordemInstrucao].var1, &(*inst)[ordemInstrucao].var2);
         case 'F':
-            fscanf(arq, "%d", (*inst)[ordemInstrucao].var1);
+            fscanf(arq, "%d", &(*inst)[ordemInstrucao].var1);
         case 'R':
             fscanf(arq, "%s", (*inst)[ordemInstrucao].arqv);
         default:
