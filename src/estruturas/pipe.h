@@ -8,10 +8,8 @@
 #include <sys/types.h>
 #include <stdbool.h>
 
-typedef struct Pipe
-{
-    int fd[2];
-    pid_t pid;
+typedef struct {
+    int filedes[2];
 } Pipe;
 
 void inicializaPipe(Pipe *p);
