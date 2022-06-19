@@ -5,7 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct Instrucao{
+typedef struct Instrucao
+{
     char id; // Id da instrução. Ex: N, D, V, A, etc.
     int var1;
     int var2;

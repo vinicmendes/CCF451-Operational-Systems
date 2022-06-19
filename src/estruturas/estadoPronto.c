@@ -1,6 +1,6 @@
 #include "estadoPronto.h"
 
-//inicializando lista encadeada
+// inicializando lista encadeada
 void inicializaListaEP(listaEP *lista)
 {
     lista->apPrimeiro = (elementoEP *)malloc(sizeof(elementoEP));
@@ -8,23 +8,23 @@ void inicializaListaEP(listaEP *lista)
     lista->apPrimeiro->apProx = NULL;
 }
 
-//verificando se a lista possui itens
+// verificando se a lista possui itens
 int lEhVaziaEP(listaEP *lista)
 {
     return lista->apPrimeiro == lista->apUltimo ? 1 : 0;
 }
 
-//inserindo item ordenado por prioridade
+// inserindo item ordenado por prioridade
 void insereItemOrdenadoEP(listaEP *lista, int item, int prioridade)
 {
     elementoEP *atual, *approximo;
     atual = lista->apPrimeiro;
-    //encontrando posição do item na lista por prioridade
+    // encontrando posição do item na lista por prioridade
     while (atual->apProx != NULL && atual->apProx->prioridadeProcesso <= prioridade)
     {
         atual = atual->apProx;
     }
-    //caso o item seja maior que todos os atuais da lista, é inserido no final
+    // caso o item seja maior que todos os atuais da lista, é inserido no final
     if (atual == lista->apUltimo)
     {
         lista->apUltimo->apProx = (elementoEP *)malloc(sizeof(elementoEP));
@@ -33,7 +33,7 @@ void insereItemOrdenadoEP(listaEP *lista, int item, int prioridade)
         lista->apUltimo->prioridadeProcesso = prioridade;
         lista->apUltimo->apProx = NULL;
     }
-    //senão é inserido na posição adequada a sua prioridade
+    // senão é inserido na posição adequada a sua prioridade
     else
     {
         approximo = atual->apProx;
@@ -45,7 +45,7 @@ void insereItemOrdenadoEP(listaEP *lista, int item, int prioridade)
     }
 }
 
-//inserindo o item na primeira posição segundo o algoritmo para fila
+// inserindo o item na primeira posição segundo o algoritmo para fila
 void insereItememFilaEP(listaEP *lista, int item, int prioridade)
 {
     lista->apUltimo->apProx = (elementoEP *)malloc(sizeof(elementoEP));
@@ -55,7 +55,7 @@ void insereItememFilaEP(listaEP *lista, int item, int prioridade)
     lista->apUltimo->apProx = NULL;
 }
 
-//removendo o primeiro item da fila
+// removendo o primeiro item da fila
 int removeItemEP(listaEP *lista, int *item)
 {
     elementoEP *apAux;
@@ -67,7 +67,7 @@ int removeItemEP(listaEP *lista, int *item)
     return 1;
 }
 
-//imprimindo os itens da fila um a um 
+// imprimindo os itens da fila um a um
 int imprimeItensEP(listaEP *lista)
 {
     elementoEP *apAux;
@@ -79,7 +79,7 @@ int imprimeItensEP(listaEP *lista)
     }
 }
 
-//atualizando os indices dos itens da fila
+// atualizando os indices dos itens da fila
 void atualizaItensEP(listaEP *lista, int item)
 {
     elementoEP *apAux;

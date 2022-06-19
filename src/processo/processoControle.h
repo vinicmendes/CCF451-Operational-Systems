@@ -7,17 +7,18 @@
 #include "processoSimulado.h"
 #include "../estruturas/pipe.h"
 
-typedef struct {
+typedef struct
+{
     int unidadeTempo;
     cpu cpu;
     processoSimulado *tabelaDeProcessos;
     listaEP estadoPronto;
     listaEB estadoBloqueado;
     int estadoExecucao;
-    int ultimaposicao; 
+    int ultimaposicao;
     int ultimoindice;
     int tipoEscalonamento;
-}processoControle;
+} processoControle;
 
 void inicializaProcessoC(processoControle *gerenciador);
 void executaGerenciador(processoControle *gerenciador, Pipe *p);
@@ -25,7 +26,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
 void comandoL(processoControle *gerenciador);
 void comandoB(processoControle *gerenciador);
 int trocaContexto(processoControle *gerenciador);
-void escalonar(processoControle *gerenciador); //devemos escolher o método *****************
+void escalonar(processoControle *gerenciador); // devemos escolher o método *****************
 void escalonarProcessos(processoControle *gerenciador);
 void processoImpressao(processoControle *gerenciador);
 void insereProgramaNoProcessoSimulado(instrucao *instProcess, instrucao *ins);

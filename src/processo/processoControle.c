@@ -48,7 +48,7 @@ void executaGerenciador(processoControle *gerenciador, Pipe *p)
 }
 
 void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe)
-{
+{ // DA PRA ALTERAR PARA SWITCH CASE
     int index, retorno, tamPipe;
     tamPipe = strlen(instrucaoPipe);
     char resultado;
@@ -74,7 +74,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                 retorno = trocaContexto(gerenciador);
                 if (retorno == -1)
                 {
-                    gerenciador->cpu.processo.id = -1;
+                    gerenciador->cpu.procexec.id = -1;
                 }
             }
             else if (resultado = 'F')
@@ -83,9 +83,9 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                 // estado ; 0 = pronto, 1 = em execução, 2 = bloquado, 3 = finalizado
                 ++gerenciador->ultimoindice;
                 inicializaProcessoSimulado(&gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao], gerenciador->ultimoindice,
-                                           gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id, gerenciador->cpu.processo.contadorPrograma + 1,
-                                           gerenciador->cpu.processo.prioridade, 0, gerenciador->cpu.processo.memoria,
-                                           gerenciador->cpu.unidTempo, 0, gerenciador->cpu.processo.programa);
+                                           gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id, gerenciador->cpu.procexec.contadorPrograma + 1,
+                                           gerenciador->cpu.procexec.prioridade, 0, gerenciador->cpu.procexec.memoria,
+                                           gerenciador->cpu.unidTempo, 0, gerenciador->cpu.procexec.programa);
                 alterarContadorPrograma(&gerenciador->cpu);
 
                 if (gerenciador->tipoEscalonamento == 1)
@@ -110,22 +110,27 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                 }
             }
         }
-        else if (instrucaoPipe[index] == 'L'){
-            //Desbloqueia o primeiro processo simulado na fila bloqueada
+        else if (instrucaoPipe[index] == 'L')
+        {
+            // Desbloqueia o primeiro processo simulado na fila bloqueada
             comandoL(gerenciador);
-            if(gerenciador->tipoEscalonamento == 1){
+            if (gerenciador->tipoEscalonamento == 1)
+            {
                 escalonar(gerenciador);
             }
-            else{
+            else
+            {
                 escalonarProcessos(gerenciador);
             }
         }
-        else if(instrucaoPipe[index] == 'I'){
-            //Imprime o estado atual do gerenciador
+        else if (instrucaoPipe[index] == 'I')
+        {
+            // Imprime o estado atual do gerenciador
             processoImpressao(gerenciador);
         }
-        else if(instrucaoPipe[index] == 'M'){
-            //Imprime o tempo médio do ciclo e finaliza o sistema
+        else if (instrucaoPipe[index] == 'M')
+        {
+            // Imprime o tempo médio do ciclo e finaliza o sistema
             processoImpressao(gerenciador);
             return;
         }
@@ -157,13 +162,14 @@ void comandoB(processoControle *gerenciador)
     insereItememFilaEB(&gerenciador->estadoBloqueado, gerenciador->estadoExecucao, gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].prioridade);
     gerenciador->estadoExecucao = -1;
     retorno = removeItemEP(&gerenciador->estadoPronto, &i);
-    gerenciador->tabelaDeProcessos[i].estado = 2;
+    gerenciador->tabelaDeProcessos[i].estado = 1;
     if (retorno != 1)
     {
         insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[i]);
         gerenciador->estadoExecucao = i;
     }
 }
+
 int trocaContexto(processoControle *gerenciador)
 {
     processoSimulado p;
@@ -180,9 +186,49 @@ int trocaContexto(processoControle *gerenciador)
             insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->estadoExecucao, gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].prioridade);
     }
     removeItemEP(&gerenciador->estadoPronto, &i);
-    gerenciador->tabelaDeProcessos[i].estado = 2;
+    gerenciador->tabelaDeProcessos[i].estado = 1;
     insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[i]);
     gerenciador->estadoExecucao = i;
-    
+
     return 1;
+}
+
+void escalonarProcessos(processoControle *gerenciador)
+{ // DA PRA ALTERAR PARA SWITCH CASE
+    if (gerenciador->cpu.procexec.prioridade == 0)
+    {
+        gerenciador->cpu.procexec.prioridade = 1;
+        trocaContexto(gerenciador);
+    }
+    else if (gerenciador->cpu.procexec.prioridade == 1 && gerenciador->cpu.procexec.tempoAtual > 1)
+    {
+        gerenciador->cpu.procexec.prioridade = 2;
+        trocaContexto(gerenciador);
+    }
+    else if (gerenciador->cpu.procexec.prioridade == 2 && gerenciador->cpu.procexec.tempoAtual > 3)
+    {
+        gerenciador->cpu.procexec.prioridade = 3;
+        trocaContexto(gerenciador);
+    }
+    else if (gerenciador->cpu.procexec.prioridade == 3 && gerenciador->cpu.procexec.tempoAtual > 7)
+    {
+        trocaContexto(gerenciador);
+    }
+    else if (gerenciador->cpu.procexec.id == -1)
+    {
+        trocaContexto(gerenciador);
+    }
+}
+
+void processoImpressao(processoControle *gerenciador)
+{
+    for (int i = 0; i < gerenciador->ultimaposicao; i++)
+    {
+        if (i == gerenciador->estadoExecucao)
+            mostrarProcessoCpu(&gerenciador->cpu);
+        else
+            return; // mostrar relatório processo
+    }
+    if (gerenciador->cpu.procexec.id == -1)
+        mostrarProcessoCpu(&gerenciador->cpu);
 }

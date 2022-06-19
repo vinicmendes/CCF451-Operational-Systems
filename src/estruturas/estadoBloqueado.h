@@ -1,7 +1,6 @@
 #ifndef ESTADOBLOQUEADO_H
 #define ESTADOBLOQUEADO_H
 
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -26,6 +25,5 @@ void insereItememFilaEB(listaEB *lista, int item, int prioridade);
 int removeItemEB(listaEB *lista, int *item);
 int imprimeItensEB(listaEB *lista);
 void atualizaItensEB(listaEB *lista, int item);
-
 
 #endif

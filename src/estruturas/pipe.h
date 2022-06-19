@@ -8,7 +8,8 @@
 #include <sys/types.h>
 #include <stdbool.h>
 
-typedef struct Pipe{
+typedef struct Pipe
+{
     int fd[2];
     pid_t pid;
 } Pipe;

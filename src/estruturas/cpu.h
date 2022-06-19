@@ -5,10 +5,10 @@
 #include <stdlib.h>
 #include "../processo/processoSimulado.h"
 
-//estrutura cpu contendo o processo em execução e o contador de unidade de tempo
+// estrutura cpu contendo o processo em execução e o contador de unidade de tempo
 typedef struct Cpu
 {
-    processoSimulado processo;
+    processoSimulado procexec;
     int unidTempo;
 } cpu;
 
