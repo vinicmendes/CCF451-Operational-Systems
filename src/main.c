@@ -16,14 +16,15 @@ int main()
         perror("fork");
         exit(1);
     }
-    if (pid == 0) {
-        inicializaProcessoC(&gerenciador);
-        executaProcessoC(&gerenciador, &p);
-    }
-  
-    else {
+    if (pid > 0)
+    {
         menu(&p);
         wait(NULL);
+    }
+    else
+    {
+        inicializaProcessoC(&gerenciador);
+        executaProcessoC(&gerenciador, &p);
     }
 
     return 0;
