@@ -8,13 +8,13 @@
 //estrutura cpu contendo o processo em execução e o contador de unidade de tempo
 typedef struct Cpu
 {
-    processoSimulado procexec;
+    processoSimulado processo;
     int unidTempo;
 } cpu;
 
 void inicializaCpu(cpu *cpu);
 void insereProcesso(cpu *cpu, processoSimulado p);
-void executaProcesso(cpu *cpu);
+char executaProcesso(cpu *cpu);
 void pararProcesso(cpu *cpu, processoSimulado *p);
 void comandoU(cpu *cpu);
 void mostrarProcesso(cpu *cpu);

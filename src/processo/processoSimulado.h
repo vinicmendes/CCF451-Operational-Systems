@@ -17,8 +17,8 @@ typedef struct ProcessoSimulado{
 } processoSimulado;
 
 void inicializaProcessoSimulado( processoSimulado *processo, int id, int idPrincipal,
- int *contadorPrograma, int prioridade, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao); //inicialização do processo
-void executaInstrucao( processoSimulado *processo); //executa uma instrução
+ int *contadorPrograma, int prioridade, int estado, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao); //inicialização do processo
+char executaInstrucao( processoSimulado *processo); //executa uma instrução
 void instrucaoN( processoSimulado *processo, instrucao instrucao); //instrução N
 void instrucaoD( processoSimulado *processo, instrucao instrucao); //instrução D
 void instrucaoV( processoSimulado *processo, instrucao instrucao); //instrução V
@@ -26,7 +26,6 @@ void instrucaoA( processoSimulado *processo, instrucao instrucao); //instrução
 void instrucaoS( processoSimulado *processo, instrucao instrucao); //instrução S
 void instrucaoB( processoSimulado *processo); //instrução B
 void instrucaoT( processoSimulado *processo); //instrução T
-void instrucaoF( processoSimulado *processo, instrucao instrucao); //instrução F
 void instrucaoR( processoSimulado *processo, instrucao instrucao); //instrução R
 void calculaTempo( processoSimulado *processo); //calcula tempo de CPU atual
 

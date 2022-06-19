@@ -21,7 +21,7 @@ typedef struct {
 
 void inicializaProcessoC(processoControle *gerenciador);
 void executaGerenciador(processoControle *gerenciador, Pipe *p);
-void executarProcessoSimulado(processoControle *gerenciador, char *instPipe);
+void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe);
 void comandoL(processoControle *gerenciador);
 void comandoB(processoControle *gerenciador);
 int trocaContexto(processoControle *gerenciador);

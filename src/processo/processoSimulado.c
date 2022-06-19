@@ -1,18 +1,19 @@
 #include "processoSimulado.h"
 
 void inicializaProcessoSimulado( processoSimulado *processo, int id, int idPrincipal,
- int *contadorPrograma, int prioridade, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao){
+ int *contadorPrograma, int prioridade, int estado, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao){
     processo->id = id;
     processo->idPrincipal = idPrincipal;
     processo->contadorPrograma = contadorPrograma;
     processo->prioridade = prioridade;
+    processo->estado = estado;
     processo->memoria = memoria;
     processo->tempoInicio = tempoInicio;
     processo->tempoCPU = tempoCPU;
     processo->programa = instrucao;
 }
 
-void executaInstrucao( processoSimulado *processo){
+char executaInstrucao( processoSimulado *processo){
     instrucao instrucao = processo->programa[*(processo->contadorPrograma)];
     switch (instrucao.id)
     {
@@ -34,18 +35,22 @@ void executaInstrucao( processoSimulado *processo){
     case 'B':
         instrucaoB(processo);
         processo->contadorPrograma++;
+        return 'B';
     case 'T':
         instrucaoT(processo);
         processo->contadorPrograma++;
+        return 'T';
     case 'F':
         instrucaoF(processo, instrucao);
         processo->contadorPrograma++;
+        return 'F';
     case 'R':
         instrucaoR(processo, instrucao);
         processo->contadorPrograma++;
     default:
         break;
     }
+    return ' ';
 }
 
 void instrucaoN( processoSimulado *processo, instrucao instrucao){
@@ -74,10 +79,6 @@ void instrucaoB( processoSimulado *processo){
 
 void instrucaoT( processoSimulado *processo){
     processo->estado = 3;
-}
-
-void instrucaoF( processoSimulado *processo, instrucao instrucao){
-    
 }
 
 void instrucaoR( processoSimulado *processo, instrucao instrucao){

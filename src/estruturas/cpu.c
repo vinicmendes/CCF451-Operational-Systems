@@ -1,26 +1,31 @@
 #include "cpu.h"
 
-//inicializando a cpu com o tempo começando de 0
+// inicializando a cpu com o tempo começando de 0
 void inicializaCpu(cpu *cpu)
 {
     cpu->unidTempo = 0;
 }
 
-//inserindo o processo na cpu
+// inserindo o processo na cpu
 void insereProcesso(cpu *cpu, processoSimulado p)
 {
     cpu->procexec = p;
 }
 
-//executando o processo recebido
-void executaProcesso(cpu *cpu)
+// executando o processo recebido
+char executaProcesso(cpu *cpu)
 {
+    char retorno;
     cpu->unidTempo++;
-    executaInstrucao(&cpu->procexec);
+    if (cpu->procexec.id == -1)
+        return ' ';
+
+    retorno = executaInstrucao(&cpu->procexec);
     incrementaTempo(&cpu->procexec);
+    return retorno;
 }
 
-//parando o processo p
+// parando o processo p
 void pararProcesso(cpu *cpu, processoSimulado *p)
 {
     cpu->procexec.tempoCPU += cpu->procexec.tempoAtual;
@@ -30,13 +35,16 @@ void pararProcesso(cpu *cpu, processoSimulado *p)
     cpu->procexec.id = -1;
 }
 
-//atlerando o contador de programa do processo em execução
-void alterarContadorPrograma(cpu *cpu){
+// atlerando o contador de programa do processo em execução
+void alterarContadorPrograma(cpu *cpu)
+{
     cpu->procexec.contadorPrograma += cpu->procexec.programa[*cpu->procexec.contadorPrograma].var1 + 1;
 }
 
-void mostrarProcessoCpu(cpu *cpu){
-    if(cpu->procexec.id == -1){
+void mostrarProcessoCpu(cpu *cpu)
+{
+    if (cpu->procexec.id == -1)
+    {
         printf("\nCPU vazia!\n");
         printf("Tempo total: %d\n", cpu->unidTempo);
         return;
