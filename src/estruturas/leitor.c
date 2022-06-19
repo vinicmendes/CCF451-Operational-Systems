@@ -1,6 +1,19 @@
 #include "leitor.h"
 
-void leArquivoPipe(Pipe *p, char *nomeArquivo)
+void lerTerminal(Pipe *p)
+{
+    printf("\n PIPE \n");
+    inicializaPipe(p);
+    char c = ' ';
+    printf("Digite os comandos, um a um (Ex: U ou  L ou I ou M): ");
+    while (c != 'M'){
+        scanf(" %c",&c);
+        c = toupper(c);
+        escrevePipe(p,c);
+    }
+}
+
+int leArquivoPipe(Pipe *p, char *nomeArquivo)
 {
     FILE *file;
     char c;
@@ -28,9 +41,10 @@ void leArquivoPipe(Pipe *p, char *nomeArquivo)
         }
     }
     fclose(file);
+    return 1;
 }
 
-void leArquivoInstrucao(instrucao **inst, char *nomeArquivo)
+int leArquivoInstrucao(instrucao **inst, char *nomeArquivo)
 {
     FILE *file;
     char c;
@@ -46,6 +60,7 @@ void leArquivoInstrucao(instrucao **inst, char *nomeArquivo)
     while ((c = fgetc(file)) != EOF)
     {
         c = fgetc(file);
+        (*inst)[ordemInstrucao].id = c;
         switch (c)
         {
         case 'N':
@@ -58,10 +73,6 @@ void leArquivoInstrucao(instrucao **inst, char *nomeArquivo)
             fscanf(file, "%d %d", (*inst)[ordemInstrucao].var1, (*inst)[ordemInstrucao].var2);
         case 'S':
             fscanf(file, "%d %d", (*inst)[ordemInstrucao].var1, (*inst)[ordemInstrucao].var2);
-        case 'B':
-            // TO_DO
-        case 'T':
-            // TO_DO
         case 'F':
             fscanf(file, "%d", (*inst)[ordemInstrucao].var1);
         case 'R':
@@ -69,8 +80,11 @@ void leArquivoInstrucao(instrucao **inst, char *nomeArquivo)
         default:
             break;
         }
+        ++ordemInstrucao;
+        c = fgetc(file);
     }
     fclose(file);
+    return 1;
 }
 
 void lerArquivoProcessoS(instrucao **inst, char *nomeArquivo)
@@ -88,6 +102,7 @@ void lerArquivoProcessoS(instrucao **inst, char *nomeArquivo)
     while ((c = fgetc(arq)) != EOF)
     {
         c = fgetc(arq);
+        (*inst)[ordemInstrucao].id = c;
         switch (c)
         {
         case 'N':
@@ -100,10 +115,6 @@ void lerArquivoProcessoS(instrucao **inst, char *nomeArquivo)
             fscanf(arq, "%d %d", (*inst)[ordemInstrucao].var1, (*inst)[ordemInstrucao].var2);
         case 'S':
             fscanf(arq, "%d %d", (*inst)[ordemInstrucao].var1, (*inst)[ordemInstrucao].var2);
-        case 'B':
-            // TO_DO
-        case 'T':
-            // TO_DO
         case 'F':
             fscanf(arq, "%d", (*inst)[ordemInstrucao].var1);
         case 'R':
@@ -111,6 +122,8 @@ void lerArquivoProcessoS(instrucao **inst, char *nomeArquivo)
         default:
             break;
         }
+        ++ordemInstrucao;
+        c = fgetc(arq);
     }
     fclose(arq);
 }

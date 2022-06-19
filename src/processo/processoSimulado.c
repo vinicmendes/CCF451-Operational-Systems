@@ -1,7 +1,8 @@
 #include "processoSimulado.h"
 
-void inicializaProcessoSimulado( processoSimulado *processo, int id, int idPrincipal,
- int *contadorPrograma, int prioridade, int estado, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao){
+void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrincipal,
+                                int *contadorPrograma, int prioridade, int estado, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao)
+{
     processo->id = id;
     processo->idPrincipal = idPrincipal;
     processo->contadorPrograma = contadorPrograma;
@@ -13,7 +14,8 @@ void inicializaProcessoSimulado( processoSimulado *processo, int id, int idPrinc
     processo->programa = instrucao;
 }
 
-char executaInstrucao( processoSimulado *processo){
+char executaInstrucao(processoSimulado *processo)
+{
     instrucao instrucao = processo->programa[*(processo->contadorPrograma)];
     switch (instrucao.id)
     {
@@ -27,7 +29,7 @@ char executaInstrucao( processoSimulado *processo){
         instrucaoV(processo, instrucao);
         processo->contadorPrograma++;
     case 'A':
-        instrucaoA(processo, instrucao);    
+        instrucaoA(processo, instrucao);
         processo->contadorPrograma++;
     case 'S':
         instrucaoS(processo, instrucao);
@@ -41,8 +43,6 @@ char executaInstrucao( processoSimulado *processo){
         processo->contadorPrograma++;
         return 'T';
     case 'F':
-        instrucaoF(processo, instrucao);
-        processo->contadorPrograma++;
         return 'F';
     case 'R':
         instrucaoR(processo, instrucao);
@@ -53,40 +53,93 @@ char executaInstrucao( processoSimulado *processo){
     return ' ';
 }
 
-void instrucaoN( processoSimulado *processo, instrucao instrucao){
+void instrucaoN(processoSimulado *processo, instrucao instrucao)
+{
     processo->memoria = (int *)malloc(sizeof(int) * instrucao.var1);
 }
 
-void instrucaoD( processoSimulado *processo, instrucao instrucao){
+void instrucaoD(processoSimulado *processo, instrucao instrucao)
+{
     processo->memoria[instrucao.var1] = 0;
 }
 
-void instrucaoV( processoSimulado *processo, instrucao instrucao){
+void instrucaoV(processoSimulado *processo, instrucao instrucao)
+{
     processo->memoria[instrucao.var1] = instrucao.var2;
 }
 
-void instrucaoA( processoSimulado *processo, instrucao instrucao){
+void instrucaoA(processoSimulado *processo, instrucao instrucao)
+{
     processo->memoria[instrucao.var1] += instrucao.var2;
 }
 
-void instrucaoS( processoSimulado *processo, instrucao instrucao){
+void instrucaoS(processoSimulado *processo, instrucao instrucao)
+{
     processo->memoria[instrucao.var1] -= instrucao.var2;
 }
 
-void instrucaoB( processoSimulado *processo){
+void instrucaoB(processoSimulado *processo)
+{
     processo->estado = 2;
 }
 
-void instrucaoT( processoSimulado *processo){
+void instrucaoT(processoSimulado *processo)
+{
     processo->estado = 3;
 }
 
-void instrucaoR( processoSimulado *processo, instrucao instrucao){
+void instrucaoR(processoSimulado *processo, instrucao instrucao)
+{
     free(processo->programa);
-    //chamar função que le o arquivo do processo simulado
+    // chamar função que le o arquivo do processo simulado
     processo->contadorPrograma = 0;
 }
 
-void calculaTempo( processoSimulado *processo){
+void calculaTempo(processoSimulado *processo)
+{
     processo->tempoAtual++;
+}
+void mostrarRelatorioProcesso(processoSimulado *processo)
+{
+    printf("----- Relatorio Processo -----\n");
+    printf("PID: %d\n", processo->id);
+    printf("Prioridade: %d\n", processo->prioridade);
+    printf("ID Processo pai: %d\n", processo->idPrincipal);
+    printf("Contador de programa: %d\n", *(processo->contadorPrograma));
+
+    printf("Estado: ");
+    switch (processo->estado)
+    {
+    case 0:
+    {
+        printf("Bloqueado\n");
+        break;
+    }
+
+    case 1:
+    {
+        printf("Pronto\n");
+        break;
+    }
+
+    case 2:
+    {
+        printf("Em execução\n");
+        break;
+    }
+
+    case 3:
+    {
+        printf("Morto\n");
+        break;
+    }
+    }
+    printf("Tempo de inicio: %d\n", processo->tempoInicio);
+    printf("Tempo em proc: %d\n", processo->tempoCPU + processo->tempoAtual);
+    printf("-------------------------------\n\n");
+}
+
+void incrementaTempoCPU(processoSimulado *processo)
+{
+    processo->tempoCPU++;
 }

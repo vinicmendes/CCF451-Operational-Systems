@@ -10,8 +10,8 @@ typedef struct Tempo
     int valor_tempo;
 } tempo;
 
-void inicializatempo(tempo *tempo);
-void atualizatempo(tempo *tempo);
-void desalocaStrtempo(tempo *tempo);
+void inicializaTempo(tempo *tempo);
+void atualizaTempo(tempo *tempo);
+void desalocaStrTempo(tempo *tempo);
 
 #endif

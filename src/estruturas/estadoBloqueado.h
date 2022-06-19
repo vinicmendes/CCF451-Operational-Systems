@@ -9,11 +9,11 @@ typedef struct elementoEB
 {
     int idProcesso;
     int prioridadeProcesso;
-    elementoEB *apProx;
+    struct elementoEB *apProx;
 } elementoEB;
 
 // estrutura da lista apontando para a primeira e para a ultima posições
-typedef struct Lista
+typedef struct
 {
     elementoEB *apPrimeiro, *apUltimo;
 } listaEB;

@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../processo/processoSimulado.h"
+#include "tempo.h"
 
 // estrutura cpu contendo o processo em execução e o contador de unidade de tempo
 typedef struct Cpu

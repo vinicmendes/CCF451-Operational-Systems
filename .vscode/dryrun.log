@@ -1,0 +1,7 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/vinicius/TP01-CCF451'
+gcc -Wall -Wextra -pedantic -std=c99 -g3 -c src/menu.c -o build/.build/menu.o
+gcc -Wall -Wextra -pedantic -std=c99 -g3 -c src/main.c -o build/.build/main.o
+gcc  build/.build/menu.o  build/.build/main.o -o build/main 
+make: Leaving directory '/home/vinicius/TP01-CCF451'
+ 

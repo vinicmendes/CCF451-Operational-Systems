@@ -21,7 +21,7 @@ char executaProcesso(cpu *cpu)
         return ' ';
 
     retorno = executaInstrucao(&cpu->procexec);
-    incrementaTempo(&cpu->procexec);
+    incrementaTempoCPU(&cpu->procexec);
     return retorno;
 }
 

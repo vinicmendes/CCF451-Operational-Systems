@@ -13,19 +13,20 @@ void inicializaProcessoC(processoControle *gerenciador)
     gerenciador->ultimoindice = 0;
 }
 
-void executaGerenciador(processoControle *gerenciador, Pipe *p)
+void executaProcessoC(processoControle *gerenciador, Pipe *p)
 {
     processoSimulado processo;
     instrucao *inst;
-    int *buffer;
+    int *buffer,*contador;
+    *contador=0;
     char *instPipe;
     int tipo = 0;
-
+    
     printf("\nCriando Processo Simulado...\n");
 
-    lerArquivoDeInstrucoesPS(&inst, "../files/file_f");
+    leArquivoInstrucao(&inst, "../files/file_f");
 
-    InicializaProcessoSimulado(&processo, 0, -1, 0, buffer, 0, 2, 0, 0, inst);
+    inicializaProcessoSimulado(&processo, 0, -1, contador , 0, 2,buffer, 0, 0, inst);
     gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao] = processo;
     inicializaCpu(&gerenciador->cpu);
     gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].estado = 2;
@@ -102,7 +103,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
             {
                 if (gerenciador->tipoEscalonamento == 1)
                 {
-                    escalonar(gerenciador);
+                    escalonarTempo(gerenciador);
                 }
                 else
                 {
@@ -116,7 +117,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
             comandoL(gerenciador);
             if (gerenciador->tipoEscalonamento == 1)
             {
-                escalonar(gerenciador);
+                escalonarTempo(gerenciador);
             }
             else
             {
@@ -192,7 +193,10 @@ int trocaContexto(processoControle *gerenciador)
 
     return 1;
 }
-
+void escalonarTempo(processoControle *gerenciador){
+    if(gerenciador->cpu.procexec.tempoCPU >= 10 || gerenciador->cpu.procexec.id == -1)
+        trocaContexto(gerenciador);
+}
 void escalonarProcessos(processoControle *gerenciador)
 { // DA PRA ALTERAR PARA SWITCH CASE
     if (gerenciador->cpu.procexec.prioridade == 0)
@@ -227,8 +231,25 @@ void processoImpressao(processoControle *gerenciador)
         if (i == gerenciador->estadoExecucao)
             mostrarProcessoCpu(&gerenciador->cpu);
         else
-            return; // mostrar relatório processo
+            mostrarRelatorioProcesso(&gerenciador->tabelaDeProcessos[i]); // mostrar relatório processo
     }
     if (gerenciador->cpu.procexec.id == -1)
         mostrarProcessoCpu(&gerenciador->cpu);
+}
+
+void retiraProcessoTabelaProcessos(processoControle *gerenciador, int indice)
+{
+    processoSimulado processo;
+    atualizaItensEB(&gerenciador->estadoBloqueado, indice);
+    atualizaItensEP(&gerenciador->estadoPronto, indice);
+
+    while (indice < MAX_PROCESSOS - 1)
+    {
+        gerenciador->tabelaDeProcessos[indice] = gerenciador->tabelaDeProcessos[indice + 1];
+        indice++;
+    }
+
+    gerenciador->cpu.procexec.id = -1;
+    gerenciador->tabelaDeProcessos[MAX_PROCESSOS - 1] = processo;
+    gerenciador->ultimaposicao--;
 }

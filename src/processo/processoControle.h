@@ -4,6 +4,7 @@
 #include "../estruturas/estadoPronto.h"
 #include "../estruturas/estadoBloqueado.h"
 #include "../estruturas/cpu.h"
+#include "../estruturas/leitor.h"
 #include "processoSimulado.h"
 #include "../estruturas/pipe.h"
 
@@ -21,12 +22,12 @@ typedef struct
 } processoControle;
 
 void inicializaProcessoC(processoControle *gerenciador);
-void executaGerenciador(processoControle *gerenciador, Pipe *p);
+void executaProcessoC(processoControle *gerenciador, Pipe *p);
 void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe);
 void comandoL(processoControle *gerenciador);
 void comandoB(processoControle *gerenciador);
 int trocaContexto(processoControle *gerenciador);
-void escalonar(processoControle *gerenciador); // devemos escolher o método *****************
+void escalonarTempo(processoControle *gerenciador); 
 void escalonarProcessos(processoControle *gerenciador);
 void processoImpressao(processoControle *gerenciador);
 void insereProgramaNoProcessoSimulado(instrucao *instProcess, instrucao *ins);

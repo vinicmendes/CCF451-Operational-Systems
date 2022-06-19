@@ -20,22 +20,6 @@ bool verificaPipe(Pipe *p)
 void escrevePipe(Pipe *p, char instrucao)
 {
     write(p->fd[1], &instrucao, 1);
-    if (instrucao == 'U')
-    {
-    }
-    else if (instrucao == 'L')
-    {
-    }
-    else if (instrucao == 'I')
-    {
-    }
-    else if (instrucao == 'M')
-    {
-    }
-    else
-    {
-        printf("Instrucao invalida");
-    }
 }
 
 void lerPipe(Pipe *p, char **instrucao)
