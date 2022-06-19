@@ -27,18 +27,10 @@ int leArquivoPipe(Pipe *p, char *nomeArquivo)
         exit(1);
     }
 
-    while ((c = fgetc(file)) != EOF)
-    {
+    while(!feof(file)){
+        fscanf(file, "%c", &c);
+        escrevePipe(p, c);
         c = fgetc(file);
-        if (c != '\n')
-        {
-            strcat(arqv, &c);
-        }
-        else
-        {
-            fscanf(file, "%c", &c);
-            escrevePipe(p, c);
-        }
     }
     fclose(file);
     return 1;
