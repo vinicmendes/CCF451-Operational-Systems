@@ -91,7 +91,7 @@ void instrucaoT(processoSimulado *processo)
 void instrucaoR(processoSimulado *processo, instrucao instrucao)
 {
     free(processo->programa);
-    // chamar função que le o arquivo do processo simulado
+    lerArquivoProcessoS(&processo->programa,instrucao.arqv);
     processo->contadorPrograma = 0;
 }
 

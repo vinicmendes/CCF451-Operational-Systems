@@ -2,6 +2,7 @@
 #define PROCESSOSIMULADO_H
 
 #include "../estruturas/instrucao.h"
+#include "../estruturas/leitor.h"
 
 typedef struct ProcessoSimulado
 {
@@ -9,7 +10,7 @@ typedef struct ProcessoSimulado
     int idPrincipal;       // processo que criou o processo atual
     int *contadorPrograma; // contador do programa
     int prioridade;        // prioridade do processo atual
-    int estado;            // estado ; 0 = pronto, 1 = em execução, 2 = bloquado, 3 = finalizado
+    int estado;            // estado ; 0 = pronto, 1 = em execução, 2 = bloqueado, 3 = finalizado
     int *memoria;          // memória do processo para as variáveis
     int tempoInicio;       // tempo de início do processo
     int tempoCPU;          // tempo de CPU do processo

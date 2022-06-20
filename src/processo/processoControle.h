@@ -21,7 +21,7 @@ typedef struct
     int tipoEscalonamento;
 } processoControle;
 
-void inicializaProcessoC(processoControle *gerenciador);
+void inicializaProcessoC(processoControle *gerenciador,int tipo);
 void executaProcessoC(processoControle *gerenciador, Pipe *p);
 void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe);
 void comandoL(processoControle *gerenciador);

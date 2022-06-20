@@ -3,7 +3,6 @@
 void lerTerminal(Pipe *p)
 {
     printf("\n PIPE \n");
-    inicializaPipe(p);
     char c = ' ';
     printf("Digite os comandos, um a um (Ex: U ou  L ou I ou M): ");
     while (c != 'M'){
@@ -18,7 +17,6 @@ int leArquivoPipe(Pipe *p, char *nomeArquivo)
     FILE *file;
     char c;
     char arqv[20];
-    inicializaPipe(p);
 
     file = fopen(nomeArquivo, "r");
     if (file == NULL)
@@ -27,10 +25,10 @@ int leArquivoPipe(Pipe *p, char *nomeArquivo)
         exit(1);
     }
 
-    while(!feof(file)){
-        fscanf(file, "%c", &c);
+    while(fscanf(file, " %c", &c) != EOF){
+        fprintf(stderr, "leitor.c - lerArquivoPipe - leu: %c\n", c);
         escrevePipe(p, c);
-        c = fgetc(file);
+        //sleep(1);
     }
     fclose(file);
     return 1;

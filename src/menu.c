@@ -11,7 +11,8 @@ void menu(Pipe *p)
         printf("2. Arquivo              \n");
         printf("0. Sair                 \n");
         printf("Opcao Escolhida: ");
-        scanf("%d", &op);
+        scanf(" %d", &op);
+        fprintf(stderr, "menu.c - menu - opcao=%d\n", op);
 
         switch (op)
         {

@@ -1,7 +1,7 @@
 #include "processoControle.h"
 #define MAX_PROCESSOS 50
 
-void inicializaProcessoC(processoControle *gerenciador)
+void inicializaProcessoC(processoControle *gerenciador,int tipo)
 {
     gerenciador->unidadeTempo = 0;
     inicializaCpu(&gerenciador->cpu);
@@ -11,22 +11,20 @@ void inicializaProcessoC(processoControle *gerenciador)
     gerenciador->estadoExecucao = -1;
     gerenciador->ultimaposicao = 0;
     gerenciador->ultimoindice = 0;
+    gerenciador->tipoEscalonamento = tipo;
 }
 
 void executaProcessoC(processoControle *gerenciador, Pipe *p)
 {
     processoSimulado processo;
     instrucao *inst;
-    int *buffer,*contador;
-    *contador=0;
-    char *instPipe;
-    int tipo = 0;
+    int *buffer,contador=0;
+    char instPipe[1025];
     
     printf("\nCriando Processo Simulado...\n");
 
-    leArquivoInstrucao(&inst, "../files/file_f");
-
-    inicializaProcessoSimulado(&processo, 0, -1, contador , 0, 2,buffer, 0, 0, inst);
+    leArquivoInstrucao(&inst, "files/file_f");
+    inicializaProcessoSimulado(&processo, 0, -1, &contador , 0, 0,buffer, 0, 0, inst);
     gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao] = processo;
     inicializaCpu(&gerenciador->cpu);
     gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].estado = 2;
@@ -34,18 +32,12 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
     gerenciador->estadoExecucao = 0;
     ++gerenciador->ultimaposicao;
 
-    while (tipo != 1 && tipo != 2)
-    {
-        printf("\nQual o tipo de escalonamento você deseja?\n");
-        printf("1. Escalonamento por *****\n");
-        printf("2. Escalonamento por Filas ordenadas por prioridades\n");
-        scanf("%d", &tipo);
+    while(1) {
+        lerPipe(p, instPipe, 1024);
+        executarProcessoSimulado(gerenciador, instPipe);
+        printf("processoControle.c --- processo Controle -- mais uma execuçao\n");
     }
-    gerenciador->tipoEscalonamento = tipo;
 
-    lerPipe(p, &instPipe);
-
-    executarProcessoSimulado(gerenciador, instPipe);
 }
 
 void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe)
@@ -133,7 +125,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
         {
             // Imprime o tempo médio do ciclo e finaliza o sistema
             processoImpressao(gerenciador);
-            return;
+            exit(0);
         }
     }
 }
