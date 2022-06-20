@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun 19 15:19:25 2022
+# Make data base, printed on Mon Jun 20 13:41:31 2022
 
 # Variables
 
@@ -34,18 +36,12 @@ SHELL = /bin/sh
 VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"195456cb6bc5e7dd989215cd334fb359.pt-br","_translationsConfigFile":"/home/vinicius/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/tcf.json","_cacheRoot":"/home/vinicius/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br","_resolvedLanguagePackCoreLocation":"/home/vinicius/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/vinicius/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /mnt/c/Users/vinic/AppData/Local/Programs/Microsoft VS Code/bin/code
-# makefile (from 'makefile', line 10)
-CFLAGS := -Wall -Wextra -pedantic -std=c99 -g3
-# makefile (from 'makefile', line 1)
-MAKEFILE_LIST :=  makefile
+# makefile
+MAKEFILE_LIST := 
 # 'override' directive
 GNUMAKEFLAGS := 
-# makefile (from 'makefile', line 5)
-OBJ_DIR := build/.build
 # environment
 VSCODE_VERBOSE_LOGGING = true
-# makefile (from 'makefile', line 14)
-OBJS :=  build/.build/menu.o  build/.build/main.o
 # environment
 VSCODE_CWD = /mnt/c/Users/vinic/AppData/Local/Programs/Microsoft VS Code
 # default
@@ -56,14 +52,10 @@ PATH = /home/vinicius/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f37363
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
 XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
-# makefile (from 'makefile', line 6)
-BIN_PATH := build/main
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-c0b78dd1-3271-4d14-af27-9708534a4e7c.sock
-# makefile (from 'makefile', line 7)
-WFLAGS := -Wall -Wextra -pedantic
+VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-04f74f79-1720-4c01-ad78-8ef1bd814163.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -83,7 +75,7 @@ WSL_INTEROP = /run/WSL/8_interop
 # environment
 PULSE_SERVER = /mnt/wslg/PulseServer
 # environment
-WT_SESSION = f84897d3-aeab-41bd-b126-d61a3c53471a
+WT_SESSION = d12da1df-9b11-4267-8f00-6829667ae72a
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -91,7 +83,7 @@ HOME = /home/vinicius
 # environment
 LOGNAME = vinicius
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 ZSH = /home/vinicius/.oh-my-zsh
 # environment
@@ -106,24 +98,18 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 SHLVL = 1
-# makefile (from 'makefile', line 1)
-CC := gcc
-# makefile (from 'makefile', line 3)
-BUILD_DIR := build
 # default
 MAKE_VERSION := 4.2.1
 # environment
 USER = vinicius
 # makefile
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := 
 # environment
 NAME = Code
 # environment
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
-# makefile (from 'makefile', line 2)
-BIN_NAME := main
 # environment
 VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/vinic/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
 # default
@@ -148,12 +134,8 @@ MFLAGS = -pqrR
 VSCODE_HANDLES_SIGPIPE = true
 # environment
 WT_PROFILE_ID = {2c4de342-38b7-51cf-b940-2309a097f518}
-# makefile (from 'makefile', line 13)
-LDFLAGS := 
 # default
 MAKEFILES := 
-# makefile (from 'makefile', line 4)
-SRC_DIR := src
 # automatic
 <F = $(notdir $<)
 # environment
@@ -181,7 +163,7 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu
 # variable set hash-table stats:
-# Load=85/1024=8%, Rehash=0, Collisions=11/137=8%
+# Load=75/1024=7%, Rehash=0, Collisions=4/97=4%
 
 # Pattern-specific Variable Values
 
@@ -189,10 +171,9 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2080, inode 45282): 10 files, no impossibilities.
-# src (device 2080, inode 46799): 8 files, no impossibilities.
+# . (device 2080, inode 45282): 9 files, no impossibilities.
 
-# 18 files, no impossibilities in 2 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -200,60 +181,26 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Files
 
-build/main: build build/.build build/.build/menu.o build/.build/main.o
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
-#  recipe to execute (from 'makefile', line 20):
-	@$(CC) $(OBJS) -o $@ $(LDFLAGS)
-
-all: build/main
-#  Phony target (prerequisite of .PHONY).
+# Not a target:
+all:
 #  Command line target.
-#  Implicit rule search has not been done.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
-
-.PHONY: all run build/.build/menu.o build/.build/main.o clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Failed to be updated.
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-19 15:17:36.670315038
-#  File has been updated.
-#  Successfully updated.
-
-build:
-#  Implicit rule search has not been done.
-#  Last modified 2022-06-19 15:19:05.44031382
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 34):
-	mkdir -p $@
-
-build/.build/main.o: src/main.c
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: 'main'
 #  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 28):
-	@$(CC) $(CFLAGS) -c $< -o $@
-
-# Not a target:
-src/main.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  File has been updated.
+#  Failed to be updated.
 
 # Not a target:
 .DEFAULT:
@@ -261,80 +208,27 @@ src/main.c:
 #  Modification time never checked.
 #  File has not been updated.
 
-build/.build/menu.o: src/menu.c
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: 'menu'
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := build/.build/menu.o
-# automatic
-# % := 
-# automatic
-# * := menu
-# automatic
-# + := src/menu.c
- 
-# automatic
-# | := 
-# automatic
-# < := src/menu.c
-# automatic
-# ^ := src/menu.c
-# automatic
-# ? := src/menu.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/15=7%
-#  recipe to execute (from 'makefile', line 28):
-	@$(CC) $(CFLAGS) -c $< -o $@
-
 # Not a target:
-src/menu.c:
+GNUmakefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-19 15:16:23.990316035
-#  File has been updated.
-#  Successfully updated.
-
-run: build/main
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 24):
-	@./$<
-
-clean:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 49):
-	rm -rf $(BUILD_DIR)
-
-build/.build:
-#  Implicit rule search has not been done.
-#  Last modified 2022-06-19 15:19:05.640313817
 #  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 41):
-	mkdir -p $@
+#  Failed to be updated.
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/48=0%
+# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 34 / storage = 296 B / avg = 8 B
-# current buf: size = 8162 B / used = 296 B / count = 34 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 17 / storage = 132 B / avg = 7 B
+# current buf: size = 8162 B / used = 132 B / count = 17 / avg = 7 B
 
-# strcache performance: lookups = 69 / hit rate = 50%
+# strcache performance: lookups = 20 / hit rate = 15%
 # hash-table stats:
-# Load=34/8192=0%, Rehash=0, Collisions=2/69=3%
-# Finished Make data base on Sun Jun 19 15:19:25 2022
+# Load=17/8192=0%, Rehash=0, Collisions=1/20=5%
+# Finished Make data base on Mon Jun 20 13:41:31 2022
 
  
