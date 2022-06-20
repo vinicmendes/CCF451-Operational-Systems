@@ -20,31 +20,41 @@ char executaInstrucao(processoSimulado *processo)
     switch (instrucao.id)
     {
     case 'N':
+        printf("processosimulado.c --- executa instrucao ---- fez instrucao N\n");
         instrucaoN(processo, instrucao);
+        printf("processosimulado.c --- executa instrucao ---- fez instrucao N %d\n", processo->memoria[processo->contadorPrograma]);
         processo->contadorPrograma++;
     case 'D':
+        printf("processosimulado.c --- executa instrucao ---- fez instrucao D\n");
         instrucaoD(processo, instrucao);
         processo->contadorPrograma++;
     case 'V':
+        printf("processosimulado.c --- executa instrucao ---- fez instrucao V\n");
         instrucaoV(processo, instrucao);
         processo->contadorPrograma++;
     case 'A':
+        printf("processosimulado.c --- executa instrucao ---- fez instrucao A\n");
         instrucaoA(processo, instrucao);
         processo->contadorPrograma++;
     case 'S':
+        printf("processosimulado.c --- executa instrucao ---- fez instrucao S\n");
         instrucaoS(processo, instrucao);
         processo->contadorPrograma++;
     case 'B':
+        printf("processosimulado.c --- executa instrucao ---- fez instrucao B\n");
         instrucaoB(processo);
         processo->contadorPrograma++;
         return 'B';
     case 'T':
+        printf("processosimulado.c --- executa instrucao ---- fez instrucao T\n");
         instrucaoT(processo);
         processo->contadorPrograma++;
         return 'T';
     case 'F':
+        printf("processosimulado.c --- executa instrucao ---- fez instrucao F\n");
         return 'F';
     case 'R':
+        printf("processosimulado.c --- executa instrucao ---- fez instrucao R\n");
         instrucaoR(processo, instrucao);
         processo->contadorPrograma++;
     default:

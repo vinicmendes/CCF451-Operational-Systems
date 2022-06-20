@@ -30,14 +30,12 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
     gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].estado = 2;
     insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao]);
     gerenciador->estadoExecucao = 0;
-    ++gerenciador->ultimaposicao;
+    gerenciador->ultimaposicao++;
 
     while(1) {
         lerPipe(p, instPipe, 1024);
         executarProcessoSimulado(gerenciador, instPipe);
-        printf("processoControle.c --- processo Controle -- mais uma execuçao\n");
     }
-
 }
 
 void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe)
@@ -75,7 +73,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
             {
                 // CRIA NOVO PROCESSO SIMULADO FILHO
                 // estado ; 0 = pronto, 1 = em execução, 2 = bloquado, 3 = finalizado
-                ++gerenciador->ultimoindice;
+                gerenciador->ultimoindice++;
                 inicializaProcessoSimulado(&gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao], gerenciador->ultimoindice,
                                            gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id, gerenciador->cpu.procexec.contadorPrograma + 1,
                                            gerenciador->cpu.procexec.prioridade, 0, gerenciador->cpu.procexec.memoria,
@@ -154,7 +152,7 @@ void comandoB(processoControle *gerenciador)
     int i, retorno;
     pararProcesso(&gerenciador->cpu, &p);
     if (p.prioridade != 0)
-        --p.prioridade;
+        p.prioridade--;
     gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao] = p;
     insereItememFilaEB(&gerenciador->estadoBloqueado, gerenciador->estadoExecucao, gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].prioridade);
     gerenciador->estadoExecucao = -1;

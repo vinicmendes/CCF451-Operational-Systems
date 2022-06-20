@@ -28,7 +28,7 @@ int leArquivoPipe(Pipe *p, char *nomeArquivo)
     while(fscanf(file, " %c", &c) != EOF){
         fprintf(stderr, "leitor.c - lerArquivoPipe - leu: %c\n", c);
         escrevePipe(p, c);
-        //sleep(1);
+        sleep(1);
     }
     fclose(file);
     return 1;
