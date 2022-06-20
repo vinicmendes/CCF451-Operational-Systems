@@ -112,19 +112,19 @@ void mostrarRelatorioProcesso(processoSimulado *processo)
     {
     case 0:
     {
-        printf("Bloqueado\n");
+        printf("Pronto\n");
         break;
     }
 
     case 1:
     {
-        printf("Pronto\n");
+        printf("Em execução\n");
         break;
     }
 
     case 2:
     {
-        printf("Em execução\n");
+        printf("Bloqueado\n");
         break;
     }
 
