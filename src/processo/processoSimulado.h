@@ -8,7 +8,7 @@ typedef struct ProcessoSimulado
 {
     int id;                // id do processo
     int idPrincipal;       // processo que criou o processo atual
-    int *contadorPrograma; // contador do programa
+    int contadorPrograma; // contador do programa
     int prioridade;        // prioridade do processo atual
     int estado;            // estado ; 0 = pronto, 1 = em execução, 2 = bloqueado, 3 = finalizado
     int *memoria;          // memória do processo para as variáveis
@@ -19,7 +19,7 @@ typedef struct ProcessoSimulado
 } processoSimulado;
 
 void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrincipal,
-                                int *contadorPrograma, int prioridade, int estado, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao); // inicialização do processo
+                                int contadorPrograma, int prioridade, int estado, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao); // inicialização do processo
 char executaInstrucao(processoSimulado *processo);                                                                                                     // executa uma instrução
 void instrucaoN(processoSimulado *processo, instrucao instrucao);                                                                                      // instrução N
 void instrucaoD(processoSimulado *processo, instrucao instrucao);                                                                                      // instrução D

@@ -1,11 +1,11 @@
 #include "processoSimulado.h"
 
 void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrincipal,
-                                int *contadorPrograma, int prioridade, int estado, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao)
+                                int contadorPrograma, int prioridade, int estado, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao)
 {
     processo->id = id;
     processo->idPrincipal = idPrincipal;
-    processo->contadorPrograma = contadorPrograma;
+    processo->contadorPrograma = 0;
     processo->prioridade = prioridade;
     processo->estado = estado;
     processo->memoria = memoria;
@@ -16,7 +16,7 @@ void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrinci
 
 char executaInstrucao(processoSimulado *processo)
 {
-    instrucao instrucao = processo->programa[*(processo->contadorPrograma)];
+    instrucao instrucao = processo->programa[processo->contadorPrograma];
     switch (instrucao.id)
     {
     case 'N':
@@ -105,7 +105,7 @@ void mostrarRelatorioProcesso(processoSimulado *processo)
     printf("PID: %d\n", processo->id);
     printf("Prioridade: %d\n", processo->prioridade);
     printf("ID Processo pai: %d\n", processo->idPrincipal);
-    printf("Contador de programa: %d\n", *(processo->contadorPrograma));
+    printf("Contador de programa: %d\n", processo->contadorPrograma);
 
     printf("Estado: ");
     switch (processo->estado)

@@ -20,8 +20,8 @@ leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: L
 leitor.c - lerArquivoPipe - leu: I
+pipe.c -------- pipe ------ n = 16
 leitor.c - lerArquivoPipe - leu: U
-pipe.c -------- pipe ------ n = 17
 leitor.c - lerArquivoPipe - leu: L
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: M

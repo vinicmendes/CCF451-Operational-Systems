@@ -24,7 +24,7 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
     printf("\nCriando Processo Simulado...\n");
 
     leArquivoInstrucao(&inst, "files/file_f");
-    inicializaProcessoSimulado(&processo, 0, -1, &contador , 0, 0,buffer, 0, 0, inst);
+    inicializaProcessoSimulado(&processo, 0, -1, 0 , 0, 0,buffer, 0, 0, inst);
     gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao] = processo;
     inicializaCpu(&gerenciador->cpu);
     gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].estado = 2;
