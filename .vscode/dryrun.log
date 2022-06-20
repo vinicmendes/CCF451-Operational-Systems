@@ -1,6 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/vinicius/TP01-CCF451'
+gcc src/main.c src/menu.c src/processo/processoControle.c src/processo/processoSimulado.c src/estruturas/cpu.c src/estruturas/estadoBloqueado.c src/estruturas/estadoPronto.c src/estruturas/leitor.c src/estruturas/pipe.c src/estruturas/tempo.c -o main
 make: Leaving directory '/home/vinicius/TP01-CCF451'
  
-make: *** No targets specified and no makefile found.  Stop.
-
