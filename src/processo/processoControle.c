@@ -23,7 +23,7 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
     
     printf("\nCriando Processo Simulado...\n");
 
-    leArquivoInstrucao(&inst, "files/file_f");
+    leArquivoInstrucao(&inst, "files/init.txt");
     inicializaProcessoSimulado(&processo, 0, -1, 0 , 0, 0,buffer, 0, 0, inst);
     gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao] = processo;
     inicializaCpu(&gerenciador->cpu);
@@ -51,6 +51,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
     {
         if (instrucaoPipe[index] == 'U')
         {
+            printf("\nComando U\n");
             // FIM DE UNIDADE DE TEMPO
             resultado = executaProcesso(&gerenciador->cpu);
 
@@ -105,6 +106,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
         }
         else if (instrucaoPipe[index] == 'L')
         {
+            printf("\nComando L\n");
             // Desbloqueia o primeiro processo simulado na fila bloqueada
             comandoL(gerenciador);
             if (gerenciador->tipoEscalonamento == 1)
@@ -118,11 +120,13 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
         }
         else if (instrucaoPipe[index] == 'I')
         {
+            printf("\nComando I\n");
             // Imprime o estado atual do gerenciador
             processoImpressao(gerenciador);
         }
         else if (instrucaoPipe[index] == 'M')
         {
+            printf("\nComando M\n");
             // Imprime o tempo médio do ciclo e finaliza o sistema
             processoImpressao(gerenciador);
             exit(0);

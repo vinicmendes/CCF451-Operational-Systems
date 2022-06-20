@@ -2,26 +2,5 @@ menu.c - menu - opcao=2
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: L
 leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: L
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: L
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: L
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: L
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: L
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: L
-leitor.c - lerArquivoPipe - leu: I
-pipe.c -------- pipe ------ n = 16
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: L
-leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: M
+pipe.c -------- pipe ------ n = 4

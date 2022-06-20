@@ -20,7 +20,7 @@ void menu(Pipe *p)
             lerTerminal(p);
             return;
         case 2:
-            if (leArquivoPipe(p,"files/init.txt") == 1)
+            if (leArquivoPipe(p,"files/pipe.txt") == 1)
                 return;
             break;
         case 0:
