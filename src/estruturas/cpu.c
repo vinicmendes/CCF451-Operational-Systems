@@ -53,6 +53,29 @@ void mostrarProcessoCpu(cpu *cpu)
     printf("Id Processo: %d\n", cpu->procexec.id);
     printf("Prioridade: %d\n", cpu->procexec.prioridade);
     printf("Id processo pai: %d\n", cpu->procexec.contadorPrograma);
+    printf("Contador de programa: %d\n", cpu->procexec.contadorPrograma);
+    printf("Estado: ");
+    switch (cpu->procexec.estado){
+        case 0:{
+            printf("Pronto\n");
+            break;
+        }
+
+        case 1:{
+            printf("Em execução\n");
+            break;
+        }
+
+        case 2:{
+            printf("Bloqueado\n");
+            break;
+        }
+
+        case 3:{
+            printf("Morto\n");
+            break;
+        }
+    }
     printf("Tempo de inicio: %d\n", cpu->procexec.tempoInicio);
     printf("Tempo em cpu: %d\n", cpu->procexec.tempoCPU + cpu->procexec.tempoAtual);
     printf("Tempo total: %d\n", cpu->unidTempo);
