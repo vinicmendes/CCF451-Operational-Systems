@@ -1,9 +1,10 @@
 #include "processoSimulado.h"
 
+#define MAGENTA "\e[0;33m"
 #define RED "\x1b[31m"
 #define GREEN "\x1b[32m"
 #define YELLOW "\e[0;33m"
-#define BLUE "\e[0;34m"
+#define BLUE "\e[0;36m"
 #define RESET "\x1b[0m"
 
 void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrincipal,

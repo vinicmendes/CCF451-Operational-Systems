@@ -1,5 +1,8 @@
 #include "processoControle.h"
 #define MAX_PROCESSOS 50
+#define MAGENTA "\e[0;35m"
+#define RED "\x1b[31m"
+#define RESET "\x1b[0m"
 
 void inicializaProcessoC(processoControle *gerenciador, int tipo)
 {
@@ -116,7 +119,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
         {
             printf("\nComando M\n");
             // Imprime o tempo médio do ciclo e finaliza o sistema
-            printf("\n Tempo medio de ciclo == %d",(gerenciador->cpu.unidTempo/gerenciador->cpu.qtdprocessos));
+            printf(MAGENTA"\n Tempo medio de ciclo = %.2f"RESET,(float)(gerenciador->cpu.unidTempo/gerenciador->cpu.qtdprocessos));
             processoImpressao(gerenciador);
             exit(0);
         }
@@ -160,7 +163,7 @@ void comandoB(processoControle *gerenciador)
 
 int trocaContexto(processoControle *gerenciador)
 {
-    printf("Trocando contexto\n");
+    printf(RED"Trocando contexto\n"RESET);
     processoSimulado p;
     int i;
     pararProcesso(&gerenciador->cpu, &p,0);
