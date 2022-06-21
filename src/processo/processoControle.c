@@ -41,7 +41,6 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
 }
 void escalona(processoControle *gerenciador)
 {
-    fprintf(stderr, "Entrou !B\n");
     if (gerenciador->tipoEscalonamento == 1)
     {
         escalonarTempo(gerenciador);
@@ -65,23 +64,20 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
             printf("\nComando U\n");
             // FIM DE UNIDADE DE TEMPO
             resultado = executaProcesso(&gerenciador->cpu);
-            fprintf(stderr, "processocontrole.c --- executa processo simulado --- resultado de executa processo %c.\n", resultado);
+            fprintf(stderr, "processocontrole.c - executa processo simulado - resultado de executa processo %c.\n", resultado);
             if (resultado == 'B')
             {
                 // BLOQUEIA PROCESSO SIMULADO
-                fprintf(stderr, "Entrou B\n");
                 comandoB(gerenciador);
             }
             else if (resultado == 'T')
             {
-                fprintf(stderr, "Entrou T\n");
                 // TERMINA PROCESSO SIMULADO
                 retiraProcessoTabelaProcessos(gerenciador, gerenciador->estadoExecucao);
                 printf("Processo %d finalizado ... \n", gerenciador->cpu.procexec.id);
             }
             else if (resultado == 'F')
             {
-                fprintf(stderr, "Entrou F\n");
                 // CRIA NOVO PROCESSO SIMULADO FILHO
                 // estado ; 0 = pronto, 1 = em execução, 2 = bloquado, 3 = finalizado
                 gerenciador->ultimoindice++;
@@ -120,6 +116,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
         {
             printf("\nComando M\n");
             // Imprime o tempo médio do ciclo e finaliza o sistema
+            printf("\n Tempo medio de ciclo == %d",(gerenciador->cpu.unidTempo/gerenciador->cpu.qtdprocessos));
             processoImpressao(gerenciador);
             exit(0);
         }
@@ -145,11 +142,11 @@ void comandoB(processoControle *gerenciador)
 {
     processoSimulado p;
     int i, retorno;
-    pararProcesso(&gerenciador->cpu, &p);
+    pararProcesso(&gerenciador->cpu, &p,2);
     if (p.prioridade != 0)
         p.prioridade--;
     gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao] = p;
-    printf("Processo de id %d bloqueado!\n", gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id);
+    printf("Processo de id %d bloqueado! \n", gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id);
     insereItememFilaEB(&gerenciador->estadoBloqueado, gerenciador->estadoExecucao, gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].prioridade);
     gerenciador->estadoExecucao = -1;
     retorno = removeItemEP(&gerenciador->estadoPronto, &i);
@@ -163,10 +160,10 @@ void comandoB(processoControle *gerenciador)
 
 int trocaContexto(processoControle *gerenciador)
 {
-    printf("trocando contexto\n");
+    printf("Trocando contexto\n");
     processoSimulado p;
     int i;
-    pararProcesso(&gerenciador->cpu, &p);
+    pararProcesso(&gerenciador->cpu, &p,0);
     if (p.id != -1)
     {
         gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao] = p;

@@ -1,17 +1,25 @@
 #include "cpu.h"
 
+#define RED "\x1b[31m"
+#define GREEN "\x1b[32m"
+#define YELLOW "\e[0;33m"
+#define BLUE "\e[0;34m"
+#define RESET "\x1b[0m"
+
 // inicializando a cpu com o tempo começando de 0
 void inicializaCpu(cpu *cpu)
 {
     cpu->unidTempo = 0;
     cpu->procexec.id = -1;
+    cpu->qtdprocessos = 0;
 }
 
 // inserindo o processo na cpu
 void insereProcesso(cpu *cpu, processoSimulado p)
 {
     cpu->procexec = p;
-    cpu->tempoProcessoAtual =0;
+    cpu->qtdprocessos++;
+    cpu->tempoProcessoAtual = 0;
 }
 
 // executando o processo recebido
@@ -29,11 +37,11 @@ char executaProcesso(cpu *cpu)
 }
 
 // parando o processo p
-void pararProcesso(cpu *cpu, processoSimulado *p)
+void pararProcesso(cpu *cpu, processoSimulado *p, int estado)
 {
     cpu->procexec.tempoCPU += cpu->procexec.tempoAtual;
     cpu->procexec.tempoAtual = 0;
-    cpu->procexec.estado = 0;
+    cpu->procexec.estado = estado;
     *p = cpu->procexec;
     cpu->procexec.id = -1;
 }
@@ -48,38 +56,43 @@ void mostrarProcessoCpu(cpu *cpu)
 {
     if (cpu->procexec.id == -1)
     {
-        printf("\nCPU vazia!\n");
+        printf(RED"\n-----CPU vazia!-----\n"RESET);
         printf("Tempo total: %d\n", cpu->unidTempo);
         return;
     }
-    printf("\nRelatório do processo atualmente em execução\n");
-    printf("Id Processo: %d\n", cpu->procexec.id);
+    printf(BLUE"\n-----Relatório do processo atualmente em execução-----\n"RESET);
+    printf("PID: %d\n", cpu->procexec.id);
     printf("Prioridade: %d\n", cpu->procexec.prioridade);
     printf("Id processo pai: %d\n", cpu->procexec.idPrincipal);
     printf("Contador de programa: %d\n", cpu->procexec.contadorPrograma);
     printf("Estado: ");
-    switch (cpu->procexec.estado){
-        case 0:{
-            printf("Pronto\n");
-            break;
-        }
+    switch (cpu->procexec.estado)
+    {
+    case 0:
+    {
+        printf(YELLOW "Pronto\n" RESET);
+        break;
+    }
 
-        case 1:{
-            printf("Em execução\n");
-            break;
-        }
+    case 1:
+    {
+        printf(GREEN "Em execução\n" RESET);
+        break;
+    }
 
-        case 2:{
-            printf("Bloqueado\n");
-            break;
-        }
+    case 2:
+    {
+        printf(RED "Bloqueado\n" RESET);
+        break;
+    }
 
-        case 3:{
-            printf("Morto\n");
-            break;
-        }
+    case 3:
+    {
+        printf("Morto\n");
+        break;
+    }
     }
     printf("Tempo de inicio: %d\n", cpu->procexec.tempoInicio);
-    printf("Tempo em cpu: %d\n", cpu->procexec.tempoCPU + cpu->procexec.tempoAtual);
+    printf("Tempo de cpu: %d\n", cpu->procexec.tempoCPU + cpu->procexec.tempoAtual);
     printf("Tempo total da CPU: %d\n", cpu->unidTempo);
 }

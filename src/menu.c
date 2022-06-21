@@ -6,9 +6,9 @@ void menu(Pipe *p)
 
     while (op != 0)
     {
-        printf("\n\n   -- Menu --       \n");
-        printf("1. Entrada Padrao       \n");
-        printf("2. Arquivo              \n");
+        printf("\n\n   -- Menu de escolha de entrada --       \n");
+        printf("1. Terminal       \n");
+        printf("2. Arquivo pipe.txt             \n");
         printf("0. Sair                 \n");
         scanf(" %d", &op);
         fprintf(stderr, "menu.c - menu - opcao=%d\n", op);

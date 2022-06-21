@@ -13,6 +13,6 @@ int lerPipe(Pipe *p, char *instrucao, int size)
 {
     int n;
     n = read(p->filedes[0], instrucao, size);
-    fprintf(stderr, "pipe.c -------- pipe ------ n = %d\n", n);
+    fprintf(stderr, "pipe.c - pipe - n = %d\n", n);
     return n;
 }

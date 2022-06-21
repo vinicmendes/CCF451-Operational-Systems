@@ -1,5 +1,11 @@
 #include "processoSimulado.h"
 
+#define RED "\x1b[31m"
+#define GREEN "\x1b[32m"
+#define YELLOW "\e[0;33m"
+#define BLUE "\e[0;34m"
+#define RESET "\x1b[0m"
+
 void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrincipal,
                                 int contadorPrograma, int prioridade, int estado, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao)
 {
@@ -17,7 +23,7 @@ void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrinci
 char executaInstrucao(processoSimulado *processo)
 {
     instrucao instrucao = processo->programa[processo->contadorPrograma];
-    fprintf(stderr,"processoSimulado.c ---- executa instrucao --- contador de programa == %d id instrucao == %c. Processo que realizou a instrucao == %d\n",processo->contadorPrograma,instrucao.id,processo->id);
+    fprintf(stderr, "processoSimulado.c - executa instrucao - contador de programa == %d id instrucao == %c. Processo que realizou a instrucao == %d\n", processo->contadorPrograma, instrucao.id, processo->id);
     switch (instrucao.id)
     {
     case 'N':
@@ -49,7 +55,7 @@ char executaInstrucao(processoSimulado *processo)
         processo->contadorPrograma++;
         return 'T';
     case 'F':
-        //Não alterar contador de programa aqui
+        // Não alterar contador de programa aqui
         return 'F';
     case 'R':
         instrucaoR(processo, instrucao);
@@ -97,11 +103,11 @@ void instrucaoT(processoSimulado *processo)
 
 void instrucaoR(processoSimulado *processo, instrucao instrucao)
 {
-    char caminho[100] = "files/"; 
+    char caminho[100] = "files/";
     free(processo->programa);
-    strcat(caminho,instrucao.arqv);
-    fprintf(stderr,"processosimulado.c ---- instrucao R --- nome arq filho == %s\n",caminho);
-    leArquivoInstrucao(&processo->programa,caminho);
+    strcat(caminho, instrucao.arqv);
+    fprintf(stderr, "processosimulado.c - instrucao R - nome arq filho == %s\n", caminho);
+    leArquivoInstrucao(&processo->programa, caminho);
     processo->contadorPrograma = 0;
 }
 
@@ -111,7 +117,7 @@ void calculaTempo(processoSimulado *processo)
 }
 void mostrarRelatorioProcesso(processoSimulado *processo)
 {
-    printf("\n----- Relatorio Processo -----\n");
+    printf(BLUE"\n----- Relatorio de processo -----\n"RESET);
     printf("PID: %d\n", processo->id);
     printf("Prioridade: %d\n", processo->prioridade);
     printf("ID Processo pai: %d\n", processo->idPrincipal);
@@ -122,19 +128,19 @@ void mostrarRelatorioProcesso(processoSimulado *processo)
     {
     case 0:
     {
-        printf("Pronto\n");
+        printf(YELLOW "Pronto\n" RESET);
         break;
     }
 
     case 1:
     {
-        printf("Em execução\n");
+        printf(GREEN "Em execução\n" RESET);
         break;
     }
 
     case 2:
     {
-        printf("Bloqueado\n");
+        printf(RED "Bloqueado\n" RESET);
         break;
     }
 
@@ -145,8 +151,8 @@ void mostrarRelatorioProcesso(processoSimulado *processo)
     }
     }
     printf("Tempo de inicio: %d\n", processo->tempoInicio);
-    printf("Tempo em proc: %d\n", processo->tempoCPU + processo->tempoAtual);
-    printf("-------------------------------\n\n");
+    printf("Tempo em processamento: %d\n", processo->tempoCPU + processo->tempoAtual);
+    printf("-----------------------------------------------------------------\n\n");
 }
 
 void incrementaTempoCPU(processoSimulado *processo)
