@@ -11,7 +11,10 @@ void inicializaListaEB(listaEB *lista)
 // verificando se a lista possui itens
 int lEhVaziaEB(listaEB *lista)
 {
-    return lista->apPrimeiro == lista->apUltimo ? 1 : 0;
+    if (lista->apPrimeiro == lista->apUltimo)
+        return 1;
+    else
+        return 0;
 }
 
 // inserindo item ordenado por prioridade

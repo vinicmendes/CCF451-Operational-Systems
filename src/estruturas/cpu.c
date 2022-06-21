@@ -79,5 +79,5 @@ void mostrarProcessoCpu(cpu *cpu)
     }
     printf("Tempo de inicio: %d\n", cpu->procexec.tempoInicio);
     printf("Tempo em cpu: %d\n", cpu->procexec.tempoCPU + cpu->procexec.tempoAtual);
-    printf("Tempo total: %d\n", cpu->unidTempo);
+    printf("Tempo total da CPU: %d\n", cpu->unidTempo);
 }
