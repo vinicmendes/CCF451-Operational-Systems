@@ -78,11 +78,6 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                 // TERMINA PROCESSO SIMULADO
                 retiraProcessoTabelaProcessos(gerenciador, gerenciador->estadoExecucao);
                 printf("Processo %d finalizado ... \n", gerenciador->cpu.procexec.id);
-                retorno = trocaContexto(gerenciador);
-                if (retorno == -1)
-                {
-                    gerenciador->cpu.procexec.id = -1;
-                }
             }
             else if (resultado == 'F')
             {
@@ -92,7 +87,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                 gerenciador->ultimoindice++;
                 inicializaProcessoSimulado(&gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao], gerenciador->ultimoindice,
                                            gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id, gerenciador->cpu.procexec.contadorPrograma + 1,
-                                           gerenciador->cpu.procexec.prioridade, 0, gerenciador->cpu.procexec.memoria,
+                                           0, 0, gerenciador->cpu.procexec.memoria,
                                            gerenciador->cpu.unidTempo, 0, gerenciador->cpu.procexec.programa);
                 gerenciador->cpu.procexec.contadorPrograma += 1 + gerenciador->cpu.procexec.programa[gerenciador->cpu.procexec.contadorPrograma].var1;
 
@@ -180,8 +175,10 @@ int trocaContexto(processoControle *gerenciador)
         else
             insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->estadoExecucao, gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].prioridade);
     }
-    if (lEhVaziaEP(&gerenciador->estadoPronto))
+    if (lEhVaziaEP(&gerenciador->estadoPronto)){
+        gerenciador->cpu.procexec.id = -1;
         return -1;
+    }
     removeItemEP(&gerenciador->estadoPronto, &i);
     gerenciador->tabelaDeProcessos[i].estado = 1;
     insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[i]);
