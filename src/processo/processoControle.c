@@ -149,12 +149,12 @@ void comandoB(processoControle *gerenciador)
     if (p.prioridade != 0)
         p.prioridade--;
     gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao] = p;
-    printf("Processo de id %d bloqueado!", gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id);
+    printf("Processo de id %d bloqueado!\n", gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id);
     insereItememFilaEB(&gerenciador->estadoBloqueado, gerenciador->estadoExecucao, gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].prioridade);
     gerenciador->estadoExecucao = -1;
     retorno = removeItemEP(&gerenciador->estadoPronto, &i);
     gerenciador->tabelaDeProcessos[i].estado = 1;
-    if (retorno != 1)
+    if (retorno != -1)
     {
         insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[i]);
         gerenciador->estadoExecucao = i;
