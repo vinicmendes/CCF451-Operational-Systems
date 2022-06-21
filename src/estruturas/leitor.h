@@ -11,5 +11,5 @@
 void lerTerminal(Pipe *p);
 int leArquivoPipe(Pipe *p, char *nomeArquivo);
 int leArquivoInstrucao(instrucao **inst, char *nomeArquivo);
-void lerArquivoProcessoS(instrucao **inst, char *nomeArquivo);
+//void lerArquivoProcessoS(instrucao **inst, char *nomeArquivo);
 #endif

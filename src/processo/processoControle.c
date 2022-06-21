@@ -1,7 +1,7 @@
 #include "processoControle.h"
 #define MAX_PROCESSOS 50
 
-void inicializaProcessoC(processoControle *gerenciador,int tipo)
+void inicializaProcessoC(processoControle *gerenciador, int tipo)
 {
     gerenciador->unidadeTempo = 0;
     inicializaCpu(&gerenciador->cpu);
@@ -18,14 +18,14 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
 {
     processoSimulado processo;
     instrucao *inst;
-    int *buffer,contador=0;
+    int *buffer, contador = 0;
     char instPipe[1025];
     int tam;
-    
+
     printf("\nCriando Processo Gerenciador de Processos...\n");
 
     leArquivoInstrucao(&inst, "files/init.txt");
-    inicializaProcessoSimulado(&processo, 0, -1, 0 , 0, 0, buffer, 0, 0, inst);
+    inicializaProcessoSimulado(&processo, 0, -1, 0, 0, 0, buffer, 0, 0, inst);
     gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao] = processo;
     inicializaCpu(&gerenciador->cpu);
     gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].estado = 1;
@@ -33,14 +33,27 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
     gerenciador->estadoExecucao = 0;
     gerenciador->ultimaposicao++;
 
-    while(1) {
+    while (1)
+    {
         tam = lerPipe(p, instPipe, 1024);
         executarProcessoSimulado(gerenciador, instPipe, tam);
     }
 }
+void escalona(processoControle *gerenciador)
+{
+    fprintf(stderr, "Entrou !B\n");
+    if (gerenciador->tipoEscalonamento == 1)
+    {
+        escalonarTempo(gerenciador);
+    }
+    else
+    {
+        escalonarProcessos(gerenciador);
+    }
+}
 
-void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe,int tamPipe)
-{ 
+void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe, int tamPipe)
+{
     int index, retorno;
     char resultado;
     processoSimulado processo;
@@ -52,20 +65,19 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
             printf("\nComando U\n");
             // FIM DE UNIDADE DE TEMPO
             resultado = executaProcesso(&gerenciador->cpu);
-            fprintf(stderr,"processocontrole.c --- executa processo simulado --- resultado de executa processo %c.\n",resultado);
+            fprintf(stderr, "processocontrole.c --- executa processo simulado --- resultado de executa processo %c.\n", resultado);
             if (resultado == 'B')
             {
                 // BLOQUEIA PROCESSO SIMULADO
-                fprintf(stderr,"Entrou B\n");
+                fprintf(stderr, "Entrou B\n");
                 comandoB(gerenciador);
-                continue;
             }
             else if (resultado == 'T')
             {
-                fprintf(stderr,"Entrou T\n");
+                fprintf(stderr, "Entrou T\n");
                 // TERMINA PROCESSO SIMULADO
                 retiraProcessoTabelaProcessos(gerenciador, gerenciador->estadoExecucao);
-                printf("Processo %d finalizado ... \n",gerenciador->cpu.procexec.id);
+                printf("Processo %d finalizado ... \n", gerenciador->cpu.procexec.id);
                 retorno = trocaContexto(gerenciador);
                 if (retorno == -1)
                 {
@@ -74,7 +86,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
             }
             else if (resultado == 'F')
             {
-                fprintf(stderr,"Entrou F\n");
+                fprintf(stderr, "Entrou F\n");
                 // CRIA NOVO PROCESSO SIMULADO FILHO
                 // estado ; 0 = pronto, 1 = em execução, 2 = bloquado, 3 = finalizado
                 gerenciador->ultimoindice++;
@@ -82,9 +94,9 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                                            gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id, gerenciador->cpu.procexec.contadorPrograma + 1,
                                            gerenciador->cpu.procexec.prioridade, 0, gerenciador->cpu.procexec.memoria,
                                            gerenciador->cpu.unidTempo, 0, gerenciador->cpu.procexec.programa);
-                gerenciador->cpu.procexec.contadorPrograma+= 1+ gerenciador->cpu.procexec.programa[gerenciador->cpu.procexec.contadorPrograma].var1;
-                
-                fprintf(stderr,"Criando processo simulado de id %d\n",gerenciador->ultimoindice);
+                gerenciador->cpu.procexec.contadorPrograma += 1 + gerenciador->cpu.procexec.programa[gerenciador->cpu.procexec.contadorPrograma].var1;
+
+                fprintf(stderr, "Criando processo simulado de id %d\n", gerenciador->ultimoindice);
                 if (gerenciador->tipoEscalonamento == 1)
                 {
                     insereItememFilaEP(&gerenciador->estadoPronto, gerenciador->ultimaposicao, gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].prioridade);
@@ -95,32 +107,13 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                 }
                 gerenciador->ultimaposicao++;
             }
-            if (resultado != 'B')
-            {
-                fprintf(stderr,"Entrou !B\n");
-                if (gerenciador->tipoEscalonamento == 1)
-                {
-                    escalonarTempo(gerenciador);
-                }
-                else
-                {
-                    escalonarProcessos(gerenciador);
-                }
-            }
+            escalona(gerenciador);
         }
         else if (instrucaoPipe[index] == 'L')
         {
             printf("\nComando L\n");
             // Desbloqueia o primeiro processo simulado na fila bloqueada
             comandoL(gerenciador);
-            if (gerenciador->tipoEscalonamento == 1)
-            {
-                escalonarTempo(gerenciador);
-            }
-            else
-            {
-                escalonarProcessos(gerenciador);
-            }
         }
         else if (instrucaoPipe[index] == 'I')
         {
@@ -146,7 +139,7 @@ void comandoL(processoControle *gerenciador)
     retorno = removeItemEB(&gerenciador->estadoBloqueado, &indice);
     if (retorno == -1)
         return;
-    printf("Processo de indice %d liberado!\n",gerenciador->tabelaDeProcessos[indice].id);
+    printf("Processo de indice %d liberado!\n", gerenciador->tabelaDeProcessos[indice].id);
     if (gerenciador->tipoEscalonamento == 1)
         insereItememFilaEP(&gerenciador->estadoPronto, indice, gerenciador->tabelaDeProcessos[indice].prioridade);
     else
@@ -161,7 +154,7 @@ void comandoB(processoControle *gerenciador)
     if (p.prioridade != 0)
         p.prioridade--;
     gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao] = p;
-    printf("Processo de id %d bloqueado!",gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id);
+    printf("Processo de id %d bloqueado!", gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id);
     insereItememFilaEB(&gerenciador->estadoBloqueado, gerenciador->estadoExecucao, gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].prioridade);
     gerenciador->estadoExecucao = -1;
     retorno = removeItemEP(&gerenciador->estadoPronto, &i);
@@ -175,10 +168,9 @@ void comandoB(processoControle *gerenciador)
 
 int trocaContexto(processoControle *gerenciador)
 {
+    printf("trocando contexto\n");
     processoSimulado p;
     int i;
-    if (lEhVaziaEP(&gerenciador->estadoPronto))
-        return 1;
     pararProcesso(&gerenciador->cpu, &p);
     if (p.id != -1)
     {
@@ -188,6 +180,8 @@ int trocaContexto(processoControle *gerenciador)
         else
             insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->estadoExecucao, gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].prioridade);
     }
+    if (lEhVaziaEP(&gerenciador->estadoPronto))
+        return -1;
     removeItemEP(&gerenciador->estadoPronto, &i);
     gerenciador->tabelaDeProcessos[i].estado = 1;
     insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[i]);
@@ -195,8 +189,9 @@ int trocaContexto(processoControle *gerenciador)
 
     return 1;
 }
-void escalonarTempo(processoControle *gerenciador){
-    if(gerenciador->cpu.procexec.tempoCPU >= 5 || gerenciador->cpu.procexec.id == -1)
+void escalonarTempo(processoControle *gerenciador)
+{
+    if (gerenciador->cpu.tempoProcessoAtual >= 5 || gerenciador->cpu.procexec.id == -1)
         trocaContexto(gerenciador);
 }
 void escalonarProcessos(processoControle *gerenciador)
@@ -206,17 +201,17 @@ void escalonarProcessos(processoControle *gerenciador)
         gerenciador->cpu.procexec.prioridade = 1;
         trocaContexto(gerenciador);
     }
-    else if (gerenciador->cpu.procexec.prioridade == 1 && gerenciador->cpu.procexec.tempoAtual > 1)
+    else if (gerenciador->cpu.procexec.prioridade == 1 && gerenciador->cpu.tempoProcessoAtual > 1)
     {
         gerenciador->cpu.procexec.prioridade = 2;
         trocaContexto(gerenciador);
     }
-    else if (gerenciador->cpu.procexec.prioridade == 2 && gerenciador->cpu.procexec.tempoAtual > 3)
+    else if (gerenciador->cpu.procexec.prioridade == 2 && gerenciador->cpu.tempoProcessoAtual > 3)
     {
         gerenciador->cpu.procexec.prioridade = 3;
         trocaContexto(gerenciador);
     }
-    else if (gerenciador->cpu.procexec.prioridade == 3 && gerenciador->cpu.procexec.tempoAtual > 7)
+    else if (gerenciador->cpu.procexec.prioridade == 3 && gerenciador->cpu.tempoProcessoAtual > 7)
     {
         trocaContexto(gerenciador);
     }

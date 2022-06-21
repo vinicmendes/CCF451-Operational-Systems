@@ -101,7 +101,7 @@ void instrucaoR(processoSimulado *processo, instrucao instrucao)
     free(processo->programa);
     strcat(caminho,instrucao.arqv);
     fprintf(stderr,"processosimulado.c ---- instrucao R --- nome arq filho == %s\n",caminho);
-    lerArquivoProcessoS(&processo->programa,caminho);
+    leArquivoInstrucao(&processo->programa,caminho);
     processo->contadorPrograma = 0;
 }
 

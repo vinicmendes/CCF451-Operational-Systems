@@ -11,6 +11,7 @@ typedef struct Cpu
 {
     processoSimulado procexec;
     int unidTempo;
+    int tempoProcessoAtual;
 } cpu;
 
 void inicializaCpu(cpu *cpu);

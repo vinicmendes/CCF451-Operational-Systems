@@ -67,6 +67,7 @@ int removeItemEB(listaEB *lista, int *item)
     *item = lista->apPrimeiro->apProx->idProcesso;
     apAux = lista->apPrimeiro;
     lista->apPrimeiro = lista->apPrimeiro->apProx;
+    free(apAux);
     return 1;
 }
 

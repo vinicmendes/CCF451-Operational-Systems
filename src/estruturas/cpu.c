@@ -11,6 +11,7 @@ void inicializaCpu(cpu *cpu)
 void insereProcesso(cpu *cpu, processoSimulado p)
 {
     cpu->procexec = p;
+    cpu->tempoProcessoAtual =0;
 }
 
 // executando o processo recebido
@@ -18,6 +19,7 @@ char executaProcesso(cpu *cpu)
 {
     char retorno;
     cpu->unidTempo++;
+    cpu->tempoProcessoAtual++;
     if (cpu->procexec.id == -1)
         return ' ';
 
