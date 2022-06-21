@@ -23,7 +23,7 @@ typedef struct
 
 void inicializaProcessoC(processoControle *gerenciador,int tipo);
 void executaProcessoC(processoControle *gerenciador, Pipe *p);
-void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe);
+void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe,int tam);
 void comandoL(processoControle *gerenciador);
 void comandoB(processoControle *gerenciador);
 int trocaContexto(processoControle *gerenciador);

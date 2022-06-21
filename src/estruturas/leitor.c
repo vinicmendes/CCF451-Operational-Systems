@@ -47,31 +47,36 @@ int leArquivoInstrucao(instrucao **inst, char *nomeArquivo)
         printf("Erro ao abrir arquivo\n");
         exit(1);
     }
-    while ((c = fgetc(file)) != EOF)
+    while (fscanf(file," %c",&c) != EOF)
     {
-        c = fgetc(file);
         (*inst)[ordemInstrucao].id = c;
         switch (c)
         {
         case 'N':
-            fscanf(file, "%d", &(*inst)[ordemInstrucao].var1);
+            fscanf(file, " %d", &(*inst)[ordemInstrucao].var1);
+            break;
         case 'D':
-            fscanf(file, "%d", &(*inst)[ordemInstrucao].var1);
+            fscanf(file, " %d", &(*inst)[ordemInstrucao].var1);
+            break;
         case 'V':
-            fscanf(file, "%d %d", &(*inst)[ordemInstrucao].var1, &(*inst)[ordemInstrucao].var2);
+            fscanf(file, " %d %d", &(*inst)[ordemInstrucao].var1, &(*inst)[ordemInstrucao].var2);
+            break;
         case 'A':
-            fscanf(file, "%d %d", &(*inst)[ordemInstrucao].var1, &(*inst)[ordemInstrucao].var2);
+            fscanf(file, " %d %d", &(*inst)[ordemInstrucao].var1, &(*inst)[ordemInstrucao].var2);
+            break;
         case 'S':
-            fscanf(file, "%d %d", &(*inst)[ordemInstrucao].var1, &(*inst)[ordemInstrucao].var2);
+            fscanf(file, " %d %d", &(*inst)[ordemInstrucao].var1, &(*inst)[ordemInstrucao].var2);
+            break;
         case 'F':
-            fscanf(file, "%d", &(*inst)[ordemInstrucao].var1);
+            fscanf(file, " %d", &(*inst)[ordemInstrucao].var1);
+            break;
         case 'R':
-            fscanf(file, "%s", (*inst)[ordemInstrucao].arqv);
+            fscanf(file, " %s", (*inst)[ordemInstrucao].arqv);
+            break;
         default:
             break;
         }
-        ++ordemInstrucao;
-        c = fgetc(file);
+        ordemInstrucao++;
     }
     fclose(file);
     return 1;

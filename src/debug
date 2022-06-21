@@ -1,6 +1,37 @@
 menu.c - menu - opcao=2
 leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: L
+pipe.c -------- pipe ------ n = 1
 leitor.c - lerArquivoPipe - leu: I
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: U
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: I
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: U
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: I
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: U
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: I
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: L
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: U
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: I
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: U
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: I
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: U
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: I
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: U
+pipe.c -------- pipe ------ n = 1
+leitor.c - lerArquivoPipe - leu: I
+pipe.c -------- pipe ------ n = 1
 leitor.c - lerArquivoPipe - leu: M
-pipe.c -------- pipe ------ n = 4
+pipe.c -------- pipe ------ n = 1

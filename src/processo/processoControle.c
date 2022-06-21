@@ -7,7 +7,7 @@ void inicializaProcessoC(processoControle *gerenciador,int tipo)
     inicializaCpu(&gerenciador->cpu);
     gerenciador->tabelaDeProcessos = (processoSimulado *)malloc(sizeof(processoSimulado) * MAX_PROCESSOS);
     inicializaListaEP(&gerenciador->estadoPronto);
-    inicializaListaEB(&gerenciador->estadoBloqueado); // temos que criar a lista encadeada ou fila pra definir fluxo do processo
+    inicializaListaEB(&gerenciador->estadoBloqueado);
     gerenciador->estadoExecucao = -1;
     gerenciador->ultimaposicao = 0;
     gerenciador->ultimoindice = 0;
@@ -20,32 +20,32 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
     instrucao *inst;
     int *buffer,contador=0;
     char instPipe[1025];
+    int tam;
     
-    printf("\nCriando Processo Simulado...\n");
+    printf("\nCriando primeiro Processo Simulado...\n");
 
     leArquivoInstrucao(&inst, "files/init.txt");
-    inicializaProcessoSimulado(&processo, 0, -1, 0 , 0, 0,buffer, 0, 0, inst);
+    inicializaProcessoSimulado(&processo, 0, -1, 0 , 0, 0, buffer, 0, 0, inst);
     gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao] = processo;
     inicializaCpu(&gerenciador->cpu);
-    gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].estado = 2;
+    gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].estado = 1;
     insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao]);
     gerenciador->estadoExecucao = 0;
     gerenciador->ultimaposicao++;
 
     while(1) {
-        lerPipe(p, instPipe, 1024);
-        executarProcessoSimulado(gerenciador, instPipe);
+        tam = lerPipe(p, instPipe, 1024);
+        executarProcessoSimulado(gerenciador, instPipe, tam);
     }
 }
 
-void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe)
-{ // DA PRA ALTERAR PARA SWITCH CASE
-    int index, retorno, tamPipe;
-    tamPipe = strlen(instrucaoPipe);
+void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe,int tamPipe)
+{ 
+    int index, retorno;
     char resultado;
     processoSimulado processo;
 
-    for (index = 0; index < strlen(instrucaoPipe); index++)
+    for (index = 0; index < tamPipe; index++)
     {
         if (instrucaoPipe[index] == 'U')
         {
@@ -63,6 +63,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
             {
                 // TERMINA PROCESSO SIMULADO
                 retiraProcessoTabelaProcessos(gerenciador, gerenciador->estadoExecucao);
+                printf("Processo %d finalizado ... \n",gerenciador->cpu.procexec.id);
                 retorno = trocaContexto(gerenciador);
                 if (retorno == -1)
                 {
@@ -78,7 +79,6 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                                            gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id, gerenciador->cpu.procexec.contadorPrograma + 1,
                                            gerenciador->cpu.procexec.prioridade, 0, gerenciador->cpu.procexec.memoria,
                                            gerenciador->cpu.unidTempo, 0, gerenciador->cpu.procexec.programa);
-                alterarContadorPrograma(&gerenciador->cpu);
 
                 if (gerenciador->tipoEscalonamento == 1)
                 {

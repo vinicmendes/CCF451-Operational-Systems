@@ -4,6 +4,7 @@
 void inicializaCpu(cpu *cpu)
 {
     cpu->unidTempo = 0;
+    cpu->procexec.id = -1;
 }
 
 // inserindo o processo na cpu
@@ -35,7 +36,7 @@ void pararProcesso(cpu *cpu, processoSimulado *p)
     cpu->procexec.id = -1;
 }
 
-// atlerando o contador de programa do processo em execução
+// alterando o contador de programa do processo em execução
 void alterarContadorPrograma(cpu *cpu)
 {
     cpu->procexec.contadorPrograma += cpu->procexec.programa[cpu->procexec.contadorPrograma].var1 + 1;
@@ -52,7 +53,7 @@ void mostrarProcessoCpu(cpu *cpu)
     printf("\nRelatório do processo atualmente em execução\n");
     printf("Id Processo: %d\n", cpu->procexec.id);
     printf("Prioridade: %d\n", cpu->procexec.prioridade);
-    printf("Id processo pai: %d\n", cpu->procexec.contadorPrograma);
+    printf("Id processo pai: %d\n", cpu->procexec.idPrincipal);
     printf("Contador de programa: %d\n", cpu->procexec.contadorPrograma);
     printf("Estado: ");
     switch (cpu->procexec.estado){

@@ -60,7 +60,7 @@ int removeItemEB(listaEB *lista, int *item)
 {
     elementoEB *apAux;
     if (lEhVaziaEB(lista))
-        return 1;
+        return -1;
     *item = lista->apPrimeiro->apProx->idProcesso;
     apAux = lista->apPrimeiro;
     lista->apPrimeiro = lista->apPrimeiro->apProx;

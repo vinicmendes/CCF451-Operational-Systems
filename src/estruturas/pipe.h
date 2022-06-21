@@ -14,7 +14,7 @@ typedef struct {
 
 void inicializaPipe(Pipe *p);
 void escrevePipe(Pipe *p, char instrucao);
-void lerPipe(Pipe *p, char *instrucao, int size);
+int lerPipe(Pipe *p, char *instrucao, int size);
 bool verificaPipe(Pipe *p);
 
 #endif

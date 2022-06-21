@@ -17,29 +17,34 @@ void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrinci
 char executaInstrucao(processoSimulado *processo)
 {
     instrucao instrucao = processo->programa[processo->contadorPrograma];
+    printf("processoSimulado.c ---- executa instrucao --- contador de programa == %d id instrucao == %c.\n",processo->contadorPrograma,instrucao.id);
     switch (instrucao.id)
     {
     case 'N':
-        printf("processosimulado.c --- executa instrucao ---- fez instrucao N\n");
+        printf("processosimulado.c --- executa instrucao ---- fez instrucao N contador de programa == %d\n",processo->contadorPrograma);
         instrucaoN(processo, instrucao);
-        printf("processosimulado.c --- executa instrucao ---- fez instrucao N %d\n", processo->memoria[processo->contadorPrograma]);
         processo->contadorPrograma++;
+        break;
     case 'D':
         printf("processosimulado.c --- executa instrucao ---- fez instrucao D\n");
         instrucaoD(processo, instrucao);
         processo->contadorPrograma++;
+        break;
     case 'V':
         printf("processosimulado.c --- executa instrucao ---- fez instrucao V\n");
         instrucaoV(processo, instrucao);
         processo->contadorPrograma++;
+        break;
     case 'A':
         printf("processosimulado.c --- executa instrucao ---- fez instrucao A\n");
         instrucaoA(processo, instrucao);
         processo->contadorPrograma++;
+        break;
     case 'S':
         printf("processosimulado.c --- executa instrucao ---- fez instrucao S\n");
         instrucaoS(processo, instrucao);
         processo->contadorPrograma++;
+        break;
     case 'B':
         printf("processosimulado.c --- executa instrucao ---- fez instrucao B\n");
         instrucaoB(processo);
@@ -52,11 +57,13 @@ char executaInstrucao(processoSimulado *processo)
         return 'T';
     case 'F':
         printf("processosimulado.c --- executa instrucao ---- fez instrucao F\n");
+        processo->contadorPrograma += 1 + instrucao.var1;
         return 'F';
     case 'R':
         printf("processosimulado.c --- executa instrucao ---- fez instrucao R\n");
         instrucaoR(processo, instrucao);
         processo->contadorPrograma++;
+        break;
     default:
         break;
     }
