@@ -111,7 +111,7 @@ void calculaTempo(processoSimulado *processo)
 }
 void mostrarRelatorioProcesso(processoSimulado *processo)
 {
-    printf("----- Relatorio Processo -----\n");
+    printf("\n----- Relatorio Processo -----\n");
     printf("PID: %d\n", processo->id);
     printf("Prioridade: %d\n", processo->prioridade);
     printf("ID Processo pai: %d\n", processo->idPrincipal);

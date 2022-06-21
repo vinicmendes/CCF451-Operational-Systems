@@ -28,7 +28,7 @@ int leArquivoPipe(Pipe *p, char *nomeArquivo)
     while(fscanf(file, " %c", &c) != EOF){
         fprintf(stderr, "leitor.c - lerArquivoPipe - leu: %c\n", c);
         escrevePipe(p, c);
-        sleep(1);
+        //sleep(1);
     }
     fclose(file);
     return 1;
@@ -44,7 +44,7 @@ int leArquivoInstrucao(instrucao **inst, char *nomeArquivo)
     file = fopen(nomeArquivo, "r");
     if (file == NULL)
     {
-        printf("Erro ao abrir arquivo\n");
+        printf("Erro ao abrir arquivo %s\n",nomeArquivo);
         exit(1);
     }
     while (fscanf(file," %c",&c) != EOF)
