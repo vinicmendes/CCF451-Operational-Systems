@@ -77,7 +77,6 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
             {
                 // TERMINA PROCESSO SIMULADO
                 retiraProcessoTabelaProcessos(gerenciador, gerenciador->estadoExecucao);
-                printf("Processo %d finalizado ... \n", gerenciador->cpu.procexec.id);
             }
             else if (resultado == 'F')
             {
@@ -242,7 +241,7 @@ void retiraProcessoTabelaProcessos(processoControle *gerenciador, int indice)
         gerenciador->tabelaDeProcessos[indice] = gerenciador->tabelaDeProcessos[indice + 1];
         indice++;
     }
-
+    printf("Processo %d finalizado ... \n", gerenciador->cpu.procexec.id);
     gerenciador->cpu.procexec.id = -1;
     gerenciador->tabelaDeProcessos[MAX_PROCESSOS - 1] = processo;
     gerenciador->ultimaposicao--;
