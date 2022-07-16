@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.c": "c",
+        "tempo.h": "c",
+<<<<<<< HEAD
+        "stdio.h": "c"
+=======
+        "stdbool.h": "c"
+>>>>>>> 46a8743ae37801364354e4322f4033dd194aabf7
+    }
+}
