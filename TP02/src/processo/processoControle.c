@@ -185,6 +185,7 @@ void comandoL(processoControle *gerenciador)
         insereItememFilaEP(&gerenciador->estadoPronto, indice, gerenciador->tabelaDeProcessos[indice].prioridade);
     else
         insereItemOrdenadoEP(&gerenciador->estadoPronto, indice, gerenciador->tabelaDeProcessos[indice].prioridade);
+    gerenciador->tabelaDeProcessos[indice].estado = 0;
 }
 
 void comandoB(processoControle *gerenciador)
