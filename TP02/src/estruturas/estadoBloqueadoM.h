@@ -16,6 +16,7 @@ typedef struct elementoEBM
 typedef struct
 {
     elementoEBM *apPrimeiro, *apUltimo;
+    int tam;
 } listaEBM;
 
 void inicializaListaEBM(listaEBM *lista);

@@ -5,12 +5,14 @@ void inicializaListaEBM(listaEBM *lista){
     lista->apPrimeiro = (elementoEBM *)malloc(sizeof(elementoEBM));
     lista->apUltimo = lista->apPrimeiro;
     lista->apPrimeiro->apProx = NULL;
+    lista->tam=0;
 }
 void insereItememFilaEBM(listaEBM *lista, int item){
     lista->apUltimo->apProx = (elementoEBM *)malloc(sizeof(elementoEBM));
     lista->apUltimo = lista->apUltimo->apProx;
     lista->apUltimo->idProcesso = item;
     lista->apUltimo->apProx = NULL;
+    lista->tam +=1;
 }
 int lEhVaziaEBM(listaEBM *lista)
 {

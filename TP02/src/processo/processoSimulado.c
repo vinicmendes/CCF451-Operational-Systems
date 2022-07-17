@@ -211,7 +211,7 @@ void mostrarRelatorioProcesso(processoSimulado *processo)
     printf("Tempo em processamento: %d\n", processo->tempoCPU + processo->tempoAtual);
     printf("-----------------------------------------------------------------\n\n");
     printf("Memoria do Processo: %d\n",processo->id);
-    if(sizeof(processo->memoria)/sizeof(processo->memoria[0]) > 0){
+    if(processo->memoria && sizeof(processo->memoria)/sizeof(processo->memoria[0]) > 0){
         tammem=sizeof(processo->memoria)/sizeof(processo->memoria[0]);
         for(int i=0;i<tammem;i++){
             printf("Variavel %d\n",i);
