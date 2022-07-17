@@ -106,11 +106,9 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                 // TERMINA PROCESSO SIMULADO E TENTA USAR A MEMORIA PARA O ALGUM PROCESSO BLOQUEADO POR MEMORIA
                 retiraProcessoTabelaProcessos(gerenciador, gerenciador->estadoExecucao, alocador);
                 apAux = gerenciador->estadoBloqueadoM.apPrimeiro;
-                
                 for(int z=0;z<gerenciador->estadoBloqueadoM.tam;z++)
                 {
                     tentativa = removeItemEBM(&gerenciador->estadoBloqueadoM, &j);
-                    printf("%d\n",tentativa);
                     instrucao instrucao = gerenciador->tabelaDeProcessos[j].programa[gerenciador->tabelaDeProcessos[j].contadorPrograma];
                     instrucaoN(&gerenciador->tabelaDeProcessos[j], instrucao, alocador, gerenciador->tipoTecMemoria);
                     if (gerenciador->tabelaDeProcessos[j].memoria == NULL)
@@ -293,10 +291,10 @@ void retiraProcessoTabelaProcessos(processoControle *gerenciador, int indice, al
         gerenciador->tabelaDeProcessos[indice] = gerenciador->tabelaDeProcessos[indice + 1];
         indice++;
     }
+    desaloca_memoria_simulada(alocador, gerenciador->cpu.procexec.memoria);
     printf("Processo %d finalizado ... \n", gerenciador->cpu.procexec.id);
     gerenciador->cpu.procexec.id = -1;
     gerenciador->tabelaDeProcessos[MAX_PROCESSOS - 1] = processo;
     gerenciador->ultimaposicao--;
-    desaloca_memoria_simulada(alocador, gerenciador->cpu.procexec.memoria);
     
 }

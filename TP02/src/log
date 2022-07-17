@@ -15,6 +15,7 @@ leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
+pipe.c - pipe - n = 12
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
@@ -25,69 +26,33 @@ leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-pipe.c - pipe - n = 37
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: L
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
 processoSimulado.c - executa instrucao - contador de programa == 0 id instrucao == N. Processo que realizou a instrucao == 0
-leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
 processocontrole.c - executa processo simulado - resultado de executa processo  .
-leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
 processoSimulado.c - executa instrucao - contador de programa == 1 id instrucao == D. Processo que realizou a instrucao == 0
-leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
 processocontrole.c - executa processo simulado - resultado de executa processo  .
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: L
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
@@ -114,6 +79,7 @@ leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: L
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
@@ -123,18 +89,53 @@ leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+processoSimulado.c - executa instrucao - contador de programa == 3 id instrucao == D. Processo que realizou a instrucao == 0
+leitor.c - lerArquivoPipe - leu: U
+processocontrole.c - executa processo simulado - resultado de executa processo  .
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+processoSimulado.c - executa instrucao - contador de programa == 4 id instrucao == D. Processo que realizou a instrucao == 0
+leitor.c - lerArquivoPipe - leu: U
+processocontrole.c - executa processo simulado - resultado de executa processo  .
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: M
-processoSimulado.c - executa instrucao - contador de programa == 3 id instrucao == D. Processo que realizou a instrucao == 0
-processocontrole.c - executa processo simulado - resultado de executa processo  .
-processoSimulado.c - executa instrucao - contador de programa == 4 id instrucao == D. Processo que realizou a instrucao == 0
-processocontrole.c - executa processo simulado - resultado de executa processo  .
 processoSimulado.c - executa instrucao - contador de programa == 5 id instrucao == D. Processo que realizou a instrucao == 0
 processocontrole.c - executa processo simulado - resultado de executa processo  .
+pipe.c - pipe - n = 111
 processoSimulado.c - executa instrucao - contador de programa == 6 id instrucao == V. Processo que realizou a instrucao == 0
 processocontrole.c - executa processo simulado - resultado de executa processo  .
 processoSimulado.c - executa instrucao - contador de programa == 7 id instrucao == V. Processo que realizou a instrucao == 0
@@ -167,7 +168,6 @@ processosimulado.c - instrucao R - nome arq filho == files/file_c
 processocontrole.c - executa processo simulado - resultado de executa processo  .
 processoSimulado.c - executa instrucao - contador de programa == 0 id instrucao == N. Processo que realizou a instrucao == 1
 processocontrole.c - executa processo simulado - resultado de executa processo  .
-pipe.c - pipe - n = 86
 processoSimulado.c - executa instrucao - contador de programa == 1 id instrucao == D. Processo que realizou a instrucao == 1
 processocontrole.c - executa processo simulado - resultado de executa processo  .
 processoSimulado.c - executa instrucao - contador de programa == 0 id instrucao == N. Processo que realizou a instrucao == 2
@@ -200,4 +200,17 @@ processocontrole.c - executa processo simulado - resultado de executa processo F
 Criando processo simulado de id 5
 processoSimulado.c - executa instrucao - contador de programa == 22 id instrucao == T. Processo que realizou a instrucao == 0
 processocontrole.c - executa processo simulado - resultado de executa processo T.
-Erro ao alocar memoria para o processo 4 -- Processo adicionado na lista de bloqueados por memoria
+Erro ao alocar memoria para o processo 4 -- Processo adicionado na lista de bloqueados por memoriaprocessoSimulado.c - executa instrucao - contador de programa == 18 id instrucao == F. Processo que realizou a instrucao == 4
+processocontrole.c - executa processo simulado - resultado de executa processo F.
+Criando processo simulado de id 6
+processoSimulado.c - executa instrucao - contador de programa == 21 id instrucao == R. Processo que realizou a instrucao == 5
+processosimulado.c - instrucao R - nome arq filho == files/file_e
+processocontrole.c - executa processo simulado - resultado de executa processo  .
+processoSimulado.c - executa instrucao - contador de programa == 19 id instrucao == R. Processo que realizou a instrucao == 6
+processosimulado.c - instrucao R - nome arq filho == files/file_d
+processocontrole.c - executa processo simulado - resultado de executa processo  .
+processoSimulado.c - executa instrucao - contador de programa == 20 id instrucao == F. Processo que realizou a instrucao == 4
+processocontrole.c - executa processo simulado - resultado de executa processo F.
+Criando processo simulado de id 7
+processoSimulado.c - executa instrucao - contador de programa == 22 id instrucao == T. Processo que realizou a instrucao == 4
+processocontrole.c - executa processo simulado - resultado de executa processo T.
