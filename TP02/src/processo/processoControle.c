@@ -11,11 +11,14 @@ void inicializaProcessoC(processoControle *gerenciador, int tipo, int tecmemoria
     gerenciador->unidadeTempo = 0;
     inicializaCpu(&gerenciador->cpu);
     gerenciador->tabelaDeProcessos = (processoSimulado *)malloc(sizeof(processoSimulado) * MAX_PROCESSOS);
+    for (int i = 0; i < MAX_PROCESSOS; ++i)
+    {
+        gerenciador->tabelaDeProcessos[i].id = -1;
+    }
     inicializaListaEP(&gerenciador->estadoPronto);
     inicializaListaEB(&gerenciador->estadoBloqueado);
     inicializaListaEBM(&gerenciador->estadoBloqueadoM);
     gerenciador->estadoExecucao = -1;
-    gerenciador->ultimaposicao = 0;
     gerenciador->ultimoindice = 0;
     gerenciador->tipoEscalonamento = tipo;
     gerenciador->tipoTecMemoria = tecmemoria;
@@ -37,13 +40,12 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
     printf("\nCriando Processo Gerenciador de Processos...\n");
 
     leArquivoInstrucao(&inst, "files/init.txt");
-    inicializaProcessoSimulado(&processo, 0, -1, 0, 0, 0, alocador.memoria, 0, 0, inst);
-    gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao] = processo;
+    inicializaProcessoSimulado(&processo, 0, -1, 0, 0, 0, alocador.memoria, 0, 0, inst,0);
+    gerenciador->tabelaDeProcessos[0] = processo;
     inicializaCpu(&gerenciador->cpu);
-    gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].estado = 1;
-    insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao]);
+    gerenciador->tabelaDeProcessos[0].estado = 1;
+    insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[0]);
     gerenciador->estadoExecucao = 0;
-    gerenciador->ultimaposicao++;
 
     while (1)
     {
@@ -106,7 +108,8 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                 // TERMINA PROCESSO SIMULADO E TENTA USAR A MEMORIA PARA O ALGUM PROCESSO BLOQUEADO POR MEMORIA
                 retiraProcessoTabelaProcessos(gerenciador, gerenciador->estadoExecucao, alocador);
                 apAux = gerenciador->estadoBloqueadoM.apPrimeiro;
-                for(int z=0;z<gerenciador->estadoBloqueadoM.tam;z++)
+                printf("ProcessoControle.c ---  tam estado bloqueadom : %d\n", gerenciador->estadoBloqueadoM.tam);
+                for (int z = 0; z < gerenciador->estadoBloqueadoM.tam; z++)
                 {
                     tentativa = removeItemEBM(&gerenciador->estadoBloqueadoM, &j);
                     instrucao instrucao = gerenciador->tabelaDeProcessos[j].programa[gerenciador->tabelaDeProcessos[j].contadorPrograma];
@@ -114,7 +117,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                     if (gerenciador->tabelaDeProcessos[j].memoria == NULL)
                     {
                         insereItememFilaEBM(&gerenciador->estadoBloqueadoM, tentativa);
-                        apAux=apAux->apProx;
+                        apAux = apAux->apProx;
                     }
                     else
                     {
@@ -126,23 +129,24 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
             {
                 // CRIA NOVO PROCESSO SIMULADO FILHO
                 // estado ; 0 = pronto, 1 = em execução, 2 = bloquado, 3 = finalizado
+                int pos=0;
                 gerenciador->ultimoindice++;
-                inicializaProcessoSimulado(&gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao], gerenciador->ultimoindice,
+                for(pos;pos<MAX_PROCESSOS && gerenciador->tabelaDeProcessos[pos].id != -1;pos++);
+                inicializaProcessoSimulado(&gerenciador->tabelaDeProcessos[pos], gerenciador->ultimoindice,
                                            gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id, gerenciador->cpu.procexec.contadorPrograma + 1,
                                            0, 0, gerenciador->cpu.procexec.memoria,
-                                           gerenciador->cpu.unidTempo, 0, gerenciador->cpu.procexec.programa);
+                                           gerenciador->cpu.unidTempo, 0, gerenciador->cpu.procexec.programa,gerenciador->cpu.procexec.tammem);
                 gerenciador->cpu.procexec.contadorPrograma += 1 + gerenciador->cpu.procexec.programa[gerenciador->cpu.procexec.contadorPrograma].var1;
-
+                    
                 fprintf(stderr, "Criando processo simulado de id %d\n", gerenciador->ultimoindice);
                 if (gerenciador->tipoEscalonamento == 1)
                 {
-                    insereItememFilaEP(&gerenciador->estadoPronto, gerenciador->ultimaposicao, gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].prioridade);
+                    insereItememFilaEP(&gerenciador->estadoPronto, pos, gerenciador->tabelaDeProcessos[pos].prioridade);
                 }
                 else
                 {
-                    insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->ultimaposicao, gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].prioridade);
+                    insereItemOrdenadoEP(&gerenciador->estadoPronto, pos, gerenciador->tabelaDeProcessos[pos].prioridade);
                 }
-                gerenciador->ultimaposicao++;
             }
             escalona(gerenciador);
         }
@@ -269,8 +273,9 @@ void escalonarProcessos(processoControle *gerenciador)
 void processoImpressao(processoControle *gerenciador, alocador_t *alocador)
 {
     exibe_memoria(alocador);
-    for (int i = 0; i < gerenciador->ultimaposicao; i++)
+    for (int i = 0; i < MAX_PROCESSOS; i++)
     {
+        if(gerenciador->tabelaDeProcessos[i].id == -1) continue;
         if (i == gerenciador->estadoExecucao)
             mostrarProcessoCpu(&gerenciador->cpu);
         else
@@ -282,19 +287,11 @@ void processoImpressao(processoControle *gerenciador, alocador_t *alocador)
 
 void retiraProcessoTabelaProcessos(processoControle *gerenciador, int indice, alocador_t *alocador)
 {
-    processoSimulado processo;
     atualizaItensEB(&gerenciador->estadoBloqueado, indice);
     atualizaItensEP(&gerenciador->estadoPronto, indice);
-
-    while (indice < MAX_PROCESSOS - 1)
-    {
-        gerenciador->tabelaDeProcessos[indice] = gerenciador->tabelaDeProcessos[indice + 1];
-        indice++;
-    }
     desaloca_memoria_simulada(alocador, gerenciador->cpu.procexec.memoria);
+    printf("Desalocando -------- ProcessoControle.c %lld\n", gerenciador->cpu.procexec.memoria);
     printf("Processo %d finalizado ... \n", gerenciador->cpu.procexec.id);
     gerenciador->cpu.procexec.id = -1;
-    gerenciador->tabelaDeProcessos[MAX_PROCESSOS - 1] = processo;
-    gerenciador->ultimaposicao--;
-    
+    gerenciador->tabelaDeProcessos[indice].id = -1;
 }

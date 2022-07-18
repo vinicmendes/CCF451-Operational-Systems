@@ -8,7 +8,7 @@
 #define RESET "\x1b[0m"
 
 void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrincipal,
-                                int contadorPrograma, int prioridade, int estado, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao)
+                                int contadorPrograma, int prioridade, int estado, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao,int tammem)
 {
     processo->id = id;
     processo->idPrincipal = idPrincipal;
@@ -16,6 +16,7 @@ void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrinci
     processo->prioridade = prioridade;
     processo->estado = estado;
     processo->memoria = memoria;
+    processo->tammem=tammem;
     processo->tempoInicio = tempoInicio;
     processo->tempoCPU = tempoCPU;
     processo->programa = instrucao;
@@ -29,10 +30,12 @@ char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecn
     {
     case 'N':
         instrucaoN(processo, instrucao, alocador, tecnica);
-        processo->contadorPrograma++;
         if(processo->memoria == NULL){
+            fprintf(stderr,"Erro ao alocar memoria para o processo %d -- Processo adicionado na lista de bloqueados por memoria",processo->id);
+            alocador->qtalocsnegadas++;
             return 'M';
         }
+        processo->contadorPrograma++;
         break;
     case 'D':
         instrucaoD(processo, instrucao);
@@ -76,50 +79,26 @@ void instrucaoN(processoSimulado *processo, instrucao instrucao, alocador_t *alo
     {
         alocador->qtalocs++;
         processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, first_fit);
-        if (processo->memoria == NULL)
-        {
-            fprintf(stderr,"Erro ao alocar memoria para o processo %d -- Processo adicionado na lista de bloqueados por memoria",processo->id);
-            alocador->tempoaloc = 0;
-            alocador->qtalocsnegadas++;
-            processo->contadorPrograma--;
-        }
     }
     else if (tecnica == 2)
     {
         alocador->qtalocs++;
         processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, next_fit);
-        if (processo->memoria == NULL)
-        {
-            fprintf(stderr,"Erro ao alocar memoria para o processo %d -- Processo adicionado na lista de bloqueados por memoria",processo->id);
-            alocador->tempoaloc = 0;
-            alocador->qtalocsnegadas++;
-            processo->contadorPrograma--;
-        }
     }
     else if (tecnica == 3)
     {
         alocador->qtalocs++;
         processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, best_fit);
-        if (processo->memoria == NULL)
-        {
-            fprintf(stderr,"Erro ao alocar memoria para o processo %d -- Processo adicionado na lista de bloqueados por memoria",processo->id);
-            alocador->tempoaloc = 0;
-            alocador->qtalocsnegadas++;
-            processo->contadorPrograma--;
-        }
     }
     else if (tecnica == 4)
     {
         alocador->qtalocs++;
         processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, worst_fit);
-        if (processo->memoria == NULL)
-        {
-            fprintf(stderr,"Erro ao alocar memoria para o processo %d -- Processo adicionado na lista de bloqueados por memoria",processo->id);
-            alocador->tempoaloc = 0;
-            alocador->qtalocsnegadas++;
-            processo->contadorPrograma--;
-        }
     }
+    printf("Alocando -------- ProcessoSimulado.c %lld\n",processo->memoria);
+    printf("Alocando %d\n",processo->id);
+    printf("Alocando tam %d\n",instrucao.var1);
+    processo->tammem=instrucao.var1;
 }
 
 void instrucaoD(processoSimulado *processo, instrucao instrucao)
@@ -155,7 +134,6 @@ void instrucaoT(processoSimulado *processo)
 void instrucaoR(processoSimulado *processo, instrucao instrucao)
 {
     char caminho[100] = "files/";
-    free(processo->programa);
     strcat(caminho, instrucao.arqv);
     fprintf(stderr, "processosimulado.c - instrucao R - nome arq filho == %s\n", caminho);
     leArquivoInstrucao(&processo->programa, caminho);
@@ -211,9 +189,8 @@ void mostrarRelatorioProcesso(processoSimulado *processo)
     printf("Tempo em processamento: %d\n", processo->tempoCPU + processo->tempoAtual);
     printf("-----------------------------------------------------------------\n\n");
     printf("Memoria do Processo: %d\n",processo->id);
-    if(processo->memoria != NULL && sizeof(processo->memoria)/sizeof(processo->memoria[0]) > 0){
-        tammem=sizeof(processo->memoria)/sizeof(processo->memoria[0]);
-        for(int i=0;i<tammem;i++){
+    if(processo->memoria != NULL && processo->tammem > 0){
+        for(int i=0;i<processo->tammem;i++){
             printf("Variavel %d\n",i);
             printf("%d\n",processo->memoria[i]);
         }

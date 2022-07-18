@@ -41,7 +41,7 @@ void desaloca_memoria_simulada(alocador_t *alocador, int *posicao) {
 void exibe_memoria(alocador_t *alocador){ 
     printf("Numero medio de fragmentos: %d\n",alocador->qtfragmentos/alocador->qtalocs);
     printf("Tempo medio de alocacao: %d\n",alocador->tempoaloc/alocador->qtalocs);
-    printf("Percentual de negacao de requisicao de alocacao: %d porcento!\n",(alocador->qtalocsnegadas/alocador->qtalocs)*100);
+    printf("Percentual de negacao de requisicao de alocacao: %.2lf porcento!\n",alocador->qtalocsnegadas/(double)alocador->qtalocs*100);
     printf("Situacao da memoria atual:\n");
     printf("[");
     for(int i=0;i<alocador->tamanho;i++){
