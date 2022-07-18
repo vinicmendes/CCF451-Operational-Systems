@@ -37,5 +37,6 @@ void escalonarProcessos(processoControle *gerenciador);
 void processoImpressao(processoControle *gerenciador,alocador_t *alocador);
 void insereProgramaNoProcessoSimulado(instrucao *instProcess, instrucao *ins);
 void retiraProcessoTabelaProcessos(processoControle *gerenciador, int indice, alocador_t* alocador);
+int encontraIndiceTP(processoControle *gerenciador, int indice);
 
 #endif

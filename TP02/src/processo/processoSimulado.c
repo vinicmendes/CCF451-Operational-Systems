@@ -32,6 +32,7 @@ char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecn
         instrucaoN(processo, instrucao, alocador, tecnica);
         if(processo->memoria == NULL){
             fprintf(stderr,"Erro ao alocar memoria para o processo %d -- Processo adicionado na lista de bloqueados por memoria",processo->id);
+            if(processo->prioridade > 0) processo->prioridade--;
             alocador->qtalocsnegadas++;
             return 'M';
         }
