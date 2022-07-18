@@ -20,7 +20,6 @@ typedef struct
     listaEP estadoPronto;
     listaEB estadoBloqueado;
     listaEBM estadoBloqueadoM;
-    int estadoExecucao;
     int ultimoindice;
     int tipoEscalonamento;
     int tipoTecMemoria;

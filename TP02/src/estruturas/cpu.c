@@ -30,7 +30,6 @@ char executaProcesso(cpu *cpu, alocador_t* alocador,int tecnica)
     cpu->tempoProcessoAtual++;
     if (cpu->procexec.id == -1)
         return ' ';
-
     retorno = executaInstrucao(&cpu->procexec, alocador,tecnica);
     incrementaTempoCPU(&cpu->procexec);
     return retorno;

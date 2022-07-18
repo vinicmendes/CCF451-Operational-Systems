@@ -83,6 +83,20 @@ int* next_fit(alocador_t *alocador, int tam_alocar) {
         for(j=i; j<alocador->tamanho; ++j) {
             if(alocador->marcador[j] == 1) break;
             if(j-i+1 == tam_alocar) {
+                alocador->pos_ultima_alocacao = j+1;
+                return (int*)(alocador->memoria + i);
+            }
+        }
+        i = j;
+    }
+    for(i=0; i<alocador->pos_ultima_alocacao; ++i) {
+        if(alocador->marcador[i] == 1){
+            alocador->tempoaloc++;
+            continue;
+        }
+        for(j=i; j<alocador->tamanho; ++j) {
+            if(alocador->marcador[j] == 1) break;
+            if(j-i+1 == tam_alocar) {
                 alocador->pos_ultima_alocacao = j;
                 return (int*)(alocador->memoria + i);
             }
