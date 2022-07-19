@@ -20,8 +20,6 @@ typedef struct
     listaEP estadoPronto;
     listaEB estadoBloqueado;
     listaEBM estadoBloqueadoM;
-    int estadoExecucao;
-    int ultimaposicao;
     int ultimoindice;
     int tipoEscalonamento;
     int tipoTecMemoria;
@@ -38,5 +36,6 @@ void escalonarProcessos(processoControle *gerenciador);
 void processoImpressao(processoControle *gerenciador,alocador_t *alocador);
 void insereProgramaNoProcessoSimulado(instrucao *instProcess, instrucao *ins);
 void retiraProcessoTabelaProcessos(processoControle *gerenciador, int indice, alocador_t* alocador);
+int encontraIndiceTP(processoControle *gerenciador, int indice);
 
 #endif

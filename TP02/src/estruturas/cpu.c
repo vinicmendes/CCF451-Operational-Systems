@@ -30,7 +30,6 @@ char executaProcesso(cpu *cpu, alocador_t* alocador,int tecnica)
     cpu->tempoProcessoAtual++;
     if (cpu->procexec.id == -1)
         return ' ';
-
     retorno = executaInstrucao(&cpu->procexec, alocador,tecnica);
     incrementaTempoCPU(&cpu->procexec);
     return retorno;
@@ -102,9 +101,8 @@ void mostrarProcessoCpu(cpu *cpu)
     printf("Tempo de cpu: %d\n", cpu->unidTempo + cpu->procexec.tempoAtual);
     printf("Tempo total da CPU: %d\n", cpu->unidTempo);
     printf("-----------Memoria do processo em execucao-----------\n");
-    if(sizeof(cpu->procexec.memoria)/sizeof(cpu->procexec.memoria[0]) > 0){
-        tammem=sizeof(cpu->procexec.memoria)/sizeof(cpu->procexec.memoria[0]);
-        for(int i=0;i<tammem;i++){
+    if(cpu->procexec.memoria != NULL && cpu->procexec.tammem > 0){
+        for(int i=0;i<cpu->procexec.tammem;i++){
             printf("Variavel %d\n",i);
             printf("%d\n",cpu->procexec.memoria[i]);
         }

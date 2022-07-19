@@ -11,11 +11,13 @@ void inicializaProcessoC(processoControle *gerenciador, int tipo, int tecmemoria
     gerenciador->unidadeTempo = 0;
     inicializaCpu(&gerenciador->cpu);
     gerenciador->tabelaDeProcessos = (processoSimulado *)malloc(sizeof(processoSimulado) * MAX_PROCESSOS);
+    for (int i = 0; i < MAX_PROCESSOS; ++i)
+    {
+        gerenciador->tabelaDeProcessos[i].id = -1;
+    }
     inicializaListaEP(&gerenciador->estadoPronto);
     inicializaListaEB(&gerenciador->estadoBloqueado);
     inicializaListaEBM(&gerenciador->estadoBloqueadoM);
-    gerenciador->estadoExecucao = -1;
-    gerenciador->ultimaposicao = 0;
     gerenciador->ultimoindice = 0;
     gerenciador->tipoEscalonamento = tipo;
     gerenciador->tipoTecMemoria = tecmemoria;
@@ -37,13 +39,11 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
     printf("\nCriando Processo Gerenciador de Processos...\n");
 
     leArquivoInstrucao(&inst, "files/init.txt");
-    inicializaProcessoSimulado(&processo, 0, -1, 0, 0, 0, alocador.memoria, 0, 0, inst);
-    gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao] = processo;
+    inicializaProcessoSimulado(&processo, 0, -1, 0, 0, 0, alocador.memoria, 0, 0, inst, 0);
+    gerenciador->tabelaDeProcessos[0] = processo;
     inicializaCpu(&gerenciador->cpu);
-    gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].estado = 1;
-    insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao]);
-    gerenciador->estadoExecucao = 0;
-    gerenciador->ultimaposicao++;
+    gerenciador->tabelaDeProcessos[0].estado = 1;
+    insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[0]);
 
     while (1)
     {
@@ -86,39 +86,39 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
             {
                 // BLOQUEIA PROCESSO SIMULADO POR MEMORIA
                 processoSimulado p;
-                int i, retorno;
+                int i, retorno, indice;
                 pararProcesso(&gerenciador->cpu, &p, 4);
-                gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao] = p;
-                insereItememFilaEBM(&gerenciador->estadoBloqueadoM, gerenciador->estadoExecucao);
-                gerenciador->estadoExecucao = -1;
+                indice = encontraIndiceTP(gerenciador, p.id);
+                gerenciador->tabelaDeProcessos[indice] = p;
+                insereItememFilaEBM(&gerenciador->estadoBloqueadoM, indice);
                 retorno = removeItemEP(&gerenciador->estadoPronto, &i);
+                i=encontraIndiceTP(gerenciador,i);
                 gerenciador->tabelaDeProcessos[i].estado = 1;
                 if (retorno != -1)
                 {
                     insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[i]);
-                    gerenciador->estadoExecucao = i;
                 }
             }
             else if (resultado == 'T')
             {
-                int tentativa, j;
+                int tentativa, j, indice;
                 elementoEBM *apAux;
                 // TERMINA PROCESSO SIMULADO E TENTA USAR A MEMORIA PARA O ALGUM PROCESSO BLOQUEADO POR MEMORIA
-                retiraProcessoTabelaProcessos(gerenciador, gerenciador->estadoExecucao, alocador);
+                indice = encontraIndiceTP(gerenciador, gerenciador->cpu.procexec.id);
+                retiraProcessoTabelaProcessos(gerenciador, indice, alocador);
                 apAux = gerenciador->estadoBloqueadoM.apPrimeiro;
-                while(apAux != gerenciador->estadoBloqueadoM.apUltimo)
+                printf("ProcessoControle.c ---  tam estado bloqueadom : %d\n", gerenciador->estadoBloqueadoM.tam);
+                tentativa = removeItemEBM(&gerenciador->estadoBloqueadoM, &j);
+                j = encontraIndiceTP(gerenciador, j);
+                if (tentativa == 1)
                 {
-                    tentativa = removeItemEBM(&gerenciador->estadoBloqueadoM, &j);
-                    instrucao instrucao = gerenciador->tabelaDeProcessos[j].programa[gerenciador->tabelaDeProcessos[j].contadorPrograma];
-                    instrucaoN(&gerenciador->tabelaDeProcessos[j], instrucao, alocador, gerenciador->tipoTecMemoria);
-                    if (gerenciador->tabelaDeProcessos[j].memoria == NULL)
+                    if (gerenciador->tipoEscalonamento == 1)
                     {
-                        insereItememFilaEBM(&gerenciador->estadoBloqueadoM, tentativa);
-                        apAux=apAux->apProx;
+                        insereItememFilaEP(&gerenciador->estadoPronto, gerenciador->tabelaDeProcessos[j].id, gerenciador->tabelaDeProcessos[j].prioridade);
                     }
                     else
                     {
-                        insereItememFilaEP(&gerenciador->estadoPronto, tentativa, 0);
+                        insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->tabelaDeProcessos[j].id, gerenciador->tabelaDeProcessos[j].prioridade);
                     }
                 }
             }
@@ -126,23 +126,25 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
             {
                 // CRIA NOVO PROCESSO SIMULADO FILHO
                 // estado ; 0 = pronto, 1 = em execução, 2 = bloquado, 3 = finalizado
+                int pos = 0;
                 gerenciador->ultimoindice++;
-                inicializaProcessoSimulado(&gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao], gerenciador->ultimoindice,
-                                           gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id, gerenciador->cpu.procexec.contadorPrograma + 1,
+                for (pos; pos < MAX_PROCESSOS && gerenciador->tabelaDeProcessos[pos].id != -1; pos++)
+                    ;
+                inicializaProcessoSimulado(&gerenciador->tabelaDeProcessos[pos], gerenciador->ultimoindice,
+                                           gerenciador->cpu.procexec.id, gerenciador->cpu.procexec.contadorPrograma + 1,
                                            0, 0, gerenciador->cpu.procexec.memoria,
-                                           gerenciador->cpu.unidTempo, 0, gerenciador->cpu.procexec.programa);
+                                           gerenciador->cpu.unidTempo, 0, gerenciador->cpu.procexec.programa, gerenciador->cpu.procexec.tammem);
                 gerenciador->cpu.procexec.contadorPrograma += 1 + gerenciador->cpu.procexec.programa[gerenciador->cpu.procexec.contadorPrograma].var1;
 
                 fprintf(stderr, "Criando processo simulado de id %d\n", gerenciador->ultimoindice);
                 if (gerenciador->tipoEscalonamento == 1)
                 {
-                    insereItememFilaEP(&gerenciador->estadoPronto, gerenciador->ultimaposicao, gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].prioridade);
+                    insereItememFilaEP(&gerenciador->estadoPronto, gerenciador->tabelaDeProcessos[pos].id, gerenciador->tabelaDeProcessos[pos].prioridade);
                 }
                 else
                 {
-                    insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->ultimaposicao, gerenciador->tabelaDeProcessos[gerenciador->ultimaposicao].prioridade);
+                    insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->tabelaDeProcessos[pos].id, gerenciador->tabelaDeProcessos[pos].prioridade);
                 }
-                gerenciador->ultimaposicao++;
             }
             escalona(gerenciador);
         }
@@ -180,30 +182,32 @@ void comandoL(processoControle *gerenciador)
     retorno = removeItemEB(&gerenciador->estadoBloqueado, &indice);
     if (retorno == -1)
         return;
+    indice = encontraIndiceTP(gerenciador, indice);
     printf("Processo de indice %d liberado!\n", gerenciador->tabelaDeProcessos[indice].id);
     if (gerenciador->tipoEscalonamento == 1)
-        insereItememFilaEP(&gerenciador->estadoPronto, indice, gerenciador->tabelaDeProcessos[indice].prioridade);
+        insereItememFilaEP(&gerenciador->estadoPronto, gerenciador->tabelaDeProcessos[indice].id, gerenciador->tabelaDeProcessos[indice].prioridade);
     else
-        insereItemOrdenadoEP(&gerenciador->estadoPronto, indice, gerenciador->tabelaDeProcessos[indice].prioridade);
+        insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->tabelaDeProcessos[indice].id, gerenciador->tabelaDeProcessos[indice].prioridade);
+    gerenciador->tabelaDeProcessos[indice].estado = 0;
 }
 
 void comandoB(processoControle *gerenciador)
 {
     processoSimulado p;
-    int i, retorno;
+    int i, retorno,indice;
     pararProcesso(&gerenciador->cpu, &p, 2);
     if (p.prioridade != 0)
         p.prioridade--;
-    gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao] = p;
-    printf("Processo de id %d bloqueado! \n", gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].id);
-    insereItememFilaEB(&gerenciador->estadoBloqueado, gerenciador->estadoExecucao, gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].prioridade);
-    gerenciador->estadoExecucao = -1;
+    indice=encontraIndiceTP(gerenciador,p.id);
+    gerenciador->tabelaDeProcessos[indice] = p;
+    printf("Processo de id %d bloqueado! \n", p.id);
+    insereItememFilaEB(&gerenciador->estadoBloqueado, p.id, p.prioridade);
     retorno = removeItemEP(&gerenciador->estadoPronto, &i);
+    i=encontraIndiceTP(gerenciador,i);
     gerenciador->tabelaDeProcessos[i].estado = 1;
     if (retorno != -1)
     {
         insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[i]);
-        gerenciador->estadoExecucao = i;
     }
 }
 
@@ -211,15 +215,17 @@ int trocaContexto(processoControle *gerenciador)
 {
     printf(RED "Trocando contexto\n" RESET);
     processoSimulado p;
-    int i;
+    int i, indice;
     pararProcesso(&gerenciador->cpu, &p, 0);
     if (p.id != -1)
     {
-        gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao] = p;
+        indice = encontraIndiceTP(gerenciador, p.id);
+        printf("%d %d %d %d\n", indice, p.id, p.contadorPrograma, gerenciador->cpu.procexec.id);
+        gerenciador->tabelaDeProcessos[indice] = p;
         if (gerenciador->tipoEscalonamento == 1)
-            insereItememFilaEP(&gerenciador->estadoPronto, gerenciador->estadoExecucao, gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].prioridade);
+            insereItememFilaEP(&gerenciador->estadoPronto, p.id, p.prioridade);
         else
-            insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->estadoExecucao, gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].prioridade);
+            insereItemOrdenadoEP(&gerenciador->estadoPronto, p.id, p.prioridade);
     }
     if (lEhVaziaEP(&gerenciador->estadoPronto))
     {
@@ -227,9 +233,11 @@ int trocaContexto(processoControle *gerenciador)
         return -1;
     }
     removeItemEP(&gerenciador->estadoPronto, &i);
+    printf("%d\n", i);
+    i = encontraIndiceTP(gerenciador, i);
+    printf("ProcessoControle.c - trocacontexto - teste -- indice removido = %d\n", gerenciador->tabelaDeProcessos[i].id);
     gerenciador->tabelaDeProcessos[i].estado = 1;
     insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[i]);
-    gerenciador->estadoExecucao = i;
 
     return 1;
 }
@@ -268,9 +276,11 @@ void escalonarProcessos(processoControle *gerenciador)
 void processoImpressao(processoControle *gerenciador, alocador_t *alocador)
 {
     exibe_memoria(alocador);
-    for (int i = 0; i < gerenciador->ultimaposicao; i++)
+    for (int i = 0; i < MAX_PROCESSOS; i++)
     {
-        if (i == gerenciador->estadoExecucao)
+        if (gerenciador->tabelaDeProcessos[i].id == -1)
+            continue;
+        if (gerenciador->tabelaDeProcessos[i].id == gerenciador->cpu.procexec.id)
             mostrarProcessoCpu(&gerenciador->cpu);
         else
             mostrarRelatorioProcesso(&gerenciador->tabelaDeProcessos[i]); // mostrar relatório processo
@@ -281,18 +291,17 @@ void processoImpressao(processoControle *gerenciador, alocador_t *alocador)
 
 void retiraProcessoTabelaProcessos(processoControle *gerenciador, int indice, alocador_t *alocador)
 {
-    processoSimulado processo;
-    atualizaItensEB(&gerenciador->estadoBloqueado, indice);
-    atualizaItensEP(&gerenciador->estadoPronto, indice);
-
-    while (indice < MAX_PROCESSOS - 1)
-    {
-        gerenciador->tabelaDeProcessos[indice] = gerenciador->tabelaDeProcessos[indice + 1];
-        indice++;
-    }
+    desaloca_memoria_simulada(alocador, gerenciador->cpu.procexec.memoria);
+    printf("Desalocando -------- ProcessoControle.c %lld\n", gerenciador->cpu.procexec.memoria);
     printf("Processo %d finalizado ... \n", gerenciador->cpu.procexec.id);
     gerenciador->cpu.procexec.id = -1;
-    gerenciador->tabelaDeProcessos[MAX_PROCESSOS - 1] = processo;
-    gerenciador->ultimaposicao--;
-    desaloca_memoria_simulada(alocador, gerenciador->cpu.procexec.memoria);
+    gerenciador->tabelaDeProcessos[indice].id = -1;
+}
+int encontraIndiceTP(processoControle *gerenciador, int indice)
+{
+    for (int i = 0; i < MAX_PROCESSOS; ++i)
+    {
+        if (gerenciador->tabelaDeProcessos[i].id == indice)
+            return i;
+    }
 }
