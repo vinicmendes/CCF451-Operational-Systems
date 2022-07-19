@@ -92,7 +92,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                 gerenciador->tabelaDeProcessos[indice] = p;
                 insereItememFilaEBM(&gerenciador->estadoBloqueadoM, indice);
                 retorno = removeItemEP(&gerenciador->estadoPronto, &i);
-                i=encontraIndiceTP(gerenciador,i);
+                i = encontraIndiceTP(gerenciador, i);
                 gerenciador->tabelaDeProcessos[i].estado = 1;
                 if (retorno != -1)
                 {
@@ -194,16 +194,16 @@ void comandoL(processoControle *gerenciador)
 void comandoB(processoControle *gerenciador)
 {
     processoSimulado p;
-    int i, retorno,indice;
+    int i, retorno, indice;
     pararProcesso(&gerenciador->cpu, &p, 2);
     if (p.prioridade != 0)
         p.prioridade--;
-    indice=encontraIndiceTP(gerenciador,p.id);
+    indice = encontraIndiceTP(gerenciador, p.id);
     gerenciador->tabelaDeProcessos[indice] = p;
     printf("Processo de id %d bloqueado! \n", p.id);
     insereItememFilaEB(&gerenciador->estadoBloqueado, p.id, p.prioridade);
     retorno = removeItemEP(&gerenciador->estadoPronto, &i);
-    i=encontraIndiceTP(gerenciador,i);
+    i = encontraIndiceTP(gerenciador, i);
     gerenciador->tabelaDeProcessos[i].estado = 1;
     if (retorno != -1)
     {
@@ -292,7 +292,7 @@ void processoImpressao(processoControle *gerenciador, alocador_t *alocador)
 void retiraProcessoTabelaProcessos(processoControle *gerenciador, int indice, alocador_t *alocador)
 {
     desaloca_memoria_simulada(alocador, gerenciador->cpu.procexec.memoria);
-    printf("Desalocando -------- ProcessoControle.c %lld\n", gerenciador->cpu.procexec.memoria);
+    // printf("Desalocando -------- ProcessoControle.c %lld\n", gerenciador->cpu.procexec.memoria);
     printf("Processo %d finalizado ... \n", gerenciador->cpu.procexec.id);
     gerenciador->cpu.procexec.id = -1;
     gerenciador->tabelaDeProcessos[indice].id = -1;

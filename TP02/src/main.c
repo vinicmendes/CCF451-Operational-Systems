@@ -39,7 +39,7 @@ int main()
     if (pid == 0)
     {
         // processo real filho executando
-        inicializaProcessoC(&gerenciador, tipoescalonamento,tipotecmemoria);
+        inicializaProcessoC(&gerenciador, tipoescalonamento, tipotecmemoria);
         executaProcessoC(&gerenciador, &p);
     }
     else

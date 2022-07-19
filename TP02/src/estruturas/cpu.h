@@ -20,8 +20,8 @@ typedef struct Cpu
 
 void inicializaCpu(cpu *cpu);
 void insereProcesso(cpu *cpu, processoSimulado p);
-char executaProcesso(cpu *cpu, alocador_t* alocador,int tecnica);
-void pararProcesso(cpu *cpu, processoSimulado *p,int estado);
+char executaProcesso(cpu *cpu, alocador_t *alocador, int tecnica);
+void pararProcesso(cpu *cpu, processoSimulado *p, int estado);
 void comandoU(cpu *cpu);
 void alterarContadorPrograma(cpu *cpu);
 void mostrarProcessoCpu(cpu *cpu);
