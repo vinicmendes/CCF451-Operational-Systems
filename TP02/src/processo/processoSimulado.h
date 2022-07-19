@@ -16,7 +16,7 @@ typedef struct ProcessoSimulado
     int prioridade;        // prioridade do processo atual
     int estado;            // estado ; 0 = pronto, 1 = em execução, 2 = bloqueado, 3 = finalizado, 4 = bloqueado por memoria
     int *memoria;          // memória do processo para as variáveis
-    int tammem;
+    int tammem;            // tamanho da memória
     int tempoInicio;       // tempo de início do processo
     int tempoCPU;          // tempo de CPU do processo
     int tempoAtual;        // tempo atual do processo
