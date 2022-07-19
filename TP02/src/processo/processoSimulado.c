@@ -39,6 +39,8 @@ char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecn
             alocador->qtalocsnegadas++;
             return 'M';
         }
+        calc_qtfragmentos(alocador);
+        printf("ProcessoSimulado.c - ExecutaInstrucao -  qt frags = %d", alocador->qtfragmentos);
         processo->contadorPrograma++;
         break;
     case 'D':
@@ -99,9 +101,9 @@ void instrucaoN(processoSimulado *processo, instrucao instrucao, alocador_t *alo
         alocador->qtalocs++;
         processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, worst_fit);
     }
-    // printf("Alocando -------- ProcessoSimulado.c %lld\n",processo->memoria);
-    // printf("Alocando %d\n",processo->id);
-    // printf("Alocando tam %d\n",instrucao.var1);
+
+    printf(RED"Alocando processo: %d\n"RESET,processo->id);
+    
     processo->tammem = instrucao.var1;
 }
 

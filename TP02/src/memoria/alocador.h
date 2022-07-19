@@ -27,6 +27,7 @@ int* aloca_memoria_simulada(alocador_t *alocador, int tamanho, funcao_alocacao a
 void desaloca_memoria_simulada(alocador_t *alocador, int *posicao);
 
 void exibe_memoria(alocador_t *alocador);
+void calc_qtfragmentos(alocador_t *alocador);
 
 // funções de alocação - apenas retornam a primeira posição do bloco livre
 int* first_fit(alocador_t *alocador, int tam_alocar);
