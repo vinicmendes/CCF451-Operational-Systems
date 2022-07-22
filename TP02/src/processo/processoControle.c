@@ -36,6 +36,14 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
     inicializa_marcador(&marcador, TAMANHO_MEM);
     alocador_t alocador;
     inicializa_alocador(&alocador, marcador, memoria, TAMANHO_MEM);
+    // if(gerenciador.memvirtual){
+    //     memoria_t memoriav;
+    //     inicializa_memoria(&memoriav, TAMANHO_MEM);
+    //     marcador_t marcadorv;
+    //     inicializa_marcador(&marcadorv, TAMANHO_MEM);
+    //     alocador_t alocadorv;
+    //     inicializa_alocador(&alocadorv, marcadorv, memoriav, TAMANHO_MEM);
+    // }
     printf("\nCriando Processo Gerenciador de Processos...\n");
 
     leArquivoInstrucao(&inst, "files/init.txt");
@@ -102,26 +110,29 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
             else if (resultado == 'T')
             {
                 int tentativa, j, indice;
-                elementoEBM *apAux;
                 // TERMINA PROCESSO SIMULADO E TENTA USAR A MEMORIA PARA O ALGUM PROCESSO BLOQUEADO POR MEMORIA
                 indice = encontraIndiceTP(gerenciador, gerenciador->cpu.procexec.id);
                 retiraProcessoTabelaProcessos(gerenciador, indice, alocador);
-                apAux = gerenciador->estadoBloqueadoM.apPrimeiro;
-                fprintf(stderr,"ProcessoControle.c ---  tam estado bloqueadom : %d\n", gerenciador->estadoBloqueadoM.tam);
-                tentativa = removeItemEBM(&gerenciador->estadoBloqueadoM, &j);
-                j = encontraIndiceTP(gerenciador, j);
-                if (tentativa == 1)
-                {
-                    gerenciador->tabelaDeProcessos[j].estado=0;
-                    if (gerenciador->tipoEscalonamento == 1)
+                // if (gerenciador.memvirtual == 0)
+                // {
+                    elementoEBM *apAux;
+                    apAux = gerenciador->estadoBloqueadoM.apPrimeiro;
+                    fprintf(stderr, "ProcessoControle.c ---  tam estado bloqueadom : %d\n", gerenciador->estadoBloqueadoM.tam);
+                    tentativa = removeItemEBM(&gerenciador->estadoBloqueadoM, &j);
+                    j = encontraIndiceTP(gerenciador, j);
+                    if (tentativa == 1)
                     {
-                        insereItememFilaEP(&gerenciador->estadoPronto, gerenciador->tabelaDeProcessos[j].id, gerenciador->tabelaDeProcessos[j].prioridade);
+                        gerenciador->tabelaDeProcessos[j].estado = 0;
+                        if (gerenciador->tipoEscalonamento == 1)
+                        {
+                            insereItememFilaEP(&gerenciador->estadoPronto, gerenciador->tabelaDeProcessos[j].id, gerenciador->tabelaDeProcessos[j].prioridade);
+                        }
+                        else
+                        {
+                            insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->tabelaDeProcessos[j].id, gerenciador->tabelaDeProcessos[j].prioridade);
+                        }
                     }
-                    else
-                    {
-                        insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->tabelaDeProcessos[j].id, gerenciador->tabelaDeProcessos[j].prioridade);
-                    }
-                }
+                // }
             }
             else if (resultado == 'F')
             {
@@ -234,10 +245,17 @@ int trocaContexto(processoControle *gerenciador)
     }
     removeItemEP(&gerenciador->estadoPronto, &i);
     i = encontraIndiceTP(gerenciador, i);
-    fprintf(stderr,"ProcessoControle.c - trocacontexto - teste -- indice removido = %d\n", gerenciador->tabelaDeProcessos[i].id);
+    fprintf(stderr, "ProcessoControle.c - trocacontexto - teste -- indice removido = %d\n", gerenciador->tabelaDeProcessos[i].id);
     gerenciador->tabelaDeProcessos[i].estado = 1;
     insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[i]);
-
+    //if(gerenciador.memvirtual){
+    //verifica se o processo gerenciador.cpu.procexec.id possui endereço virtual
+    //desaloca o processo gerenciador.cpu.procexec.id da memoria virtual
+    //tenta alocar na fisica
+    //desaloca alguem da memoria virtual
+    //zera seu endereço virtual
+    //aloca ele na fisica
+    //}
     return 1;
 }
 void escalonarTempo(processoControle *gerenciador)
@@ -291,12 +309,7 @@ void processoImpressao(processoControle *gerenciador, alocador_t *alocador)
 void retiraProcessoTabelaProcessos(processoControle *gerenciador, int indice, alocador_t *alocador)
 {
     desaloca_memoria_simulada(alocador, gerenciador->cpu.procexec.memoria);
-    for(int i=0;i<alocador->tamanho;++i){
-        if(alocador->marcador[i] == 1){
-            alocador->qtfragmentos++;
-            break;
-        }
-    }
+    alocador->qtfragmentos++;
     printf("Processo %d finalizado ... \n", gerenciador->cpu.procexec.id);
     gerenciador->cpu.procexec.id = -1;
     gerenciador->tabelaDeProcessos[indice].id = -1;

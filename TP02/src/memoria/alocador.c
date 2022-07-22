@@ -16,7 +16,7 @@ void inicializa_alocador(alocador_t *alocador, marcador_t marcador, memoria_t me
     alocador->tamanho = tamanho;
     alocador->ultima_alocacao = NULL;
     alocador->pos_ultima_alocacao = 0;
-    alocador->qtfragmentos = 0;
+    alocador->qtfragmentos = 1;
     alocador->tempoaloc = 0;
     alocador->qtalocs = 0;
     alocador->qtalocsnegadas = 0;
@@ -48,6 +48,7 @@ void desaloca_memoria_simulada(alocador_t *alocador, int *posicao)
     desmarcar_posicoes(&alocador->marcador, index_base, index_base + alocador->alocacoes[index_base] - 1);
     alocador->alocacoes[index_base] = 0;
 }
+
 void calc_qtfragmentos(alocador_t *alocador){
     int frag=0;
     for(int i=0;i<alocador->tamanho;++i){
@@ -62,15 +63,16 @@ void calc_qtfragmentos(alocador_t *alocador){
     }
     if(frag) alocador->qtfragmentos++;
 }
+
 void exibe_memoria(alocador_t *alocador)
 {
     int livres = 0;
     int ocupados = 0;
     printf("%s\n\nMemoria:%s\n", BLUE, RESET);
     printf("Numero total de fragmentos na memoria %d\n",alocador->qtfragmentos);
+    printf("Numero de alocacoes: %d\n", alocador->qtalocs);
     printf("Numero medio de fragmentos: %.2lf\n", alocador->qtfragmentos / (double)alocador->qtalocs);
     printf("Tempo de alocacao: %d\n", alocador->tempoaloc);
-    printf("Numero de alocacoes: %d\n", alocador->qtalocs);
     printf("Tempo medio de alocacao: %.2lf\n", alocador->tempoaloc / (double)alocador->qtalocs);
     printf("Percentual de negacao de requisicao de alocacao: %.2lf porcento!\n", alocador->qtalocsnegadas / (double)alocador->qtalocs * 100);
     printf("Situacao da memoria atual:\n");

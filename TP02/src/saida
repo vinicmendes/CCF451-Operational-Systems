@@ -13,16 +13,27 @@ Escolha a tecnica para alocar o processo:
 Criando Processo Gerenciador de Processos...
 
 Comando U
-Alocando -------- ProcessoSimulado.c 94821240679968
-Alocando 0
-[31mTrocando contexto
+[31mAlocando processo: 0
+[0m[31mTrocando contexto
 [0m
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 1
@@ -30,7 +41,7 @@ Id processo pai: -1
 Contador de programa: 1
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 1
+Tempo de cpu: 2
 Tempo total da CPU: 1
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -47,11 +58,23 @@ Variavel 4
 Comando U
 
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 1
@@ -59,7 +82,7 @@ Id processo pai: -1
 Contador de programa: 2
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 2
+Tempo de cpu: 4
 Tempo total da CPU: 2
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -77,11 +100,23 @@ Comando U
 [31mTrocando contexto
 [0m
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 2
@@ -89,7 +124,7 @@ Id processo pai: -1
 Contador de programa: 3
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 3
+Tempo de cpu: 6
 Tempo total da CPU: 3
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -106,11 +141,23 @@ Variavel 4
 Comando U
 
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 2
@@ -118,7 +165,7 @@ Id processo pai: -1
 Contador de programa: 4
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 4
+Tempo de cpu: 8
 Tempo total da CPU: 4
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -135,11 +182,23 @@ Variavel 4
 Comando U
 
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 2
@@ -147,7 +206,7 @@ Id processo pai: -1
 Contador de programa: 5
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 5
+Tempo de cpu: 10
 Tempo total da CPU: 5
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -164,11 +223,23 @@ Variavel 4
 Comando U
 
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 2
@@ -176,7 +247,7 @@ Id processo pai: -1
 Contador de programa: 6
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 6
+Tempo de cpu: 12
 Tempo total da CPU: 6
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -194,11 +265,23 @@ Comando U
 [31mTrocando contexto
 [0m
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 3
@@ -206,7 +289,7 @@ Id processo pai: -1
 Contador de programa: 7
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 7
+Tempo de cpu: 14
 Tempo total da CPU: 7
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -223,11 +306,23 @@ Variavel 4
 Comando U
 
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 3
@@ -235,7 +330,7 @@ Id processo pai: -1
 Contador de programa: 8
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 8
+Tempo de cpu: 16
 Tempo total da CPU: 8
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -252,11 +347,23 @@ Variavel 4
 Comando U
 
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 3
@@ -264,7 +371,7 @@ Id processo pai: -1
 Contador de programa: 9
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 9
+Tempo de cpu: 18
 Tempo total da CPU: 9
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -281,11 +388,23 @@ Variavel 4
 Comando U
 
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 3
@@ -293,7 +412,7 @@ Id processo pai: -1
 Contador de programa: 10
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 10
+Tempo de cpu: 20
 Tempo total da CPU: 10
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -310,11 +429,23 @@ Variavel 4
 Comando U
 
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 3
@@ -322,7 +453,7 @@ Id processo pai: -1
 Contador de programa: 11
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 11
+Tempo de cpu: 22
 Tempo total da CPU: 11
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -339,11 +470,23 @@ Variavel 4
 Comando U
 
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 3
@@ -351,7 +494,7 @@ Id processo pai: -1
 Contador de programa: 12
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 12
+Tempo de cpu: 24
 Tempo total da CPU: 12
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -368,11 +511,23 @@ Variavel 4
 Comando U
 
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 3
@@ -380,7 +535,7 @@ Id processo pai: -1
 Contador de programa: 14
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 13
+Tempo de cpu: 26
 Tempo total da CPU: 13
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -405,16 +560,37 @@ Tempo em processamento: 0
 -----------------------------------------------------------------
 
 Memoria do Processo: 1
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 
 Comando U
 
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 3
@@ -422,7 +598,7 @@ Id processo pai: -1
 Contador de programa: 16
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 14
+Tempo de cpu: 28
 Tempo total da CPU: 14
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -447,7 +623,16 @@ Tempo em processamento: 0
 -----------------------------------------------------------------
 
 Memoria do Processo: 1
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 2
@@ -460,17 +645,38 @@ Tempo em processamento: 0
 -----------------------------------------------------------------
 
 Memoria do Processo: 2
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 
 Comando U
 [31mTrocando contexto
 [0m
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -503,7 +709,16 @@ Estado: [32mEm execução
 Tempo de cpu: 15
 Tempo total da CPU: 15
 -----------Memoria do processo em execucao-----------
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 2
@@ -516,7 +731,16 @@ Tempo em processamento: 0
 -----------------------------------------------------------------
 
 Memoria do Processo: 2
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 3
@@ -529,17 +753,38 @@ Tempo em processamento: 0
 -----------------------------------------------------------------
 
 Memoria do Processo: 3
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 
 Comando U
 [31mTrocando contexto
 [0m
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -573,7 +818,16 @@ Tempo em processamento: 1
 -----------------------------------------------------------------
 
 Memoria do Processo: 1
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 [0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 2
@@ -585,7 +839,16 @@ Estado: [32mEm execução
 Tempo de cpu: 16
 Tempo total da CPU: 16
 -----------Memoria do processo em execucao-----------
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 3
@@ -598,17 +861,38 @@ Tempo em processamento: 0
 -----------------------------------------------------------------
 
 Memoria do Processo: 3
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 
 Comando U
 [31mTrocando contexto
 [0m
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -642,7 +926,16 @@ Tempo em processamento: 1
 -----------------------------------------------------------------
 
 Memoria do Processo: 1
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 2
@@ -655,7 +948,16 @@ Tempo em processamento: 1
 -----------------------------------------------------------------
 
 Memoria do Processo: 2
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 [0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 3
@@ -667,17 +969,38 @@ Estado: [32mEm execução
 Tempo de cpu: 17
 Tempo total da CPU: 17
 -----------Memoria do processo em execucao-----------
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 
 Comando U
 [31mTrocando contexto
 [0m
 Comando I
-Numero medio de fragmentos: 1
-Tempo medio de alocacao: 0
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 1
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 0
+Tempo medio de alocacao: 0.00
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||               ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m               [32m]
+
+[0m[32mLivres: 15
+[0m[32mOcupados: 5
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -707,10 +1030,19 @@ Id processo pai: 0
 Contador de programa: 0
 Estado: [32mEm execução
 [0mTempo de inicio: 13
-Tempo de cpu: 18
+Tempo de cpu: 19
 Tempo total da CPU: 18
 -----------Memoria do processo em execucao-----------
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 2
@@ -723,7 +1055,16 @@ Tempo em processamento: 1
 -----------------------------------------------------------------
 
 Memoria do Processo: 2
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 3
@@ -736,18 +1077,38 @@ Tempo em processamento: 1
 -----------------------------------------------------------------
 
 Memoria do Processo: 3
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 
 Comando U
-Alocando -------- ProcessoSimulado.c 94821240679988
-Alocando 1
-
+[31mAlocando processo: 1
+[0m
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 2
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 2
+Numero medio de fragmentos: 0.50
+Tempo de alocacao: 5
+Tempo medio de alocacao: 2.50
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||         ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m            [32m]
+
+[0m[32mLivres: 12
+[0m[32mOcupados: 8
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -777,7 +1138,7 @@ Id processo pai: 0
 Contador de programa: 1
 Estado: [32mEm execução
 [0mTempo de inicio: 13
-Tempo de cpu: 19
+Tempo de cpu: 21
 Tempo total da CPU: 19
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -786,12 +1147,6 @@ Variavel 1
 0
 Variavel 2
 0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 2
@@ -804,7 +1159,16 @@ Tempo em processamento: 1
 -----------------------------------------------------------------
 
 Memoria do Processo: 2
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 3
@@ -817,17 +1181,38 @@ Tempo em processamento: 1
 -----------------------------------------------------------------
 
 Memoria do Processo: 3
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 
 Comando U
 [31mTrocando contexto
 [0m
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 2
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 2
+Numero medio de fragmentos: 0.50
+Tempo de alocacao: 5
+Tempo medio de alocacao: 2.50
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||         ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m            [32m]
+
+[0m[32mLivres: 12
+[0m[32mOcupados: 8
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -866,12 +1251,6 @@ Variavel 0
 Variavel 1
 0
 Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
 0
 [0;34m
 -----Relatório do processo atualmente em execução-----
@@ -881,10 +1260,19 @@ Id processo pai: 0
 Contador de programa: 0
 Estado: [32mEm execução
 [0mTempo de inicio: 14
-Tempo de cpu: 20
+Tempo de cpu: 21
 Tempo total da CPU: 20
 -----------Memoria do processo em execucao-----------
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 3
@@ -897,18 +1285,38 @@ Tempo em processamento: 1
 -----------------------------------------------------------------
 
 Memoria do Processo: 3
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 
 Comando U
-Alocando -------- ProcessoSimulado.c 94821240680012
-Alocando 2
-
+[31mAlocando processo: 2
+[0m
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 5
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 3
+Numero medio de fragmentos: 0.33
+Tempo de alocacao: 13
+Tempo medio de alocacao: 4.33
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||||||||   ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m        [32m]
+
+[0m[32mLivres: 8
+[0m[32mOcupados: 12
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -947,12 +1355,6 @@ Variavel 0
 Variavel 1
 0
 Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
 0
 [0;34m
 -----Relatório do processo atualmente em execução-----
@@ -962,7 +1364,7 @@ Id processo pai: 0
 Contador de programa: 1
 Estado: [32mEm execução
 [0mTempo de inicio: 14
-Tempo de cpu: 21
+Tempo de cpu: 23
 Tempo total da CPU: 21
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -973,10 +1375,6 @@ Variavel 2
 0
 Variavel 3
 0
-Variavel 4
-0
-Variavel 5
-0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 3
@@ -989,17 +1387,38 @@ Tempo em processamento: 1
 -----------------------------------------------------------------
 
 Memoria do Processo: 3
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 
 Comando U
-[31mTrocando contexto
-[0m
+Processo de id 2 bloqueado! 
+
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 5
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 3
+Numero medio de fragmentos: 0.33
+Tempo de alocacao: 13
+Tempo medio de alocacao: 4.33
 Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||||||||   ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m        [32m]
+
+[0m[32mLivres: 8
+[0m[32mOcupados: 12
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -1039,19 +1458,13 @@ Variavel 1
 0
 Variavel 2
 0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 2
-Prioridade: 2
+Prioridade: 0
 ID Processo pai: 0
 Contador de programa: 2
-Estado: [0;33mPronto
+Estado: [31mBloqueado
 [0mTempo de inicio: 14
 Tempo em processamento: 3
 -----------------------------------------------------------------
@@ -1065,10 +1478,6 @@ Variavel 2
 0
 Variavel 3
 0
-Variavel 4
-0
-Variavel 5
-0
 [0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 3
@@ -1077,21 +1486,41 @@ Id processo pai: 0
 Contador de programa: 0
 Estado: [32mEm execução
 [0mTempo de inicio: 15
-Tempo de cpu: 22
+Tempo de cpu: 23
 Tempo total da CPU: 22
 -----------Memoria do processo em execucao-----------
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
 
 Comando U
-Alocando -------- ProcessoSimulado.c 0
-Alocando 3
-
+[31mAlocando processo: 3
+[0m
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 8
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.25
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||||||||   ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 2
+[0m[32mOcupados: 18
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -1113,15 +1542,53 @@ Variavel 3
 0
 Variavel 4
 0
-[0;34m
------Relatório do processo atualmente em execução-----
+[0;36m
+----- Relatorio de processo -----
 [0mPID: 1
 Prioridade: 2
-Id processo pai: 0
+ID Processo pai: 0
 Contador de programa: 2
-Estado: [32mEm execução
+Estado: [0;33mPronto
 [0mTempo de inicio: 13
-Tempo de cpu: 23
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 1
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 2
+Prioridade: 0
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [31mBloqueado
+[0mTempo de inicio: 14
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 2
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 3
+Prioridade: 1
+Id processo pai: 0
+Contador de programa: 1
+Estado: [32mEm execução
+[0mTempo de inicio: 15
+Tempo de cpu: 25
 Tempo total da CPU: 23
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -1136,13 +1603,73 @@ Variavel 4
 0
 Variavel 5
 0
+
+Comando U
+[31mTrocando contexto
+[0m
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.25
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 2
+[0m[32mOcupados: 18
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 0
+Prioridade: 3
+ID Processo pai: -1
+Contador de programa: 18
+Estado: [0;33mPronto
+[0mTempo de inicio: 0
+Tempo em processamento: 15
+-----------------------------------------------------------------
+
+Memoria do Processo: 0
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 1
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 2
+Estado: [32mEm execução
+[0mTempo de inicio: 13
+Tempo de cpu: 27
+Tempo total da CPU: 24
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 2
-Prioridade: 2
+Prioridade: 0
 ID Processo pai: 0
 Contador de programa: 2
-Estado: [0;33mPronto
+Estado: [31mBloqueado
 [0mTempo de inicio: 14
 Tempo em processamento: 3
 -----------------------------------------------------------------
@@ -1156,32 +1683,54 @@ Variavel 2
 0
 Variavel 3
 0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
 Variavel 4
 0
 Variavel 5
 0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 2
------------------------------------------------------------------
 
-Memoria do Processo: 3
-Memoria Vazia
+Comando L
+Processo de indice 2 liberado!
 
 Comando U
 
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 8
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.25
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||||||||   ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 2
+[0m[32mOcupados: 18
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -1211,8 +1760,8 @@ Id processo pai: 0
 Contador de programa: 3
 Estado: [32mEm execução
 [0mTempo de inicio: 13
-Tempo de cpu: 24
-Tempo total da CPU: 24
+Tempo de cpu: 29
+Tempo total da CPU: 25
 -----------Memoria do processo em execucao-----------
 Variavel 0
 0
@@ -1220,16 +1769,10 @@ Variavel 1
 0
 Variavel 2
 0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 2
-Prioridade: 2
+Prioridade: 0
 ID Processo pai: 0
 Contador de programa: 2
 Estado: [0;33mPronto
@@ -1246,34 +1789,51 @@ Variavel 2
 0
 Variavel 3
 0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
 Variavel 4
 0
 Variavel 5
 0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 2
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
-
-Comando L
 
 Comando U
 
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 8
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.25
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||||||||   ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 2
+[0m[32mOcupados: 18
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -1303,8 +1863,8 @@ Id processo pai: 0
 Contador de programa: 4
 Estado: [32mEm execução
 [0mTempo de inicio: 13
-Tempo de cpu: 25
-Tempo total da CPU: 25
+Tempo de cpu: 31
+Tempo total da CPU: 26
 -----------Memoria do processo em execucao-----------
 Variavel 0
 0
@@ -1312,16 +1872,10 @@ Variavel 1
 0
 Variavel 2
 0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 2
-Prioridade: 2
+Prioridade: 0
 ID Processo pai: 0
 Contador de programa: 2
 Estado: [0;33mPronto
@@ -1338,32 +1892,51 @@ Variavel 2
 0
 Variavel 3
 0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
 Variavel 4
 0
 Variavel 5
 0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 2
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
 
 Comando U
 
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 8
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 1
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.25
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||||||||   ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 2
+[0m[32mOcupados: 18
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -1393,25 +1966,19 @@ Id processo pai: 0
 Contador de programa: 5
 Estado: [32mEm execução
 [0mTempo de inicio: 13
-Tempo de cpu: 26
-Tempo total da CPU: 26
+Tempo de cpu: 33
+Tempo total da CPU: 27
 -----------Memoria do processo em execucao-----------
 Variavel 0
-0
+1000
 Variavel 1
 0
 Variavel 2
 0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
 [0;36m
 ----- Relatorio de processo -----
 [0mPID: 2
-Prioridade: 2
+Prioridade: 0
 ID Processo pai: 0
 Contador de programa: 2
 Estado: [0;33mPronto
@@ -1428,33 +1995,53 @@ Variavel 2
 0
 Variavel 3
 0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
 Variavel 4
 0
 Variavel 5
 0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 2
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
 
 Comando U
+Processo 1 finalizado ... 
 [31mTrocando contexto
 [0m
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 8
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 2
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.50
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||||||||   ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m   [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -1476,129 +2063,15 @@ Variavel 3
 0
 Variavel 4
 0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 1
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
 [0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 2
-Prioridade: 2
+Prioridade: 0
 Id processo pai: 0
 Contador de programa: 2
 Estado: [32mEm execução
 [0mTempo de inicio: 14
-Tempo de cpu: 27
-Tempo total da CPU: 27
------------Memoria do processo em execucao-----------
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 2
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
-
-Comando U
-
-Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 8
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
-Situacao da memoria atual:
-[|||||||||||||||||   ][0;36m
------ Relatorio de processo -----
-[0mPID: 0
-Prioridade: 3
-ID Processo pai: -1
-Contador de programa: 18
-Estado: [0;33mPronto
-[0mTempo de inicio: 0
-Tempo em processamento: 15
------------------------------------------------------------------
-
-Memoria do Processo: 0
-Variavel 0
-1039
-Variavel 1
-502
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 1
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;34m
------Relatório do processo atualmente em execução-----
-[0mPID: 2
-Prioridade: 2
-Id processo pai: 0
-Contador de programa: 3
-Estado: [32mEm execução
-[0mTempo de inicio: 14
-Tempo de cpu: 28
+Tempo de cpu: 31
 Tempo total da CPU: 28
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -1609,32 +2082,52 @@ Variavel 2
 0
 Variavel 3
 0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
 Variavel 4
 0
 Variavel 5
 0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 2
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
 
 Comando U
-
+[31mTrocando contexto
+[0m
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 8
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 2
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.50
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||||||||   ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m   [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -1656,39 +2149,15 @@ Variavel 3
 0
 Variavel 4
 0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 1
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
 [0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 2
-Prioridade: 2
+Prioridade: 1
 Id processo pai: 0
-Contador de programa: 4
+Contador de programa: 3
 Estado: [32mEm execução
 [0mTempo de inicio: 14
-Tempo de cpu: 29
+Tempo de cpu: 33
 Tempo total da CPU: 29
 -----------Memoria do processo em execucao-----------
 Variavel 0
@@ -1699,32 +2168,137 @@ Variavel 2
 0
 Variavel 3
 0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
 Variavel 4
 0
 Variavel 5
 0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 2
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
 
 Comando U
 
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 8
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 2
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.50
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||||||||   ][0;36m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m   [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 0
+Prioridade: 3
+ID Processo pai: -1
+Contador de programa: 18
+Estado: [0;33mPronto
+[0mTempo de inicio: 0
+Tempo em processamento: 15
+-----------------------------------------------------------------
+
+Memoria do Processo: 0
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 2
+Prioridade: 1
+Id processo pai: 0
+Contador de programa: 4
+Estado: [32mEm execução
+[0mTempo de inicio: 14
+Tempo de cpu: 35
+Tempo total da CPU: 30
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+[31mTrocando contexto
+[0m
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 2
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.50
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m   [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
 [0mPID: 0
 Prioridade: 3
@@ -1748,16 +2322,16 @@ Variavel 4
 0
 [0;36m
 ----- Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
+[0mPID: 2
+Prioridade: 2
 ID Processo pai: 0
-Contador de programa: 6
+Contador de programa: 5
 Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
+[0mTempo de inicio: 14
+Tempo em processamento: 6
 -----------------------------------------------------------------
 
-Memoria do Processo: 1
+Memoria do Processo: 2
 Variavel 0
 0
 Variavel 1
@@ -1766,20 +2340,16 @@ Variavel 2
 0
 Variavel 3
 0
-Variavel 4
-0
-Variavel 5
-0
 [0;34m
 -----Relatório do processo atualmente em execução-----
-[0mPID: 2
+[0mPID: 3
 Prioridade: 2
 Id processo pai: 0
-Contador de programa: 5
+Contador de programa: 2
 Estado: [32mEm execução
-[0mTempo de inicio: 14
-Tempo de cpu: 30
-Tempo total da CPU: 30
+[0mTempo de inicio: 15
+Tempo de cpu: 34
+Tempo total da CPU: 31
 -----------Memoria do processo em execucao-----------
 Variavel 0
 0
@@ -1793,29 +2363,627 @@ Variavel 4
 0
 Variavel 5
 0
+
+Comando U
+
+Comando I
 [0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 2
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.50
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m   [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 2
+[0mPID: 0
+Prioridade: 3
+ID Processo pai: -1
+Contador de programa: 18
+Estado: [0;33mPronto
+[0mTempo de inicio: 0
+Tempo em processamento: 15
 -----------------------------------------------------------------
 
-Memoria do Processo: 3
-Memoria Vazia
+Memoria do Processo: 0
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 2
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 5
+Estado: [0;33mPronto
+[0mTempo de inicio: 14
+Tempo em processamento: 6
+-----------------------------------------------------------------
+
+Memoria do Processo: 2
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 3
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 3
+Estado: [32mEm execução
+[0mTempo de inicio: 15
+Tempo de cpu: 36
+Tempo total da CPU: 32
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 2
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.50
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m   [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 0
+Prioridade: 3
+ID Processo pai: -1
+Contador de programa: 18
+Estado: [0;33mPronto
+[0mTempo de inicio: 0
+Tempo em processamento: 15
+-----------------------------------------------------------------
+
+Memoria do Processo: 0
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 2
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 5
+Estado: [0;33mPronto
+[0mTempo de inicio: 14
+Tempo em processamento: 6
+-----------------------------------------------------------------
+
+Memoria do Processo: 2
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 3
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 4
+Estado: [32mEm execução
+[0mTempo de inicio: 15
+Tempo de cpu: 38
+Tempo total da CPU: 33
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 2
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.50
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m   [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 0
+Prioridade: 3
+ID Processo pai: -1
+Contador de programa: 18
+Estado: [0;33mPronto
+[0mTempo de inicio: 0
+Tempo em processamento: 15
+-----------------------------------------------------------------
+
+Memoria do Processo: 0
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 2
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 5
+Estado: [0;33mPronto
+[0mTempo de inicio: 14
+Tempo em processamento: 6
+-----------------------------------------------------------------
+
+Memoria do Processo: 2
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 3
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 5
+Estado: [32mEm execução
+[0mTempo de inicio: 15
+Tempo de cpu: 40
+Tempo total da CPU: 34
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
 
 Comando U
 [31mTrocando contexto
 [0m
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 8
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 2
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.50
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||||||||   ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m   [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 0
+Prioridade: 3
+ID Processo pai: -1
+Contador de programa: 18
+Estado: [0;33mPronto
+[0mTempo de inicio: 0
+Tempo em processamento: 15
+-----------------------------------------------------------------
+
+Memoria do Processo: 0
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 2
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 5
+Estado: [32mEm execução
+[0mTempo de inicio: 14
+Tempo de cpu: 41
+Tempo total da CPU: 35
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 2
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.50
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m   [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 0
+Prioridade: 3
+ID Processo pai: -1
+Contador de programa: 18
+Estado: [0;33mPronto
+[0mTempo de inicio: 0
+Tempo em processamento: 15
+-----------------------------------------------------------------
+
+Memoria do Processo: 0
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 2
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 6
+Estado: [32mEm execução
+[0mTempo de inicio: 14
+Tempo de cpu: 43
+Tempo total da CPU: 36
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando L
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 2
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.50
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m   [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 0
+Prioridade: 3
+ID Processo pai: -1
+Contador de programa: 18
+Estado: [0;33mPronto
+[0mTempo de inicio: 0
+Tempo em processamento: 15
+-----------------------------------------------------------------
+
+Memoria do Processo: 0
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 2
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 7
+Estado: [32mEm execução
+[0mTempo de inicio: 14
+Tempo de cpu: 45
+Tempo total da CPU: 37
+-----------Memoria do processo em execucao-----------
+Variavel 0
+1000
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 2
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.50
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m   [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 0
+Prioridade: 3
+ID Processo pai: -1
+Contador de programa: 18
+Estado: [0;33mPronto
+[0mTempo de inicio: 0
+Tempo em processamento: 15
+-----------------------------------------------------------------
+
+Memoria do Processo: 0
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 2
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 8
+Estado: [32mEm execução
+[0mTempo de inicio: 14
+Tempo de cpu: 47
+Tempo total da CPU: 38
+-----------Memoria do processo em execucao-----------
+Variavel 0
+1000
+Variavel 1
+500
+Variavel 2
+0
+Variavel 3
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+Processo 2 finalizado ... 
+[31mTrocando contexto
+[0m
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 3
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.75
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m       [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 9
+[0m[32mOcupados: 11
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 3
@@ -1823,8 +2991,8 @@ Id processo pai: -1
 Contador de programa: 18
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 31
-Tempo total da CPU: 31
+Tempo de cpu: 54
+Tempo total da CPU: 39
 -----------Memoria do processo em execucao-----------
 Variavel 0
 1039
@@ -1838,74 +3006,49 @@ Variavel 4
 0
 [0;36m
 ----- Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 1
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 2
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 14
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 2
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;36m
------ Relatorio de processo -----
 [0mPID: 3
-Prioridade: 1
+Prioridade: 3
 ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 2
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
 -----------------------------------------------------------------
 
 Memoria do Processo: 3
-Memoria Vazia
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
 
 Comando U
 
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 8
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 3
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.75
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||||||||   ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m       [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 9
+[0m[32mOcupados: 11
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 3
@@ -1913,8 +3056,8 @@ Id processo pai: -1
 Contador de programa: 20
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 32
-Tempo total da CPU: 32
+Tempo de cpu: 56
+Tempo total da CPU: 40
 -----------Memoria do processo em execucao-----------
 Variavel 0
 1039
@@ -1928,87 +3071,71 @@ Variavel 4
 0
 [0;36m
 ----- Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 1
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 2
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 14
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 2
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 2
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
-[0;36m
------ Relatorio de processo -----
 [0mPID: 4
 Prioridade: 0
 ID Processo pai: 0
 Contador de programa: 19
 Estado: [0;33mPronto
-[0mTempo de inicio: 32
+[0mTempo de inicio: 40
 Tempo em processamento: 0
 -----------------------------------------------------------------
 
 Memoria do Processo: 4
-Memoria Vazia
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
 
 Comando U
 
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 8
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 3
+Numero de alocacoes: 4
+Numero medio de fragmentos: 0.75
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[|||||||||||||||||   ][0;34m
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m       [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 9
+[0m[32mOcupados: 11
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 0
 Prioridade: 3
@@ -2016,8 +3143,8 @@ Id processo pai: -1
 Contador de programa: 22
 Estado: [32mEm execução
 [0mTempo de inicio: 0
-Tempo de cpu: 33
-Tempo total da CPU: 33
+Tempo de cpu: 58
+Tempo total da CPU: 41
 -----------Memoria do processo em execucao-----------
 Variavel 0
 1039
@@ -2031,119 +3158,16 @@ Variavel 4
 0
 [0;36m
 ----- Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 1
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 2
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 14
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 2
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 2
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
-[0;36m
------ Relatorio de processo -----
 [0mPID: 4
 Prioridade: 0
 ID Processo pai: 0
 Contador de programa: 19
 Estado: [0;33mPronto
-[0mTempo de inicio: 32
+[0mTempo de inicio: 40
 Tempo em processamento: 0
 -----------------------------------------------------------------
 
 Memoria do Processo: 4
-Memoria Vazia
-[0;36m
------ Relatorio de processo -----
-[0mPID: 5
-Prioridade: 0
-ID Processo pai: 0
-Contador de programa: 21
-Estado: [0;33mPronto
-[0mTempo de inicio: 33
-Tempo em processamento: 0
------------------------------------------------------------------
-
-Memoria do Processo: 5
-Memoria Vazia
-
-Comando U
-Desalocando -------- ProcessoControle.c 94821240679968
-Processo 0 finalizado ... 
-ProcessoControle.c ---  tam estado bloqueadom : 1
-Alocando -------- ProcessoSimulado.c 0
-Alocando 3
-Alocando -------- ProcessoSimulado.c 94821240679968
-Alocando 1
-[31mTrocando contexto
-[0m
-Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 7
-Percentual de negacao de requisicao de alocacao: 16.67 porcento!
-Situacao da memoria atual:
-[|||||||||||||||||   ][0;36m
------ Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 1
 Variavel 0
 1039
 Variavel 1
@@ -2156,111 +3180,38 @@ Variavel 4
 0
 [0;36m
 ----- Relatorio de processo -----
-[0mPID: 2
-Prioridade: 3
+[0mPID: 5
+Prioridade: 0
 ID Processo pai: 0
-Contador de programa: 6
+Contador de programa: 21
 Estado: [0;33mPronto
-[0mTempo de inicio: 14
-Tempo em processamento: 7
+[0mTempo de inicio: 41
+Tempo em processamento: 0
 -----------------------------------------------------------------
 
-Memoria do Processo: 2
+Memoria do Processo: 5
 Variavel 0
-0
+1039
 Variavel 1
-0
+502
 Variavel 2
 0
 Variavel 3
 0
 Variavel 4
 0
-Variavel 5
-0
-[0;34m
------Relatório do processo atualmente em execução-----
+[0;36m
+----- Relatorio de processo -----
 [0mPID: 3
-Prioridade: 1
-Id processo pai: 0
-Contador de programa: 0
-Estado: [32mEm execução
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
 [0mTempo de inicio: 15
-Tempo de cpu: 34
-Tempo total da CPU: 34
------------Memoria do processo em execucao-----------
-Memoria Vazia
-[0;36m
------ Relatorio de processo -----
-[0mPID: 4
-Prioridade: 0
-ID Processo pai: 0
-Contador de programa: 19
-Estado: [0;33mPronto
-[0mTempo de inicio: 32
-Tempo em processamento: 0
------------------------------------------------------------------
-
-Memoria do Processo: 4
-Memoria Vazia
-[0;36m
------ Relatorio de processo -----
-[0mPID: 5
-Prioridade: 0
-ID Processo pai: 0
-Contador de programa: 21
-Estado: [0;33mPronto
-[0mTempo de inicio: 33
-Tempo em processamento: 0
------------------------------------------------------------------
-
-Memoria do Processo: 5
-Memoria Vazia
-
-Comando U
-Alocando -------- ProcessoSimulado.c 0
-Alocando 3
-[31mTrocando contexto
-[0m
-Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 8
-Percentual de negacao de requisicao de alocacao: 28.57 porcento!
-Situacao da memoria atual:
-[|||||||||||||||||   ][0;36m
------ Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
 Tempo em processamento: 7
 -----------------------------------------------------------------
 
-Memoria do Processo: 1
-Variavel 0
-1039
-Variavel 1
-502
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 2
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 14
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 2
+Memoria do Processo: 3
 Variavel 0
 0
 Variavel 1
@@ -2273,638 +3224,36 @@ Variavel 4
 0
 Variavel 5
 0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 3
------------------------------------------------------------------
 
-Memoria do Processo: 3
-Memoria Vazia
-[0;34m
+Comando U
+Processo 0 finalizado ... 
+[31mTrocando contexto
+[0m
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 4
+Numero de alocacoes: 4
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m            [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 14
+[0m[32mOcupados: 6
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
 [0mPID: 4
-Prioridade: 1
+Prioridade: 0
 Id processo pai: 0
 Contador de programa: 19
 Estado: [32mEm execução
-[0mTempo de inicio: 32
-Tempo de cpu: 35
-Tempo total da CPU: 35
------------Memoria do processo em execucao-----------
-Memoria Vazia
-[0;36m
------ Relatorio de processo -----
-[0mPID: 5
-Prioridade: 0
-ID Processo pai: 0
-Contador de programa: 21
-Estado: [0;33mPronto
-[0mTempo de inicio: 33
-Tempo em processamento: 0
------------------------------------------------------------------
-
-Memoria do Processo: 5
-Memoria Vazia
-
-Comando U
-
-Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 8
-Percentual de negacao de requisicao de alocacao: 28.57 porcento!
-Situacao da memoria atual:
-[|||||||||||||||||   ][0;36m
------ Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 1
-Variavel 0
-1039
-Variavel 1
-502
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 2
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 14
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 2
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 3
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
-[0;34m
------Relatório do processo atualmente em execução-----
-[0mPID: 4
-Prioridade: 1
-Id processo pai: 0
-Contador de programa: 0
-Estado: [32mEm execução
-[0mTempo de inicio: 32
-Tempo de cpu: 36
-Tempo total da CPU: 36
------------Memoria do processo em execucao-----------
-Memoria Vazia
-[0;36m
------ Relatorio de processo -----
-[0mPID: 5
-Prioridade: 0
-ID Processo pai: 0
-Contador de programa: 21
-Estado: [0;33mPronto
-[0mTempo de inicio: 33
-Tempo em processamento: 0
------------------------------------------------------------------
-
-Memoria do Processo: 5
-Memoria Vazia
-
-Comando L
-
-Comando U
-Alocando -------- ProcessoSimulado.c 94821240680036
-Alocando 4
-[31mTrocando contexto
-[0m
-Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 9
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
-Situacao da memoria atual:
-[||||||||||||||||||| ][0;36m
------ Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 1
-Variavel 0
-1039
-Variavel 1
-502
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 2
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 14
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 2
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 3
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
-[0;34m
------Relatório do processo atualmente em execução-----
-[0mPID: 4
-Prioridade: 2
-Id processo pai: 0
-Contador de programa: 1
-Estado: [32mEm execução
-[0mTempo de inicio: 32
-Tempo de cpu: 37
-Tempo total da CPU: 37
------------Memoria do processo em execucao-----------
-Variavel 0
-0
-Variavel 1
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 5
-Prioridade: 0
-ID Processo pai: 0
-Contador de programa: 21
-Estado: [0;33mPronto
-[0mTempo de inicio: 33
-Tempo em processamento: 0
------------------------------------------------------------------
-
-Memoria do Processo: 5
-Memoria Vazia
-
-Comando U
-
-Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 9
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
-Situacao da memoria atual:
-[||||||||||||||||||| ][0;36m
------ Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 1
-Variavel 0
-1039
-Variavel 1
-502
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 2
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 14
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 2
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 3
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
-[0;34m
------Relatório do processo atualmente em execução-----
-[0mPID: 4
-Prioridade: 2
-Id processo pai: 0
-Contador de programa: 2
-Estado: [32mEm execução
-[0mTempo de inicio: 32
-Tempo de cpu: 38
-Tempo total da CPU: 38
------------Memoria do processo em execucao-----------
-Variavel 0
-0
-Variavel 1
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 5
-Prioridade: 0
-ID Processo pai: 0
-Contador de programa: 21
-Estado: [0;33mPronto
-[0mTempo de inicio: 33
-Tempo em processamento: 0
------------------------------------------------------------------
-
-Memoria do Processo: 5
-Memoria Vazia
-
-Comando U
-
-Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 9
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
-Situacao da memoria atual:
-[||||||||||||||||||| ][0;36m
------ Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 1
-Variavel 0
-1039
-Variavel 1
-502
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 2
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 14
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 2
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 3
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
-[0;34m
------Relatório do processo atualmente em execução-----
-[0mPID: 4
-Prioridade: 2
-Id processo pai: 0
-Contador de programa: 3
-Estado: [32mEm execução
-[0mTempo de inicio: 32
-Tempo de cpu: 39
-Tempo total da CPU: 39
------------Memoria do processo em execucao-----------
-Variavel 0
-0
-Variavel 1
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 5
-Prioridade: 0
-ID Processo pai: 0
-Contador de programa: 21
-Estado: [0;33mPronto
-[0mTempo de inicio: 33
-Tempo em processamento: 0
------------------------------------------------------------------
-
-Memoria do Processo: 5
-Memoria Vazia
-
-Comando U
-
-Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 9
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
-Situacao da memoria atual:
-[||||||||||||||||||| ][0;36m
------ Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 1
-Variavel 0
-1039
-Variavel 1
-502
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 2
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 14
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 2
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 3
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
-[0;34m
------Relatório do processo atualmente em execução-----
-[0mPID: 4
-Prioridade: 2
-Id processo pai: 0
-Contador de programa: 4
-Estado: [32mEm execução
-[0mTempo de inicio: 32
-Tempo de cpu: 40
-Tempo total da CPU: 40
------------Memoria do processo em execucao-----------
-Variavel 0
-1000
-Variavel 1
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 5
-Prioridade: 0
-ID Processo pai: 0
-Contador de programa: 21
-Estado: [0;33mPronto
-[0mTempo de inicio: 33
-Tempo em processamento: 0
------------------------------------------------------------------
-
-Memoria do Processo: 5
-Memoria Vazia
-
-Comando U
-[31mTrocando contexto
-[0m
-Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 9
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
-Situacao da memoria atual:
-[||||||||||||||||||| ][0;36m
------ Relatorio de processo -----
-[0mPID: 1
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 13
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 1
-Variavel 0
-1039
-Variavel 1
-502
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 2
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 6
-Estado: [0;33mPronto
-[0mTempo de inicio: 14
-Tempo em processamento: 7
------------------------------------------------------------------
-
-Memoria do Processo: 2
-Variavel 0
-0
-Variavel 1
-0
-Variavel 2
-0
-Variavel 3
-0
-Variavel 4
-0
-Variavel 5
-0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 3
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
-[0;36m
------ Relatorio de processo -----
-[0mPID: 4
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 5
-Estado: [0;33mPronto
-[0mTempo de inicio: 32
-Tempo em processamento: 6
------------------------------------------------------------------
-
-Memoria do Processo: 4
-Variavel 0
-1000
-Variavel 1
-500
-[0;36m
------ Relatorio de processo -----
-[0mPID: 5
-Prioridade: 0
-ID Processo pai: 0
-Contador de programa: 21
-Estado: [0;33mPronto
-[0mTempo de inicio: 33
-Tempo em processamento: 0
------------------------------------------------------------------
-
-Memoria do Processo: 5
-Memoria Vazia
-[31m
------CPU vazia!-----
-[0mTempo total: 41
-
-Comando U
-[31mTrocando contexto
-[0m
-Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 9
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
-Situacao da memoria atual:
-[||||||||||||||||||| ][0;34m
------Relatório do processo atualmente em execução-----
-[0mPID: 1
-Prioridade: 3
-Id processo pai: 0
-Contador de programa: 6
-Estado: [32mEm execução
-[0mTempo de inicio: 13
+[0mTempo de inicio: 40
 Tempo de cpu: 42
 Tempo total da CPU: 42
 -----------Memoria do processo em execucao-----------
@@ -2920,16 +3269,38 @@ Variavel 4
 0
 [0;36m
 ----- Relatorio de processo -----
-[0mPID: 2
+[0mPID: 5
+Prioridade: 0
+ID Processo pai: 0
+Contador de programa: 21
+Estado: [0;33mPronto
+[0mTempo de inicio: 41
+Tempo em processamento: 0
+-----------------------------------------------------------------
+
+Memoria do Processo: 5
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
 Prioridade: 3
 ID Processo pai: 0
 Contador de programa: 6
 Estado: [0;33mPronto
-[0mTempo de inicio: 14
+[0mTempo de inicio: 15
 Tempo em processamento: 7
 -----------------------------------------------------------------
 
-Memoria do Processo: 2
+Memoria do Processo: 3
 Variavel 0
 0
 Variavel 1
@@ -2942,64 +3313,57 @@ Variavel 4
 0
 Variavel 5
 0
+
+Comando U
+[31mTrocando contexto
+[0m
+Comando I
 [0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 4
+Numero de alocacoes: 4
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m            [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 14
+[0m[32mOcupados: 6
+[0m[32mTotal: 20
+[0m[0;36m
 ----- Relatorio de processo -----
-[0mPID: 3
+[0mPID: 4
 Prioridade: 1
 ID Processo pai: 0
 Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 3
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
-[0;36m
------ Relatorio de processo -----
-[0mPID: 4
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 5
 Estado: [0;33mPronto
-[0mTempo de inicio: 32
-Tempo em processamento: 6
+[0mTempo de inicio: 40
+Tempo em processamento: 1
 -----------------------------------------------------------------
 
 Memoria do Processo: 4
 Variavel 0
-1000
+1039
 Variavel 1
-500
-[0;36m
------ Relatorio de processo -----
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
 [0mPID: 5
 Prioridade: 0
-ID Processo pai: 0
-Contador de programa: 21
-Estado: [0;33mPronto
-[0mTempo de inicio: 33
-Tempo em processamento: 0
------------------------------------------------------------------
-
-Memoria do Processo: 5
-Memoria Vazia
-
-Comando U
-
-Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 9
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
-Situacao da memoria atual:
-[||||||||||||||||||| ][0;34m
------Relatório do processo atualmente em execução-----
-[0mPID: 1
-Prioridade: 3
 Id processo pai: 0
-Contador de programa: 7
+Contador de programa: 21
 Estado: [32mEm execução
-[0mTempo de inicio: 13
+[0mTempo de inicio: 41
 Tempo de cpu: 43
 Tempo total da CPU: 43
 -----------Memoria do processo em execucao-----------
@@ -3015,16 +3379,16 @@ Variavel 4
 0
 [0;36m
 ----- Relatorio de processo -----
-[0mPID: 2
+[0mPID: 3
 Prioridade: 3
 ID Processo pai: 0
 Contador de programa: 6
 Estado: [0;33mPronto
-[0mTempo de inicio: 14
+[0mTempo de inicio: 15
 Tempo em processamento: 7
 -----------------------------------------------------------------
 
-Memoria do Processo: 2
+Memoria do Processo: 3
 Variavel 0
 0
 Variavel 1
@@ -3037,69 +3401,40 @@ Variavel 4
 0
 Variavel 5
 0
-[0;36m
------ Relatorio de processo -----
-[0mPID: 3
-Prioridade: 1
-ID Processo pai: 0
-Contador de programa: 0
-Estado: Bloqueado por memoria
-Tempo de inicio: 15
-Tempo em processamento: 3
------------------------------------------------------------------
-
-Memoria do Processo: 3
-Memoria Vazia
-[0;36m
------ Relatorio de processo -----
-[0mPID: 4
-Prioridade: 3
-ID Processo pai: 0
-Contador de programa: 5
-Estado: [0;33mPronto
-[0mTempo de inicio: 32
-Tempo em processamento: 6
------------------------------------------------------------------
-
-Memoria do Processo: 4
-Variavel 0
-1000
-Variavel 1
-500
-[0;36m
------ Relatorio de processo -----
-[0mPID: 5
-Prioridade: 0
-ID Processo pai: 0
-Contador de programa: 21
-Estado: [0;33mPronto
-[0mTempo de inicio: 33
-Tempo em processamento: 0
------------------------------------------------------------------
-
-Memoria do Processo: 5
-Memoria Vazia
 
 Comando U
-
+[31mTrocando contexto
+[0m
 Comando I
-Numero medio de fragmentos: 0
-Tempo medio de alocacao: 9
-Percentual de negacao de requisicao de alocacao: 25.00 porcento!
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 4
+Numero de alocacoes: 4
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 25
+Tempo medio de alocacao: 6.25
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
 Situacao da memoria atual:
-[||||||||||||||||||| ][0;34m
+[32m
+[[0m            [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 14
+[0m[32mOcupados: 6
+[0m[32mTotal: 20
+[0m[0;34m
 -----Relatório do processo atualmente em execução-----
-[0mPID: 1
-Prioridade: 3
+[0mPID: 4
+Prioridade: 1
 Id processo pai: 0
-Contador de programa: 8
+Contador de programa: 0
 Estado: [32mEm execução
-[0mTempo de inicio: 13
-Tempo de cpu: 44
+[0mTempo de inicio: 40
+Tempo de cpu: 45
 Tempo total da CPU: 44
 -----------Memoria do processo em execucao-----------
 Variavel 0
-1000
+1039
 Variavel 1
 502
 Variavel 2
@@ -3110,10 +3445,1666 @@ Variavel 4
 0
 [0;36m
 ----- Relatorio de processo -----
-[0mPID: 2
+[0mPID: 5
+Prioridade: 1
+ID Processo pai: 0
+Contador de programa: 0
+Estado: [0;33mPronto
+[0mTempo de inicio: 41
+Tempo em processamento: 1
+-----------------------------------------------------------------
+
+Memoria do Processo: 5
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
 Prioridade: 3
 ID Processo pai: 0
-Contad
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+[31mAlocando processo: 4
+[0m
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 4
+Numero de alocacoes: 5
+Numero medio de fragmentos: 0.80
+Tempo de alocacao: 25
+Tempo medio de alocacao: 5.00
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m          [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 12
+[0m[32mOcupados: 8
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 4
+Prioridade: 1
+Id processo pai: 0
+Contador de programa: 1
+Estado: [32mEm execução
+[0mTempo de inicio: 40
+Tempo de cpu: 47
+Tempo total da CPU: 45
+-----------Memoria do processo em execucao-----------
+Variavel 0
+1039
+Variavel 1
+502
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 5
+Prioridade: 1
+ID Processo pai: 0
+Contador de programa: 0
+Estado: [0;33mPronto
+[0mTempo de inicio: 41
+Tempo em processamento: 1
+-----------------------------------------------------------------
+
+Memoria do Processo: 5
+Variavel 0
+1039
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+[31mTrocando contexto
+[0m
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 4
+Numero de alocacoes: 5
+Numero medio de fragmentos: 0.80
+Tempo de alocacao: 25
+Tempo medio de alocacao: 5.00
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m          [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 12
+[0m[32mOcupados: 8
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 4
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [0;33mPronto
+[0mTempo de inicio: 40
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 4
+Variavel 0
+0
+Variavel 1
+502
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 5
+Prioridade: 1
+Id processo pai: 0
+Contador de programa: 0
+Estado: [32mEm execução
+[0mTempo de inicio: 41
+Tempo de cpu: 47
+Tempo total da CPU: 46
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+502
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+[31mAlocando processo: 5
+[0m
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 4
+Numero de alocacoes: 6
+Numero medio de fragmentos: 0.67
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 3
+[0m[32mOcupados: 17
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 4
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [0;33mPronto
+[0mTempo de inicio: 40
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 4
+Variavel 0
+0
+Variavel 1
+502
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 5
+Prioridade: 1
+Id processo pai: 0
+Contador de programa: 1
+Estado: [32mEm execução
+[0mTempo de inicio: 41
+Tempo de cpu: 49
+Tempo total da CPU: 47
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+1000
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+[31mTrocando contexto
+[0m
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 4
+Numero de alocacoes: 6
+Numero medio de fragmentos: 0.67
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 3
+[0m[32mOcupados: 17
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 4
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 2
+Estado: [32mEm execução
+[0mTempo de inicio: 40
+Tempo de cpu: 51
+Tempo total da CPU: 48
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+502
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 5
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [0;33mPronto
+[0mTempo de inicio: 41
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 5
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+1000
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 4
+Numero de alocacoes: 6
+Numero medio de fragmentos: 0.67
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 3
+[0m[32mOcupados: 17
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 4
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 3
+Estado: [32mEm execução
+[0mTempo de inicio: 40
+Tempo de cpu: 53
+Tempo total da CPU: 49
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 5
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [0;33mPronto
+[0mTempo de inicio: 41
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 5
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+1000
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 4
+Numero de alocacoes: 6
+Numero medio de fragmentos: 0.67
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 3
+[0m[32mOcupados: 17
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 4
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 4
+Estado: [32mEm execução
+[0mTempo de inicio: 40
+Tempo de cpu: 55
+Tempo total da CPU: 50
+-----------Memoria do processo em execucao-----------
+Variavel 0
+1000
+Variavel 1
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 5
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [0;33mPronto
+[0mTempo de inicio: 41
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 5
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+1000
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 4
+Numero de alocacoes: 6
+Numero medio de fragmentos: 0.67
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 3
+[0m[32mOcupados: 17
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 4
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 5
+Estado: [32mEm execução
+[0mTempo de inicio: 40
+Tempo de cpu: 57
+Tempo total da CPU: 51
+-----------Memoria do processo em execucao-----------
+Variavel 0
+1000
+Variavel 1
+500
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 5
+Prioridade: 2
+ID Processo pai: 0
+Contador de programa: 2
+Estado: [0;33mPronto
+[0mTempo de inicio: 41
+Tempo em processamento: 3
+-----------------------------------------------------------------
+
+Memoria do Processo: 5
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+1000
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+Processo 4 finalizado ... 
+[31mTrocando contexto
+[0m
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 5
+Numero de alocacoes: 6
+Numero medio de fragmentos: 0.83
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 5
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 2
+Estado: [32mEm execução
+[0mTempo de inicio: 41
+Tempo de cpu: 55
+Tempo total da CPU: 52
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+1000
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 5
+Numero de alocacoes: 6
+Numero medio de fragmentos: 0.83
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 5
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 3
+Estado: [32mEm execução
+[0mTempo de inicio: 41
+Tempo de cpu: 57
+Tempo total da CPU: 53
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+1000
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 5
+Numero de alocacoes: 6
+Numero medio de fragmentos: 0.83
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 5
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 4
+Estado: [32mEm execução
+[0mTempo de inicio: 41
+Tempo de cpu: 59
+Tempo total da CPU: 54
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+1000
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 5
+Numero de alocacoes: 6
+Numero medio de fragmentos: 0.83
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 5
+Prioridade: 2
+Id processo pai: 0
+Contador de programa: 5
+Estado: [32mEm execução
+[0mTempo de inicio: 41
+Tempo de cpu: 61
+Tempo total da CPU: 55
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+[0;36m
+----- Relatorio de processo -----
+[0mPID: 3
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 15
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 3
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+[31mTrocando contexto
+[0m
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 5
+Numero de alocacoes: 6
+Numero medio de fragmentos: 0.83
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 5
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 41
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 5
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 3
+Prioridade: 3
+Id processo pai: 0
+Contador de programa: 6
+Estado: [32mEm execução
+[0mTempo de inicio: 15
+Tempo de cpu: 63
+Tempo total da CPU: 56
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 5
+Numero de alocacoes: 6
+Numero medio de fragmentos: 0.83
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 5
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 41
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 5
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 3
+Prioridade: 3
+Id processo pai: 0
+Contador de programa: 7
+Estado: [32mEm execução
+[0mTempo de inicio: 15
+Tempo de cpu: 65
+Tempo total da CPU: 57
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 5
+Numero de alocacoes: 6
+Numero medio de fragmentos: 0.83
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 5
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 41
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 5
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 3
+Prioridade: 3
+Id processo pai: 0
+Contador de programa: 8
+Estado: [32mEm execução
+[0mTempo de inicio: 15
+Tempo de cpu: 67
+Tempo total da CPU: 58
+-----------Memoria do processo em execucao-----------
+Variavel 0
+1000
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 5
+Numero de alocacoes: 6
+Numero medio de fragmentos: 0.83
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m  [32m]
+
+[0m[32mLivres: 5
+[0m[32mOcupados: 15
+[0m[32mTotal: 20
+[0m[0;36m
+----- Relatorio de processo -----
+[0mPID: 5
+Prioridade: 3
+ID Processo pai: 0
+Contador de programa: 6
+Estado: [0;33mPronto
+[0mTempo de inicio: 41
+Tempo em processamento: 7
+-----------------------------------------------------------------
+
+Memoria do Processo: 5
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 3
+Prioridade: 3
+Id processo pai: 0
+Contador de programa: 9
+Estado: [32mEm execução
+[0mTempo de inicio: 15
+Tempo de cpu: 69
+Tempo total da CPU: 59
+-----------Memoria do processo em execucao-----------
+Variavel 0
+1000
+Variavel 1
+500
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+
+Comando U
+Processo 3 finalizado ... 
+[31mTrocando contexto
+[0m
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 6
+Numero de alocacoes: 6
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m         [32m]
+
+[0m[32mLivres: 11
+[0m[32mOcupados: 9
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 5
+Prioridade: 3
+Id processo pai: 0
+Contador de programa: 6
+Estado: [32mEm execução
+[0mTempo de inicio: 41
+Tempo de cpu: 67
+Tempo total da CPU: 60
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 6
+Numero de alocacoes: 6
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m         [32m]
+
+[0m[32mLivres: 11
+[0m[32mOcupados: 9
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 5
+Prioridade: 3
+Id processo pai: 0
+Contador de programa: 7
+Estado: [32mEm execução
+[0mTempo de inicio: 41
+Tempo de cpu: 69
+Tempo total da CPU: 61
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+1000
+Variavel 7
+500
+Variavel 8
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 6
+Numero de alocacoes: 6
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m         [32m]
+
+[0m[32mLivres: 11
+[0m[32mOcupados: 9
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 5
+Prioridade: 3
+Id processo pai: 0
+Contador de programa: 8
+Estado: [32mEm execução
+[0mTempo de inicio: 41
+Tempo de cpu: 71
+Tempo total da CPU: 62
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+0
+Variavel 7
+500
+Variavel 8
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 6
+Numero de alocacoes: 6
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m         [32m]
+
+[0m[32mLivres: 11
+[0m[32mOcupados: 9
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 5
+Prioridade: 3
+Id processo pai: 0
+Contador de programa: 9
+Estado: [32mEm execução
+[0mTempo de inicio: 41
+Tempo de cpu: 73
+Tempo total da CPU: 63
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+0
+Variavel 7
+0
+Variavel 8
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 6
+Numero de alocacoes: 6
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m         [32m]
+
+[0m[32mLivres: 11
+[0m[32mOcupados: 9
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 5
+Prioridade: 3
+Id processo pai: 0
+Contador de programa: 10
+Estado: [32mEm execução
+[0mTempo de inicio: 41
+Tempo de cpu: 75
+Tempo total da CPU: 64
+-----------Memoria do processo em execucao-----------
+Variavel 0
+0
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+0
+Variavel 7
+0
+Variavel 8
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 6
+Numero de alocacoes: 6
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m         [32m]
+
+[0m[32mLivres: 11
+[0m[32mOcupados: 9
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 5
+Prioridade: 3
+Id processo pai: 0
+Contador de programa: 11
+Estado: [32mEm execução
+[0mTempo de inicio: 41
+Tempo de cpu: 77
+Tempo total da CPU: 65
+-----------Memoria do processo em execucao-----------
+Variavel 0
+1000
+Variavel 1
+0
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+0
+Variavel 7
+0
+Variavel 8
+0
+
+Comando U
+
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 6
+Numero de alocacoes: 6
+Numero medio de fragmentos: 1.00
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m  [32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m[32m|[0m         [32m]
+
+[0m[32mLivres: 11
+[0m[32mOcupados: 9
+[0m[32mTotal: 20
+[0m[0;34m
+-----Relatório do processo atualmente em execução-----
+[0mPID: 5
+Prioridade: 3
+Id processo pai: 0
+Contador de programa: 12
+Estado: [32mEm execução
+[0mTempo de inicio: 41
+Tempo de cpu: 79
+Tempo total da CPU: 66
+-----------Memoria do processo em execucao-----------
+Variavel 0
+1000
+Variavel 1
+500
+Variavel 2
+0
+Variavel 3
+0
+Variavel 4
+0
+Variavel 5
+0
+Variavel 6
+0
+Variavel 7
+0
+Variavel 8
+0
+
+Comando U
+Processo 5 finalizado ... 
+[31mTrocando contexto
+[0m
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 7
+Numero de alocacoes: 6
+Numero medio de fragmentos: 1.17
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m                    [32m]
+
+[0m[32mLivres: 20
+[0m[32mOcupados: 0
+[0m[32mTotal: 20
+[0m[31m
+-----CPU vazia!-----
+[0mTempo total: 67
+
+Comando U
+[31mTrocando contexto
+[0m
+Comando I
+[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 7
+Numero de alocacoes: 6
+Numero medio de fragmentos: 1.17
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m                    [32m]
+
+[0m[32mLivres: 20
+[0m[32mOcupados: 0
+[0m[32mTotal: 20
+[0m[31m
+-----CPU vazia!-----
+[0mTempo total: 68
+
+Comando M
+[0;35m
+ Tempo medio de ciclo = 2.00
+[0m[0;36m
+
+Memoria:[0m
+Numero total de fragmentos na memoria 7
+Numero de alocacoes: 6
+Numero medio de fragmentos: 1.17
+Tempo de alocacao: 27
+Tempo medio de alocacao: 4.50
+Percentual de negacao de requisicao de alocacao: 0.00 porcento!
+Situacao da memoria atual:
+[32m
+[[0m                    [32m]
+
+[0m[32mLivres: 20
+[0m[32mOcupados: 0
+[0m[32mTotal: 20
+[0m[31m
+-----CPU vazia!-----
+[0mTempo total: 68
+
 Escolha o metodo de escalonamento
 1. Escalonamento por Chaveamento Circular
 2. Escalonamento por prioridades

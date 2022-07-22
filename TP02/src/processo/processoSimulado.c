@@ -33,14 +33,23 @@ char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecn
         instrucaoN(processo, instrucao, alocador, tecnica);
         if (processo->memoria == NULL)
         {
-            fprintf(stderr, "Erro ao alocar memoria para o processo %d -- Processo adicionado na lista de bloqueados por memoria", processo->id);
-            if (processo->prioridade > 0)
-                processo->prioridade--;
-            alocador->qtalocsnegadas++;
-            return 'M';
+            // if (memvirtual)
+            // {
+            //     aloca_memoria_simulada(alocadorv, first_fit);
+            //      endereça processo com endereço virtual
+            //     Coloca processo na lista de Estado Pronto
+            // }
+            // else
+            // {
+                printf(BLUE "Alocação negada!" RESET);
+                fprintf(stderr, "Erro ao alocar memoria para o processo %d -- Processo adicionado na lista de bloqueados por memoria", processo->id);
+                if (processo->prioridade > 0)
+                    processo->prioridade--;
+                alocador->qtalocsnegadas++;
+                return 'M';
+            // }
         }
-        calc_qtfragmentos(alocador);
-        printf("ProcessoSimulado.c - ExecutaInstrucao -  qt frags = %d", alocador->qtfragmentos);
+        alocador->qtalocs++;
         processo->contadorPrograma++;
         break;
     case 'D':
@@ -83,27 +92,23 @@ void instrucaoN(processoSimulado *processo, instrucao instrucao, alocador_t *alo
 {
     if (tecnica == 1)
     {
-        alocador->qtalocs++;
         processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, first_fit);
     }
     else if (tecnica == 2)
     {
-        alocador->qtalocs++;
         processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, next_fit);
     }
     else if (tecnica == 3)
     {
-        alocador->qtalocs++;
         processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, best_fit);
     }
     else if (tecnica == 4)
     {
-        alocador->qtalocs++;
         processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, worst_fit);
     }
 
-    printf(RED"Alocando processo: %d\n"RESET,processo->id);
-    
+    printf(RED "Alocando processo: %d\n" RESET, processo->id);
+
     processo->tammem = instrucao.var1;
 }
 
