@@ -7,7 +7,7 @@
 #define RED "\x1b[31m"
 #define RESET "\x1b[0m"
 
-void inicializaProcessoC(processoControle *gerenciador, int tipo, int tecmemoria)
+void inicializaProcessoC(processoControle *gerenciador, int tipo, int tecmemoria, int memvirtual)
 {
     gerenciador->unidadeTempo = 0;
     inicializaCpu(&gerenciador->cpu);
@@ -22,6 +22,7 @@ void inicializaProcessoC(processoControle *gerenciador, int tipo, int tecmemoria
     gerenciador->ultimoindice = 0;
     gerenciador->tipoEscalonamento = tipo;
     gerenciador->tipoTecMemoria = tecmemoria;
+    gerenciador->memvirtual = memvirtual;
 }
 
 void executaProcessoC(processoControle *gerenciador, Pipe *p)
@@ -36,15 +37,16 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
     marcador_t marcador;
     inicializa_marcador(&marcador, TAMANHO_MEM);
     alocador_t alocador;
-    inicializa_alocador(&alocador, marcador, memoria, TAMANHO_MEM);
-    // if(gerenciador.memvirtual){
-    //     memoria_t memoriav;
-    //     inicializa_memoria(&memoriav, TAMANHO_MEMV);
-    //     marcador_t marcadorv;
-    //     inicializa_marcador(&marcadorv, TAMANHO_MEMV);
-    //     alocador_t alocadorv;
-    //     inicializa_alocador(&alocadorv, marcadorv, memoriav, TAMANHO_MEMV);
-    // }
+    inicializa_alocador(&alocador, marcador, memoria, TAMANHO_MEM, MAX_PROCESSOS);
+    memoria_t memoriav;
+    marcador_t marcadorv;
+    alocador_t alocadorv;
+    if (gerenciador->memvirtual)
+    {
+        inicializa_memoria(&memoriav, TAMANHO_MEMV);
+        inicializa_marcador(&marcadorv, TAMANHO_MEMV);
+        inicializa_alocador(&alocadorv, marcadorv, memoriav, TAMANHO_MEMV, MAX_PROCESSOS);
+    }
     printf("\nCriando Processo Gerenciador de Processos...\n");
 
     leArquivoInstrucao(&inst, "files/init.txt");
@@ -57,22 +59,22 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
     while (1)
     {
         tam = lerPipe(p, instPipe, 1024);
-        executarProcessoSimulado(gerenciador, instPipe, tam, &alocador, &memoria, &marcador);
+        executarProcessoSimulado(gerenciador, instPipe, tam, &alocador, &memoria, &marcador, &alocadorv, &memoriav, &marcadorv);
     }
 }
-void escalona(processoControle *gerenciador)
+void escalona(processoControle *gerenciador, alocador_t* alocador, alocador_t* alocadorv)
 {
     if (gerenciador->tipoEscalonamento == 1)
     {
-        escalonarTempo(gerenciador);
+        escalonarTempo(gerenciador,alocador, alocadorv);
     }
     else
     {
-        escalonarProcessos(gerenciador);
+        escalonarProcessos(gerenciador,alocador, alocadorv);
     }
 }
 
-void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe, int tamPipe, alocador_t *alocador, memoria_t *memoria, marcador_t *marcador)
+void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe, int tamPipe, alocador_t *alocador, memoria_t *memoria, marcador_t *marcador,alocador_t *alocadorv, memoria_t *memoriav, marcador_t *marcadorv)
 {
     int index, retorno;
     char resultado;
@@ -84,7 +86,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
         {
             printf("\nComando U\n");
             // FIM DE UNIDADE DE TEMPO
-            resultado = executaProcesso(&gerenciador->cpu, alocador, gerenciador->tipoTecMemoria);
+            resultado = executaProcesso(&gerenciador->cpu, alocador, gerenciador->tipoTecMemoria, gerenciador->memvirtual);
             fprintf(stderr, "processocontrole.c - executa processo simulado - resultado de executa processo %c.\n", resultado);
             if (resultado == 'B')
             {
@@ -108,14 +110,28 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                     insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[i]);
                 }
             }
+            else if (resultado == 'V')
+            {
+                int eqindice,indice;
+                indice = encontraIndiceTP(gerenciador, gerenciador->cpu.procexec.id);
+                for (int i = 0; i < MAX_PROCESSOS; ++i)
+                {
+                    if(gerenciador->cpu.procexec.tammem <= gerenciador->tabelaDeProcessos[i].tammem && gerenciador->cpu.procexec.id != gerenciador->tabelaDeProcessos[i].id && gerenciador->tabelaDeProcessos[i].tempoCPU > 0){
+                        desaloca_memoria_simulada(alocador, gerenciador->tabelaDeProcessos[i].memoria);
+                        alocadorv->espacodeEnderecos[gerenciador->tabelaDeProcessos[i].id]=alocadorv->ultimoEndereco;
+                        gerenciador->tabelaDeProcessos[i].memoria = aloca_memoria_simulada(alocadorv,gerenciador->tabelaDeProcessos[i].tammem,first_fit);
+                        alocadorv->ultimoEndereco = alocadorv->ultimoEndereco + gerenciador->tabelaDeProcessos[i].tammem;
+                    }   
+                }
+            }
             else if (resultado == 'T')
             {
                 int tentativa, j, indice;
                 // TERMINA PROCESSO SIMULADO E TENTA USAR A MEMORIA PARA O ALGUM PROCESSO BLOQUEADO POR MEMORIA
                 indice = encontraIndiceTP(gerenciador, gerenciador->cpu.procexec.id);
                 retiraProcessoTabelaProcessos(gerenciador, indice, alocador);
-                // if (gerenciador.memvirtual == 0)
-                // {
+                if (gerenciador->memvirtual == 0)
+                {
                     elementoEBM *apAux;
                     apAux = gerenciador->estadoBloqueadoM.apPrimeiro;
                     fprintf(stderr, "ProcessoControle.c ---  tam estado bloqueadom : %d\n", gerenciador->estadoBloqueadoM.tam);
@@ -133,7 +149,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                             insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->tabelaDeProcessos[j].id, gerenciador->tabelaDeProcessos[j].prioridade);
                         }
                     }
-                // }
+                }
             }
             else if (resultado == 'F')
             {
@@ -159,7 +175,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                     insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->tabelaDeProcessos[pos].id, gerenciador->tabelaDeProcessos[pos].prioridade);
                 }
             }
-            escalona(gerenciador);
+            escalona(gerenciador,alocador,alocadorv);
         }
         else if (instrucaoPipe[index] == 'L')
         {
@@ -224,7 +240,7 @@ void comandoB(processoControle *gerenciador)
     }
 }
 
-int trocaContexto(processoControle *gerenciador)
+int trocaContexto(processoControle *gerenciador, alocador_t *alocador, alocador_t *alocadorv)
 {
     printf(RED "Trocando contexto\n" RESET);
     processoSimulado p;
@@ -249,45 +265,69 @@ int trocaContexto(processoControle *gerenciador)
     fprintf(stderr, "ProcessoControle.c - trocacontexto - teste -- indice removido = %d\n", gerenciador->tabelaDeProcessos[i].id);
     gerenciador->tabelaDeProcessos[i].estado = 1;
     insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[i]);
-    //if(gerenciador.memvirtual){
-    //verifica se o processo gerenciador.cpu.procexec.id possui endereço virtual
-    //desaloca o processo gerenciador.cpu.procexec.id da memoria virtual
-    //tenta alocar na fisica
-    //desaloca alguem da memoria virtual
-    //zera seu endereço virtual
-    //aloca ele na fisica
-    //}
+    if (gerenciador->memvirtual)
+    {
+        if (alocador->espacodeEnderecos[gerenciador->cpu.procexec.id] != -1){
+            desaloca_memoria_simulada(alocadorv,gerenciador->cpu.procexec.memoria);
+            if(gerenciador->tipoEscalonamento == 1){
+                gerenciador->cpu.procexec.memoria = aloca_memoria_simulada(alocador,gerenciador->cpu.procexec.tammem,first_fit);
+            }
+            else if(gerenciador->tipoEscalonamento == 2){
+                gerenciador->cpu.procexec.memoria = aloca_memoria_simulada(alocador,gerenciador->cpu.procexec.tammem,next_fit);
+            }
+            else if(gerenciador->tipoEscalonamento == 3){
+                gerenciador->cpu.procexec.memoria = aloca_memoria_simulada(alocador,gerenciador->cpu.procexec.tammem,best_fit);
+            }
+            else if(gerenciador->tipoEscalonamento == 4){
+                gerenciador->cpu.procexec.memoria = aloca_memoria_simulada(alocador,gerenciador->cpu.procexec.tammem,worst_fit);
+            }
+            if(gerenciador->cpu.procexec.memoria == NULL){
+                int eqindice,indice;
+                indice = encontraIndiceTP(gerenciador, gerenciador->cpu.procexec.id);
+                for (int i = 0; i < MAX_PROCESSOS; ++i)
+                {
+                    if(gerenciador->cpu.procexec.tammem <= gerenciador->tabelaDeProcessos[i].tammem && gerenciador->cpu.procexec.id != gerenciador->tabelaDeProcessos[i].id && gerenciador->tabelaDeProcessos[i].tempoCPU > 0){
+                        desaloca_memoria_simulada(alocador, gerenciador->tabelaDeProcessos[i].memoria);
+                        alocadorv->espacodeEnderecos[gerenciador->tabelaDeProcessos[i].id]=alocadorv->ultimoEndereco;
+                        gerenciador->tabelaDeProcessos[i].memoria = aloca_memoria_simulada(alocadorv,gerenciador->tabelaDeProcessos[i].tammem,first_fit);
+                        alocadorv->ultimoEndereco = alocadorv->ultimoEndereco + gerenciador->tabelaDeProcessos[i].tammem;
+                    }   
+                }
+            }
+        }
+        alocadorv->espacodeEnderecos[gerenciador->cpu.procexec.id] = -1;
+    }
     return 1;
 }
-void escalonarTempo(processoControle *gerenciador)
+void escalonarTempo(processoControle *gerenciador, alocador_t *alocador, alocador_t *alocadorv)
 {
     if (gerenciador->cpu.tempoProcessoAtual >= 5 || gerenciador->cpu.procexec.id == -1)
-        trocaContexto(gerenciador);
+        trocaContexto(gerenciador,alocador,alocadorv);
 }
-void escalonarProcessos(processoControle *gerenciador)
+void escalonarProcessos(processoControle *gerenciador, alocador_t *alocador, alocador_t *alocadorv)
 {
     if (gerenciador->cpu.procexec.prioridade == 0)
     {
         gerenciador->cpu.procexec.prioridade = 1;
-        trocaContexto(gerenciador);
+        trocaContexto(gerenciador,alocador,alocadorv);
     }
     else if (gerenciador->cpu.procexec.prioridade == 1 && gerenciador->cpu.tempoProcessoAtual > 1)
     {
         gerenciador->cpu.procexec.prioridade = 2;
-        trocaContexto(gerenciador);
+        trocaContexto(gerenciador,alocador,alocadorv);
     }
     else if (gerenciador->cpu.procexec.prioridade == 2 && gerenciador->cpu.tempoProcessoAtual > 3)
     {
         gerenciador->cpu.procexec.prioridade = 3;
-        trocaContexto(gerenciador);
+        trocaContexto(gerenciador,alocador,alocadorv);
     }
     else if (gerenciador->cpu.procexec.prioridade == 3 && gerenciador->cpu.tempoProcessoAtual > 7)
     {
-        trocaContexto(gerenciador);
+        trocaContexto(gerenciador,alocador,alocadorv);
     }
     else if (gerenciador->cpu.procexec.id == -1)
     {
-        trocaContexto(gerenciador);
+        trocaContexto(gerenciador,alocador, alocadorv);
     }
 }
 

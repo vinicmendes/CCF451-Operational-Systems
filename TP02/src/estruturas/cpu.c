@@ -23,14 +23,14 @@ void insereProcesso(cpu *cpu, processoSimulado p)
 }
 
 // executando o processo recebido
-char executaProcesso(cpu *cpu, alocador_t* alocador,int tecnica)
+char executaProcesso(cpu *cpu, alocador_t* alocador,int tecnica, int memoriav)
 {
     char retorno;
     cpu->unidTempo++;
     cpu->tempoProcessoAtual++;
     if (cpu->procexec.id == -1)
         return ' ';
-    retorno = executaInstrucao(&cpu->procexec, alocador,tecnica);
+    retorno = executaInstrucao(&cpu->procexec, alocador,tecnica,memoriav);
     incrementaTempoCPU(&cpu->procexec);
     return retorno;
 }

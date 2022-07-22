@@ -23,7 +23,7 @@ void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrinci
     processo->tempoAtual = 0;
 }
 
-char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecnica)
+char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecnica, int memvirtual)
 {
     instrucao instrucao = processo->programa[processo->contadorPrograma];
     fprintf(stderr, "processoSimulado.c - executa instrucao - contador de programa == %d id instrucao == %c. Processo que realizou a instrucao == %d\n", processo->contadorPrograma, instrucao.id, processo->id);
@@ -33,23 +33,19 @@ char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecn
         instrucaoN(processo, instrucao, alocador, tecnica);
         if (processo->memoria == NULL)
         {
-            // if (memvirtual)
-            // {
-            //      desalocar  um processo da memoria fisica
-            //     aloca_memoria_simulada(alocadorv, first_fit);
-            //      endereça processo com endereço virtual
-            //     Coloca processo na lista de Estado Pronto            
-            //      alocar  processo negado que está em execução na memoria fisica
-            // }
-            // else
-            // {
+            if (memvirtual)
+            {
+                return 'V';
+            }
+            else
+            {
                 printf(BLUE "Alocação negada!" RESET);
                 fprintf(stderr, "Erro ao alocar memoria para o processo %d -- Processo adicionado na lista de bloqueados por memoria", processo->id);
                 if (processo->prioridade > 0)
                     processo->prioridade--;
                 alocador->qtalocsnegadas++;
                 return 'M';
-            // }
+            }
         }
         alocador->qtalocs++;
         processo->contadorPrograma++;

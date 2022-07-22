@@ -24,7 +24,7 @@ typedef struct ProcessoSimulado
 
 void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrincipal,
                                 int contadorPrograma, int prioridade, int estado, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao, int tammem); // inicialização do processo
-char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecnica);                                                                             // executa uma instrução
+char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecnica, int memvirtual);                                                                             // executa uma instrução
 void instrucaoN(processoSimulado *processo, instrucao instrucao, alocador_t *alocador, int tecnica);                                                              // instrução N
 void instrucaoD(processoSimulado *processo, instrucao instrucao);                                                                                                 // instrução D
 void instrucaoV(processoSimulado *processo, instrucao instrucao);                                                                                                 // instrução V

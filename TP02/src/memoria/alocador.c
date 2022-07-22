@@ -8,7 +8,7 @@
 #define BLUE "\e[0;36m"
 #define RESET "\x1b[0m"
 
-void inicializa_alocador(alocador_t *alocador, marcador_t marcador, memoria_t memoria, int tamanho)
+void inicializa_alocador(alocador_t *alocador, marcador_t marcador, memoria_t memoria, int tamanho, int MAX_PROCESSOS)
 {
     int i;
     alocador->memoria = memoria;
@@ -21,8 +21,12 @@ void inicializa_alocador(alocador_t *alocador, marcador_t marcador, memoria_t me
     alocador->qtalocs = 0;
     alocador->qtalocsnegadas = 0;
     alocador->alocacoes = (int *)malloc(tamanho * sizeof(int));
+    alocador->ultimoEndereco = 0;
     for (i = 0; i < tamanho; ++i)
         alocador->alocacoes[i] = 0;
+    alocador->espacodeEnderecos = (enderecoVirtual *) malloc(MAX_PROCESSOS * sizeof(enderecoVirtual));
+    for (i = 0; i < MAX_PROCESSOS; ++i)
+        alocador->espacodeEnderecos[i] = -1;
 }
 
 void destroi_alocador(alocador_t *alocador)
