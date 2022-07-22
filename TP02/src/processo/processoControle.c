@@ -2,6 +2,7 @@
 
 #define MAX_PROCESSOS 50
 #define TAMANHO_MEM 20
+#define TAMANHO_MEMV 2000
 #define MAGENTA "\e[0;35m"
 #define RED "\x1b[31m"
 #define RESET "\x1b[0m"
@@ -38,11 +39,11 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
     inicializa_alocador(&alocador, marcador, memoria, TAMANHO_MEM);
     // if(gerenciador.memvirtual){
     //     memoria_t memoriav;
-    //     inicializa_memoria(&memoriav, TAMANHO_MEM);
+    //     inicializa_memoria(&memoriav, TAMANHO_MEMV);
     //     marcador_t marcadorv;
-    //     inicializa_marcador(&marcadorv, TAMANHO_MEM);
+    //     inicializa_marcador(&marcadorv, TAMANHO_MEMV);
     //     alocador_t alocadorv;
-    //     inicializa_alocador(&alocadorv, marcadorv, memoriav, TAMANHO_MEM);
+    //     inicializa_alocador(&alocadorv, marcadorv, memoriav, TAMANHO_MEMV);
     // }
     printf("\nCriando Processo Gerenciador de Processos...\n");
 

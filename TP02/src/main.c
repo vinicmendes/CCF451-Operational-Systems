@@ -22,6 +22,7 @@ int main()
         printf("2. Escalonamento por prioridades\n");
         scanf("%d", &tipoescalonamento);
     }
+    
     // define o tipo de escalonamento aqui
     while (tipotecmemoria != 1 && tipotecmemoria != 2 && tipotecmemoria != 3 && tipotecmemoria != 4)
     {

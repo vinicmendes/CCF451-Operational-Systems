@@ -35,9 +35,11 @@ char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecn
         {
             // if (memvirtual)
             // {
+            //      desalocar  um processo da memoria fisica
             //     aloca_memoria_simulada(alocadorv, first_fit);
             //      endereça processo com endereço virtual
-            //     Coloca processo na lista de Estado Pronto
+            //     Coloca processo na lista de Estado Pronto            
+            //      alocar  processo negado que está em execução na memoria fisica
             // }
             // else
             // {
