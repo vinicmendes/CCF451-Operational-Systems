@@ -23,14 +23,14 @@ void insereProcesso(cpu *cpu, processoSimulado p)
 }
 
 // executando o processo recebido
-char executaProcesso(cpu *cpu, alocador_t* alocador,int tecnica, int memoriav)
+char executaProcesso(cpu *cpu, alocador_t *alocador, int tecnica, int memoriav,gerenciador_virtual_t *gerenciadorVitual)
 {
     char retorno;
     cpu->unidTempo++;
     cpu->tempoProcessoAtual++;
     if (cpu->procexec.id == -1)
         return ' ';
-    retorno = executaInstrucao(&cpu->procexec, alocador,tecnica,memoriav);
+    retorno = executaInstrucao(&cpu->procexec, alocador, tecnica, memoriav, gerenciadorVitual);
     incrementaTempoCPU(&cpu->procexec);
     return retorno;
 }
@@ -51,16 +51,16 @@ void alterarContadorPrograma(cpu *cpu)
     cpu->procexec.contadorPrograma += cpu->procexec.programa[cpu->procexec.contadorPrograma].var1 + 1;
 }
 
-void mostrarProcessoCpu(cpu *cpu)
+void mostrarProcessoCpu(cpu *cpu, gerenciador_virtual_t *gerenciadorVitual)
 {
-    int tammem=0;
+    int tammem = 0;
     if (cpu->procexec.id == -1)
     {
-        printf(RED"\n-----CPU vazia!-----\n"RESET);
+        printf(RED "\n-----CPU vazia!-----\n" RESET);
         printf("Tempo total: %d\n", cpu->unidTempo);
         return;
     }
-    printf(BLUE"\n-----Relatório do processo atualmente em execução-----\n"RESET);
+    printf(BLUE "\n-----Relatório do processo atualmente em execução-----\n" RESET);
     printf("PID: %d\n", cpu->procexec.id);
     printf("Prioridade: %d\n", cpu->procexec.prioridade);
     printf("Id processo pai: %d\n", cpu->procexec.idPrincipal);
@@ -101,13 +101,5 @@ void mostrarProcessoCpu(cpu *cpu)
     printf("Tempo de cpu: %d\n", cpu->unidTempo + cpu->procexec.tempoCPU);
     printf("Tempo total da CPU: %d\n", cpu->unidTempo);
     printf("-----------Memoria do processo em execucao-----------\n");
-    if(cpu->procexec.memoria != NULL && cpu->procexec.tammem > 0){
-        for(int i=0;i<cpu->procexec.tammem;i++){
-            printf("Variavel %d\n",i);
-            printf("%d\n",cpu->procexec.memoria[i]);
-        }
-    }
-    else{
-        printf("Memoria Vazia\n");
-    }
+    mostrarVariaveisProcesso(gerenciadorVitual,cpu->procexec.id,cpu->procexec.tammem);
 }

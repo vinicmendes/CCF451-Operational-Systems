@@ -6,6 +6,7 @@
 #include "../memoria/alocador.h"
 #include "../memoria/marcador.h"
 #include "../memoria/memoria.h"
+#include "../memoria/virtual.h"
 
 typedef struct ProcessoSimulado
 {
@@ -24,17 +25,17 @@ typedef struct ProcessoSimulado
 
 void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrincipal,
                                 int contadorPrograma, int prioridade, int estado, int *memoria, int tempoInicio, int tempoCPU, instrucao *instrucao, int tammem); // inicialização do processo
-char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecnica, int memvirtual);                                                                             // executa uma instrução
-void instrucaoN(processoSimulado *processo, instrucao instrucao, alocador_t *alocador, int tecnica);                                                              // instrução N
-void instrucaoD(processoSimulado *processo, instrucao instrucao);                                                                                                 // instrução D
-void instrucaoV(processoSimulado *processo, instrucao instrucao);                                                                                                 // instrução V
-void instrucaoA(processoSimulado *processo, instrucao instrucao);                                                                                                 // instrução A
-void instrucaoS(processoSimulado *processo, instrucao instrucao);                                                                                                 // instrução S
+char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecnica, int memvirtual, gerenciador_virtual_t *gerenciadorVirtual);                                                                             // executa uma instrução
+void instrucaoN(processoSimulado *processo, instrucao instrucao, alocador_t *alocador, int tecnica, int memvirtual,gerenciador_virtual_t *gerenciadorVirtual);                                                              // instrução N
+void instrucaoD(processoSimulado *processo, instrucao instrucao, int memvirtual,gerenciador_virtual_t *gerenciadorVirtual);                                                                                                 // instrução D
+void instrucaoV(processoSimulado *processo, instrucao instrucao, int memvirtual,gerenciador_virtual_t *gerenciadorVirtual);                                                                                                 // instrução V
+void instrucaoA(processoSimulado *processo, instrucao instrucao, int memvirtual,gerenciador_virtual_t *gerenciadorVirtual);                                                                                                 // instrução A
+void instrucaoS(processoSimulado *processo, instrucao instrucao, int memvirtual,gerenciador_virtual_t *gerenciadorVirtual);                                                                                                 // instrução S
 void instrucaoB(processoSimulado *processo);                                                                                                                      // instrução B
 void instrucaoT(processoSimulado *processo);                                                                                                                      // instrução T
-void instrucaoR(processoSimulado *processo, instrucao instrucao);                                                                                                 // instrução R
+void instrucaoR(processoSimulado *processo, instrucao instrucao,gerenciador_virtual_t *gerenciadorVirtual);                                                                                                 // instrução R
 void calculaTempo(processoSimulado *processo);                                                                                                                    // calcula tempo de CPU atual
-void mostrarRelatorioProcesso(processoSimulado *processo);                                                                                                        // exibe status atual do processo
+void mostrarRelatorioProcesso(processoSimulado *processo, gerenciador_virtual_t *gerenciadorVitualv);                                                                                                        // exibe status atual do processo
 void incrementaTempoCPU(processoSimulado *processo);
 
 #endif

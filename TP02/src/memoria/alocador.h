@@ -1,16 +1,14 @@
 #ifndef ALOCADOR_H
 #define ALOCADOR_H
 
+
 #include "memoria.h"
 #include "marcador.h"
-
-typedef int enderecoVirtual;
 
 typedef struct
 {
     marcador_t marcador;
     memoria_t memoria;
-    enderecoVirtual *espacodeEnderecos;
     int *ultima_alocacao;
     int *alocacoes;
     int pos_ultima_alocacao;
@@ -19,7 +17,6 @@ typedef struct
     int qtalocsnegadas;
     int qtalocs;
     int tamanho;
-    int ultimoEndereco;
 } alocador_t;
 
 typedef int *(*funcao_alocacao)(alocador_t *alocador, int tam_alocar);

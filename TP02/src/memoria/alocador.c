@@ -21,12 +21,8 @@ void inicializa_alocador(alocador_t *alocador, marcador_t marcador, memoria_t me
     alocador->qtalocs = 0;
     alocador->qtalocsnegadas = 0;
     alocador->alocacoes = (int *)malloc(tamanho * sizeof(int));
-    alocador->ultimoEndereco = 0;
     for (i = 0; i < tamanho; ++i)
         alocador->alocacoes[i] = 0;
-    alocador->espacodeEnderecos = (enderecoVirtual *) malloc(MAX_PROCESSOS * sizeof(enderecoVirtual));
-    for (i = 0; i < MAX_PROCESSOS; ++i)
-        alocador->espacodeEnderecos[i] = -1;
 }
 
 void destroi_alocador(alocador_t *alocador)
@@ -53,19 +49,24 @@ void desaloca_memoria_simulada(alocador_t *alocador, int *posicao)
     alocador->alocacoes[index_base] = 0;
 }
 
-void calc_qtfragmentos(alocador_t *alocador){
-    int frag=0;
-    for(int i=0;i<alocador->tamanho;++i){
-        if(alocador->marcador[i] == 0){
-            frag=1;
+void calc_qtfragmentos(alocador_t *alocador)
+{
+    int frag = 0;
+    for (int i = 0; i < alocador->tamanho; ++i)
+    {
+        if (alocador->marcador[i] == 0)
+        {
+            frag = 1;
         }
-        if(alocador->marcador[i] == 1 && frag){
+        if (alocador->marcador[i] == 1 && frag)
+        {
             alocador->qtfragmentos++;
-            frag=0;
+            frag = 0;
             break;
-        } 
+        }
     }
-    if(frag) alocador->qtfragmentos++;
+    if (frag)
+        alocador->qtfragmentos++;
 }
 
 void exibe_memoria(alocador_t *alocador)
@@ -73,7 +74,7 @@ void exibe_memoria(alocador_t *alocador)
     int livres = 0;
     int ocupados = 0;
     printf("%s\n\nMemoria:%s\n", BLUE, RESET);
-    printf("Numero total de fragmentos na memoria %d\n",alocador->qtfragmentos);
+    printf("Numero total de fragmentos na memoria %d\n", alocador->qtfragmentos);
     printf("Numero de alocacoes: %d\n", alocador->qtalocs);
     printf("Numero medio de fragmentos: %.2lf\n", alocador->qtfragmentos / (double)alocador->qtalocs);
     printf("Tempo de alocacao: %d\n", alocador->tempoaloc);
@@ -85,12 +86,12 @@ void exibe_memoria(alocador_t *alocador)
     {
         if (alocador->marcador[i] == 1)
         {
-            printf(GREEN "|" RESET);
+            printf(GREEN "#" RESET);
             ocupados++;
         }
         else
         {
-            printf(" ");
+            printf(GREEN "." RESET);
             livres++;
         }
     }

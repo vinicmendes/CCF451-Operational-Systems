@@ -8,6 +8,7 @@
 #include "../memoria/alocador.h"
 #include "../memoria/marcador.h"
 #include "../memoria/memoria.h"
+#include "../memoria/virtual.h"
 
 // estrutura cpu contendo o processo em execução e o contador de unidade de tempo
 typedef struct Cpu
@@ -20,10 +21,10 @@ typedef struct Cpu
 
 void inicializaCpu(cpu *cpu);
 void insereProcesso(cpu *cpu, processoSimulado p);
-char executaProcesso(cpu *cpu, alocador_t *alocador, int tecnica, int memoriav);
+char executaProcesso(cpu *cpu, alocador_t *alocador, int tecnica, int memoriav, gerenciador_virtual_t *gerenciadorVitual);
 void pararProcesso(cpu *cpu, processoSimulado *p, int estado);
 void comandoU(cpu *cpu);
 void alterarContadorPrograma(cpu *cpu);
-void mostrarProcessoCpu(cpu *cpu);
+void mostrarProcessoCpu(cpu *cpu, gerenciador_virtual_t *gerenciadorVitual);
 
 #endif
