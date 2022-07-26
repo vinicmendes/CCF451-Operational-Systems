@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Jul 22 14:07:38 2022
+# Make data base, printed on Sat Jul 23 09:33:22 2022
 
 # Variables
 
@@ -47,7 +47,7 @@ LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-431f1576-3a30-4a30-876e-c3b469270add.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-75eb5626-bac3-4c22-b7a8-795509c87a74.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -61,7 +61,7 @@ PWD = /home/vinicius/TPS-SO/CCF451-Operational-Systems
 # environment
 WSL_INTEROP = /run/WSL/8_interop
 # environment
-WT_SESSION = a03bb073-4384-4ffe-a3c7-884cdc4010f5
+WT_SESSION = 2928b452-6231-46d2-bcbc-bdcc41886172
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -211,7 +211,7 @@ GNUmakefile:
 # strcache performance: lookups = 18 / hit rate = 16%
 # hash-table stats:
 # Load=15/8192=0%, Rehash=0, Collisions=1/18=6%
-# Finished Make data base on Fri Jul 22 14:07:38 2022
+# Finished Make data base on Sat Jul 23 09:33:22 2022
 
  
 make: *** No rule to make target 'all'.  Stop.
