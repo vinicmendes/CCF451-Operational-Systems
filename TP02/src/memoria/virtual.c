@@ -4,6 +4,12 @@
 
 #define FISICA  0
 #define DISCO   1
+#define MAGENTA "\e[0;33m"
+#define RED "\x1b[31m"
+#define GREEN "\x1b[32m"
+#define YELLOW "\e[0;33m"
+#define BLUE "\e[0;36m"
+#define RESET "\x1b[0m"
 
 struct dados_processo {
     int id, bloco, *mem, f_d;
@@ -100,20 +106,20 @@ void move_bloco(int* destino, int* origem) {
 }
 
 void mostra_memoriaVirtual(gerenciador_virtual_t *gv) {
-    printf("blocos da memoria fisica: [");
+    printf(GREEN"Blocos da memória física: [");
     for(int i=0; i<24; i += TAMANHO_PAGINA) {
         if(gv->fisica.marcador[i]) printf("#");
         else printf(".");
     }
-    printf("]\n");
+    printf(GREEN"]\n"RESET);
 
 
-    printf("blocos do disco: [");
+    printf(GREEN"Blocos do disco: [");
     for(int i=0; i<256; i += TAMANHO_PAGINA) {
         if(gv->disco.marcador[i]) printf("#");
         else printf(".");
     }
-    printf("]\n");
+    printf(GREEN"]\n"RESET);
 }
 
 

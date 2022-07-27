@@ -302,7 +302,6 @@ void escalonarProcessos(processoControle *gerenciador, alocador_t *alocador)
 
 void processoImpressao(processoControle *gerenciador, alocador_t *alocador, gerenciador_virtual_t *gerenciadorVirtual)
 {
-    printf("%d\n",gerenciador->memvirtual);
     if (gerenciador->memvirtual == 0)
     {
         exibe_memoria(alocador);

@@ -80,8 +80,8 @@ void exibe_memoria(alocador_t *alocador)
     printf("Tempo de alocacao: %d\n", alocador->tempoaloc);
     printf("Tempo medio de alocacao: %.2lf\n", alocador->tempoaloc / (double)alocador->qtalocs);
     printf("Percentual de negacao de requisicao de alocacao: %.2lf porcento!\n", alocador->qtalocsnegadas / (double)alocador->qtalocs * 100);
-    printf("Situacao da memoria atual:\n");
-    printf(GREEN "\n[" RESET);
+    printf(GREEN"Situacao da memoria atual: ");
+    printf(GREEN "[" RESET);
     for (int i = 0; i < alocador->tamanho; i++)
     {
         if (alocador->marcador[i] == 1)

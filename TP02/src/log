@@ -7,6 +7,7 @@ leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
+pipe.c - pipe - n = 1
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
@@ -15,39 +16,39 @@ leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-pipe.c - pipe - n = 17
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
 processoSimulado.c - executa instrucao - contador de programa == 0 id instrucao == N. Processo que realizou a instrucao == 0
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 processocontrole.c - executa processo simulado - resultado de executa processo  .
 leitor.c - lerArquivoPipe - leu: I
+pipe.c - pipe - n = 16
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: L
@@ -77,40 +78,40 @@ leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: L
 leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
-leitor.c - lerArquivoPipe - leu: U
-leitor.c - lerArquivoPipe - leu: I
 processoSimulado.c - executa instrucao - contador de programa == 1 id instrucao == D. Processo que realizou a instrucao == 0
-leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
 processocontrole.c - executa processo simulado - resultado de executa processo  .
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
+leitor.c - lerArquivoPipe - leu: I
+leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
 leitor.c - lerArquivoPipe - leu: U
 leitor.c - lerArquivoPipe - leu: I
@@ -215,11 +216,13 @@ processocontrole.c - executa processo simulado - resultado de executa processo F
 Criando processo simulado de id 5
 processoSimulado.c - executa instrucao - contador de programa == 22 id instrucao == T. Processo que realizou a instrucao == 0
 processocontrole.c - executa processo simulado - resultado de executa processo T.
+ProcessoControle.c ---  tam estado bloqueadom : 0
 ProcessoControle.c - trocacontexto - teste -- indice removido = 1
 processoSimulado.c - executa instrucao - contador de programa == 4 id instrucao == V. Processo que realizou a instrucao == 1
 processocontrole.c - executa processo simulado - resultado de executa processo  .
 processoSimulado.c - executa instrucao - contador de programa == 5 id instrucao == T. Processo que realizou a instrucao == 1
 processocontrole.c - executa processo simulado - resultado de executa processo T.
+ProcessoControle.c ---  tam estado bloqueadom : 0
 ProcessoControle.c - trocacontexto - teste -- indice removido = 2
 processoSimulado.c - executa instrucao - contador de programa == 2 id instrucao == D. Processo que realizou a instrucao == 2
 processocontrole.c - executa processo simulado - resultado de executa processo  .
@@ -259,6 +262,24 @@ processoSimulado.c - executa instrucao - contador de programa == 21 id instrucao
 processosimulado.c - instrucao R - nome arq filho == files/file_e
 processocontrole.c - executa processo simulado - resultado de executa processo  .
 processoSimulado.c - executa instrucao - contador de programa == 0 id instrucao == N. Processo que realizou a instrucao == 5
+Erro ao alocar memoria para o processo 5 -- Processo adicionado na lista de bloqueados por memoriaprocessocontrole.c - executa processo simulado - resultado de executa processo M.
+processoSimulado.c - executa instrucao - contador de programa == 7 id instrucao == V. Processo que realizou a instrucao == 2
+processocontrole.c - executa processo simulado - resultado de executa processo  .
+processoSimulado.c - executa instrucao - contador de programa == 8 id instrucao == T. Processo que realizou a instrucao == 2
+processocontrole.c - executa processo simulado - resultado de executa processo T.
+ProcessoControle.c ---  tam estado bloqueadom : 1
+ProcessoControle.c - trocacontexto - teste -- indice removido = 3
+processoSimulado.c - executa instrucao - contador de programa == 9 id instrucao == T. Processo que realizou a instrucao == 3
+processocontrole.c - executa processo simulado - resultado de executa processo T.
+ProcessoControle.c ---  tam estado bloqueadom : 0
+ProcessoControle.c - trocacontexto - teste -- indice removido = 4
+processoSimulado.c - executa instrucao - contador de programa == 4 id instrucao == V. Processo que realizou a instrucao == 4
+processocontrole.c - executa processo simulado - resultado de executa processo  .
+processoSimulado.c - executa instrucao - contador de programa == 5 id instrucao == T. Processo que realizou a instrucao == 4
+processocontrole.c - executa processo simulado - resultado de executa processo T.
+ProcessoControle.c ---  tam estado bloqueadom : 0
+ProcessoControle.c - trocacontexto - teste -- indice removido = 5
+processoSimulado.c - executa instrucao - contador de programa == 0 id instrucao == N. Processo que realizou a instrucao == 5
 processocontrole.c - executa processo simulado - resultado de executa processo  .
 processoSimulado.c - executa instrucao - contador de programa == 1 id instrucao == D. Processo que realizou a instrucao == 5
 processocontrole.c - executa processo simulado - resultado de executa processo  .
@@ -266,22 +287,9 @@ processoSimulado.c - executa instrucao - contador de programa == 2 id instrucao 
 processocontrole.c - executa processo simulado - resultado de executa processo  .
 processoSimulado.c - executa instrucao - contador de programa == 3 id instrucao == D. Processo que realizou a instrucao == 5
 processocontrole.c - executa processo simulado - resultado de executa processo  .
-ProcessoControle.c - trocacontexto - teste -- indice removido = 2
-processoSimulado.c - executa instrucao - contador de programa == 7 id instrucao == V. Processo que realizou a instrucao == 2
-processocontrole.c - executa processo simulado - resultado de executa processo  .
-processoSimulado.c - executa instrucao - contador de programa == 8 id instrucao == T. Processo que realizou a instrucao == 2
-processocontrole.c - executa processo simulado - resultado de executa processo T.
-ProcessoControle.c - trocacontexto - teste -- indice removido = 3
-processoSimulado.c - executa instrucao - contador de programa == 9 id instrucao == T. Processo que realizou a instrucao == 3
-processocontrole.c - executa processo simulado - resultado de executa processo T.
-ProcessoControle.c - trocacontexto - teste -- indice removido = 4
-processoSimulado.c - executa instrucao - contador de programa == 4 id instrucao == V. Processo que realizou a instrucao == 4
-processocontrole.c - executa processo simulado - resultado de executa processo  .
-processoSimulado.c - executa instrucao - contador de programa == 5 id instrucao == T. Processo que realizou a instrucao == 4
-processocontrole.c - executa processo simulado - resultado de executa processo T.
-ProcessoControle.c - trocacontexto - teste -- indice removido = 5
 processoSimulado.c - executa instrucao - contador de programa == 4 id instrucao == D. Processo que realizou a instrucao == 5
 processocontrole.c - executa processo simulado - resultado de executa processo  .
+ProcessoControle.c - trocacontexto - teste -- indice removido = 5
 processoSimulado.c - executa instrucao - contador de programa == 5 id instrucao == D. Processo que realizou a instrucao == 5
 processocontrole.c - executa processo simulado - resultado de executa processo  .
 processoSimulado.c - executa instrucao - contador de programa == 6 id instrucao == D. Processo que realizou a instrucao == 5
@@ -290,13 +298,13 @@ processoSimulado.c - executa instrucao - contador de programa == 7 id instrucao 
 processocontrole.c - executa processo simulado - resultado de executa processo  .
 processoSimulado.c - executa instrucao - contador de programa == 8 id instrucao == D. Processo que realizou a instrucao == 5
 processocontrole.c - executa processo simulado - resultado de executa processo  .
-ProcessoControle.c - trocacontexto - teste -- indice removido = 5
 processoSimulado.c - executa instrucao - contador de programa == 9 id instrucao == D. Processo que realizou a instrucao == 5
 processocontrole.c - executa processo simulado - resultado de executa processo  .
+ProcessoControle.c - trocacontexto - teste -- indice removido = 5
 processoSimulado.c - executa instrucao - contador de programa == 10 id instrucao == V. Processo que realizou a instrucao == 5
 processocontrole.c - executa processo simulado - resultado de executa processo  .
 processoSimulado.c - executa instrucao - contador de programa == 11 id instrucao == V. Processo que realizou a instrucao == 5
 processocontrole.c - executa processo simulado - resultado de executa processo  .
 processoSimulado.c - executa instrucao - contador de programa == 12 id instrucao == T. Processo que realizou a instrucao == 5
 processocontrole.c - executa processo simulado - resultado de executa processo T.
-processocontrole.c - executa processo simulado - resultado de executa processo  .
+ProcessoControle.c ---  tam estado bloqueadom : 0
