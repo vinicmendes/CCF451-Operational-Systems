@@ -26,7 +26,7 @@ int main()
     // define o uso de memoria virtual
     while (memvirtual != 1 && memvirtual != 2)
     {
-        printf("\nEscolha o metodo de escalonamento\n");
+        printf("\nEscolha o tipo de memória\n");
         printf("1. Sem uso de memória virtual\n");
         printf("2. Com uso de memória virtual\n");
         scanf("%d", &memvirtual);
@@ -35,7 +35,7 @@ int main()
     // define o tipo de escalonamento aqui
     while (tipotecmemoria != 1 && tipotecmemoria != 2 && tipotecmemoria != 3 && tipotecmemoria != 4)
     {
-        printf("\nEscolha a tecnica para alocar o processo:\n");
+        printf("\nEscolha a técnica para alocar o processo:\n");
         printf("1. First fit\n");
         printf("2. Next fit\n");
         printf("3. Best fit\n");
