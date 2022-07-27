@@ -25,6 +25,6 @@ char executaProcesso(cpu *cpu, alocador_t *alocador, int tecnica, int memoriav, 
 void pararProcesso(cpu *cpu, processoSimulado *p, int estado);
 void comandoU(cpu *cpu);
 void alterarContadorPrograma(cpu *cpu);
-void mostrarProcessoCpu(cpu *cpu, gerenciador_virtual_t *gerenciadorVitual);
+void mostrarProcessoCpu(cpu *cpu, gerenciador_virtual_t *gerenciadorVitual, int memvirtual);
 
 #endif

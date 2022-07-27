@@ -23,7 +23,7 @@ void insereProcesso(cpu *cpu, processoSimulado p)
 }
 
 // executando o processo recebido
-char executaProcesso(cpu *cpu, alocador_t *alocador, int tecnica, int memoriav,gerenciador_virtual_t *gerenciadorVitual)
+char executaProcesso(cpu *cpu, alocador_t *alocador, int tecnica, int memoriav, gerenciador_virtual_t *gerenciadorVitual)
 {
     char retorno;
     cpu->unidTempo++;
@@ -51,7 +51,7 @@ void alterarContadorPrograma(cpu *cpu)
     cpu->procexec.contadorPrograma += cpu->procexec.programa[cpu->procexec.contadorPrograma].var1 + 1;
 }
 
-void mostrarProcessoCpu(cpu *cpu, gerenciador_virtual_t *gerenciadorVitual)
+void mostrarProcessoCpu(cpu *cpu, gerenciador_virtual_t *gerenciadorVitual, int memvirtual)
 {
     int tammem = 0;
     if (cpu->procexec.id == -1)
@@ -101,5 +101,21 @@ void mostrarProcessoCpu(cpu *cpu, gerenciador_virtual_t *gerenciadorVitual)
     printf("Tempo de cpu: %d\n", cpu->unidTempo + cpu->procexec.tempoCPU);
     printf("Tempo total da CPU: %d\n", cpu->unidTempo);
     printf("-----------Memoria do processo em execucao-----------\n");
-    mostrarVariaveisProcesso(gerenciadorVitual,cpu->procexec.id,cpu->procexec.tammem);
+    if (tammem == 0)
+    {
+        if (cpu->procexec.memoria != NULL && cpu->procexec.tammem > 0)
+        {
+            for (int i = 0; i < cpu->procexec.tammem; i++)
+            {
+                printf("Variavel %d\n", i);
+                printf("%d\n", cpu->procexec.memoria[i]);
+            }
+        }
+        else
+        {
+            printf("Memoria Vazia\n");
+        }
+    }
+    else
+        mostrarVariaveisProcesso(gerenciadorVitual, cpu->procexec.id, cpu->procexec.tammem);
 }

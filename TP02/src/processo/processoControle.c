@@ -42,7 +42,7 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
     marcador_t marcadorv;
     alocador_t alocadorv;
     gerenciador_virtual_t gerenciadorVirtual;
-    if (gerenciador->memvirtual)
+    if (gerenciador->memvirtual == 1)
     {
         inicializa_memoria(&memoriav, TAMANHO_MEMV);
         inicializa_marcador(&marcadorv, TAMANHO_MEMV);
@@ -64,15 +64,15 @@ void executaProcessoC(processoControle *gerenciador, Pipe *p)
         executarProcessoSimulado(gerenciador, instPipe, tam, &alocador, &memoria, &marcador, &alocadorv, &memoriav, &marcadorv, &gerenciadorVirtual);
     }
 }
-void escalona(processoControle *gerenciador, alocador_t *alocador, alocador_t *alocadorv)
+void escalona(processoControle *gerenciador, alocador_t *alocador)
 {
     if (gerenciador->tipoEscalonamento == 1)
     {
-        escalonarTempo(gerenciador, alocador, alocadorv);
+        escalonarTempo(gerenciador, alocador);
     }
     else
     {
-        escalonarProcessos(gerenciador, alocador, alocadorv);
+        escalonarProcessos(gerenciador, alocador);
     }
 }
 
@@ -151,7 +151,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                                            gerenciador->cpu.procexec.id, gerenciador->cpu.procexec.contadorPrograma + 1,
                                            0, 0, gerenciador->cpu.procexec.memoria,
                                            gerenciador->cpu.unidTempo, 0, gerenciador->cpu.procexec.programa, gerenciador->cpu.procexec.tammem);
-                if (gerenciador->memvirtual)
+                if (gerenciador->memvirtual == 1)
                 {
                     aloca_memoria_virtual(gerenciadorVirtual, gerenciador->tabelaDeProcessos[pos].id,gerenciador->cpu.procexec.tammem);
                     for(int i=0;i<gerenciador->cpu.procexec.tammem;++i){
@@ -172,7 +172,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
                     insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->tabelaDeProcessos[pos].id, gerenciador->tabelaDeProcessos[pos].prioridade);
                 }
             }
-            escalona(gerenciador, alocador, alocadorv);
+            escalona(gerenciador, alocador);
         }
         else if (instrucaoPipe[index] == 'L')
         {
@@ -240,7 +240,7 @@ void comandoB(processoControle *gerenciador)
     }
 }
 
-int trocaContexto(processoControle *gerenciador, alocador_t *alocador, alocador_t *alocadorv)
+int trocaContexto(processoControle *gerenciador, alocador_t *alocador)
 {
     printf(RED "Trocando contexto\n" RESET);
     processoSimulado p;
@@ -265,45 +265,45 @@ int trocaContexto(processoControle *gerenciador, alocador_t *alocador, alocador_
     fprintf(stderr, "ProcessoControle.c - trocacontexto - teste -- indice removido = %d\n", gerenciador->tabelaDeProcessos[i].id);
     gerenciador->tabelaDeProcessos[i].estado = 1;
     insereProcesso(&gerenciador->cpu, gerenciador->tabelaDeProcessos[i]);
-    // ver com o dener, como encaixa acessamemoriavirtual aqui
 
     return 1;
 }
-void escalonarTempo(processoControle *gerenciador, alocador_t *alocador, alocador_t *alocadorv)
+void escalonarTempo(processoControle *gerenciador, alocador_t *alocador)
 {
     if (gerenciador->cpu.tempoProcessoAtual >= 5 || gerenciador->cpu.procexec.id == -1)
-        trocaContexto(gerenciador, alocador, alocadorv);
+        trocaContexto(gerenciador, alocador);
 }
-void escalonarProcessos(processoControle *gerenciador, alocador_t *alocador, alocador_t *alocadorv)
+void escalonarProcessos(processoControle *gerenciador, alocador_t *alocador)
 {
     if (gerenciador->cpu.procexec.prioridade == 0)
     {
         gerenciador->cpu.procexec.prioridade = 1;
-        trocaContexto(gerenciador, alocador, alocadorv);
+        trocaContexto(gerenciador, alocador);
     }
     else if (gerenciador->cpu.procexec.prioridade == 1 && gerenciador->cpu.tempoProcessoAtual > 1)
     {
         gerenciador->cpu.procexec.prioridade = 2;
-        trocaContexto(gerenciador, alocador, alocadorv);
+        trocaContexto(gerenciador, alocador);
     }
     else if (gerenciador->cpu.procexec.prioridade == 2 && gerenciador->cpu.tempoProcessoAtual > 3)
     {
         gerenciador->cpu.procexec.prioridade = 3;
-        trocaContexto(gerenciador, alocador, alocadorv);
+        trocaContexto(gerenciador, alocador);
     }
     else if (gerenciador->cpu.procexec.prioridade == 3 && gerenciador->cpu.tempoProcessoAtual > 7)
     {
-        trocaContexto(gerenciador, alocador, alocadorv);
+        trocaContexto(gerenciador, alocador);
     }
     else if (gerenciador->cpu.procexec.id == -1)
     {
-        trocaContexto(gerenciador, alocador, alocadorv);
+        trocaContexto(gerenciador, alocador);
     }
 }
 
 void processoImpressao(processoControle *gerenciador, alocador_t *alocador, gerenciador_virtual_t *gerenciadorVirtual)
 {
-    if (gerenciador->memvirtual)
+    printf("%d\n",gerenciador->memvirtual);
+    if (gerenciador->memvirtual == 0)
     {
         exibe_memoria(alocador);
     }
@@ -316,12 +316,12 @@ void processoImpressao(processoControle *gerenciador, alocador_t *alocador, gere
         if (gerenciador->tabelaDeProcessos[i].id == -1)
             continue;
         if (gerenciador->tabelaDeProcessos[i].id == gerenciador->cpu.procexec.id)
-            mostrarProcessoCpu(&gerenciador->cpu, gerenciadorVirtual);
+            mostrarProcessoCpu(&gerenciador->cpu, gerenciadorVirtual,gerenciador->memvirtual);
         else
-            mostrarRelatorioProcesso(&gerenciador->tabelaDeProcessos[i], gerenciadorVirtual); // mostrar relatório processo
+            mostrarRelatorioProcesso(&gerenciador->tabelaDeProcessos[i], gerenciadorVirtual,gerenciador->memvirtual); // mostrar relatório processo
     }
     if (gerenciador->cpu.procexec.id == -1)
-        mostrarProcessoCpu(&gerenciador->cpu, gerenciadorVirtual);
+        mostrarProcessoCpu(&gerenciador->cpu, gerenciadorVirtual,gerenciador->memvirtual);
 }
 
 void retiraProcessoTabelaProcessos(processoControle *gerenciador, int indice, alocador_t *alocador, gerenciador_virtual_t *gerenciadorVirtual)

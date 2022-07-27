@@ -35,7 +35,7 @@ void instrucaoB(processoSimulado *processo);                                    
 void instrucaoT(processoSimulado *processo);                                                                                                                      // instrução T
 void instrucaoR(processoSimulado *processo, instrucao instrucao,gerenciador_virtual_t *gerenciadorVirtual);                                                                                                 // instrução R
 void calculaTempo(processoSimulado *processo);                                                                                                                    // calcula tempo de CPU atual
-void mostrarRelatorioProcesso(processoSimulado *processo, gerenciador_virtual_t *gerenciadorVitualv);                                                                                                        // exibe status atual do processo
+void mostrarRelatorioProcesso(processoSimulado *processo, gerenciador_virtual_t *gerenciadorVitualv, int memvirtual);                                                                                                        // exibe status atual do processo
 void incrementaTempoCPU(processoSimulado *processo);
 
 #endif

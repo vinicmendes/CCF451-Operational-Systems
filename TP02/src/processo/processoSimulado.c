@@ -31,9 +31,9 @@ char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecn
     {
     case 'N':
         instrucaoN(processo, instrucao, alocador, tecnica, memvirtual, gerenciadorVirtual);
-        if (processo->memoria == NULL)
+        if (processo->memoria == NULL && memvirtual == 0)
         {
-            printf(BLUE "Alocação negada!" RESET);
+            printf(BLUE "Alocação negada!\n" RESET);
             fprintf(stderr, "Erro ao alocar memoria para o processo %d -- Processo adicionado na lista de bloqueados por memoria", processo->id);
             if (processo->prioridade > 0)
                 processo->prioridade--;
@@ -71,7 +71,7 @@ char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecn
         // Não alterar contador de programa aqui
         return 'F';
     case 'R':
-        instrucaoR(processo, instrucao,gerenciadorVirtual);
+        instrucaoR(processo, instrucao, gerenciadorVirtual);
         break;
     default:
         break;
@@ -81,10 +81,9 @@ char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecn
 
 void instrucaoN(processoSimulado *processo, instrucao instrucao, alocador_t *alocador, int tecnica, int memvirtual, gerenciador_virtual_t *gerenciadorVirtual)
 {
-    processo->tammem = instrucao.var1;
-    if (memvirtual)
+    if (memvirtual == 1)
     {
-        aloca_memoria_virtual(gerenciadorVirtual, processo->id, processo->tammem);
+        aloca_memoria_virtual(gerenciadorVirtual, processo->id, instrucao.var1);
     }
     else
     {
@@ -107,11 +106,12 @@ void instrucaoN(processoSimulado *processo, instrucao instrucao, alocador_t *alo
     }
 
     printf(RED "Alocando processo: %d\n" RESET, processo->id);
+    processo->tammem = instrucao.var1;
 }
 
 void instrucaoD(processoSimulado *processo, instrucao instrucao, int memvirtual, gerenciador_virtual_t *gerenciadorVirtual)
 {
-    if (memvirtual)
+    if (memvirtual != 0)
     {
         int *posicao = acessa_memoria_virtual(gerenciadorVirtual, processo->id, instrucao.var1);
         *posicao = 0;
@@ -122,7 +122,7 @@ void instrucaoD(processoSimulado *processo, instrucao instrucao, int memvirtual,
 
 void instrucaoV(processoSimulado *processo, instrucao instrucao, int memvirtual, gerenciador_virtual_t *gerenciadorVirtual)
 {
-    if (memvirtual)
+    if (memvirtual != 0)
     {
         int *posicao = acessa_memoria_virtual(gerenciadorVirtual, processo->id, instrucao.var1);
         *posicao = instrucao.var2;
@@ -133,7 +133,7 @@ void instrucaoV(processoSimulado *processo, instrucao instrucao, int memvirtual,
 
 void instrucaoA(processoSimulado *processo, instrucao instrucao, int memvirtual, gerenciador_virtual_t *gerenciadorVirtual)
 {
-    if (memvirtual)
+    if (memvirtual != 0)
     {
         int *posicao = acessa_memoria_virtual(gerenciadorVirtual, processo->id, instrucao.var1);
         *posicao += instrucao.var2;
@@ -144,7 +144,7 @@ void instrucaoA(processoSimulado *processo, instrucao instrucao, int memvirtual,
 
 void instrucaoS(processoSimulado *processo, instrucao instrucao, int memvirtual, gerenciador_virtual_t *gerenciadorVirtual)
 {
-    if (memvirtual)
+    if (memvirtual != 0)
     {
         int *posicao = acessa_memoria_virtual(gerenciadorVirtual, processo->id, instrucao.var1);
         *posicao -= instrucao.var2;
@@ -163,11 +163,12 @@ void instrucaoT(processoSimulado *processo)
     processo->estado = 3;
 }
 
-void instrucaoR(processoSimulado *processo, instrucao instrucao,gerenciador_virtual_t *gerenciadorVirtual)
+void instrucaoR(processoSimulado *processo, instrucao instrucao, gerenciador_virtual_t *gerenciadorVirtual)
 {
-    if(gerenciadorVirtual){
-        desaloca_memoria_virtual(gerenciadorVirtual,processo->id);
-        processo->tammem=0;
+    if (gerenciadorVirtual)
+    {
+        desaloca_memoria_virtual(gerenciadorVirtual, processo->id);
+        processo->tammem = 0;
     }
     char caminho[100] = "files/";
     strcat(caminho, instrucao.arqv);
@@ -180,7 +181,7 @@ void calculaTempo(processoSimulado *processo)
 {
     processo->tempoAtual++;
 }
-void mostrarRelatorioProcesso(processoSimulado *processo, gerenciador_virtual_t *gerenciadorVitual)
+void mostrarRelatorioProcesso(processoSimulado *processo, gerenciador_virtual_t *gerenciadorVitual, int memvirtual)
 {
     int tammem = 0;
     printf(BLUE "\n----- Relatorio de processo -----\n" RESET);
@@ -225,7 +226,23 @@ void mostrarRelatorioProcesso(processoSimulado *processo, gerenciador_virtual_t 
     printf("Tempo em processamento: %d\n", processo->tempoCPU + processo->tempoAtual);
     printf("-----------------------------------------------------------------\n\n");
     printf("Memoria do Processo: %d\n", processo->id);
-    mostrarVariaveisProcesso(gerenciadorVitual,processo->id,processo->tammem);
+    if (tammem == 0)
+    {
+        if (processo->memoria != NULL && processo->tammem > 0)
+        {
+            for (int i = 0; i < processo->tammem; i++)
+            {
+                printf("Variavel %d\n", i);
+                printf("%d\n", processo->memoria[i]);
+            }
+        }
+        else
+        {
+            printf("Memoria Vazia\n");
+        }
+    }
+    else
+        mostrarVariaveisProcesso(gerenciadorVitual, processo->id, processo->tammem);
 }
 
 void incrementaTempoCPU(processoSimulado *processo)
