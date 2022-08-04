@@ -1,6 +1,11 @@
 make --dry-run --always-make --keep-going --print-directory
+<<<<<<< HEAD
+make: Entering directory '/home/vinicius/OperationalSystems/TP02'
+make: Leaving directory '/home/vinicius/OperationalSystems/TP02'
+=======
 make: Entering directory '/home/vinicius/TPS-SO/CCF451-Operational-Systems/TP02'
 make: Leaving directory '/home/vinicius/TPS-SO/CCF451-Operational-Systems/TP02'
+>>>>>>> 1a6027616142f7b67291726811d8300a847f4600
  
 make: *** No targets specified and no makefile found.  Stop.
 
