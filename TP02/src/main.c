@@ -12,6 +12,7 @@ int main()
     processoControle gerenciador;
     int tipoescalonamento = 0;
     int tipotecmemoria = 0;
+    int memvirtual = 0;
     inicializaPipe(&p);
 
     // define o tipo de escalonamento aqui
@@ -22,10 +23,19 @@ int main()
         printf("2. Escalonamento por prioridades\n");
         scanf("%d", &tipoescalonamento);
     }
+    // define o uso de memoria virtual
+    while (memvirtual != 1 && memvirtual != 2)
+    {
+        printf("\nEscolha o tipo de memória\n");
+        printf("1. Sem uso de memória virtual\n");
+        printf("2. Com uso de memória virtual\n");
+        scanf("%d", &memvirtual);
+    }
+    memvirtual--;
     // define o tipo de escalonamento aqui
     while (tipotecmemoria != 1 && tipotecmemoria != 2 && tipotecmemoria != 3 && tipotecmemoria != 4)
     {
-        printf("\nEscolha a tecnica para alocar o processo:\n");
+        printf("\nEscolha a técnica para alocar o processo:\n");
         printf("1. First fit\n");
         printf("2. Next fit\n");
         printf("3. Best fit\n");
@@ -39,7 +49,7 @@ int main()
     if (pid == 0)
     {
         // processo real filho executando
-        inicializaProcessoC(&gerenciador, tipoescalonamento, tipotecmemoria);
+        inicializaProcessoC(&gerenciador, tipoescalonamento, tipotecmemoria, memvirtual);
         executaProcessoC(&gerenciador, &p);
     }
     else

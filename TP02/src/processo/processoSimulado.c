@@ -23,40 +23,40 @@ void inicializaProcessoSimulado(processoSimulado *processo, int id, int idPrinci
     processo->tempoAtual = 0;
 }
 
-char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecnica)
+char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecnica, int memvirtual, gerenciador_virtual_t *gerenciadorVirtual)
 {
     instrucao instrucao = processo->programa[processo->contadorPrograma];
     fprintf(stderr, "processoSimulado.c - executa instrucao - contador de programa == %d id instrucao == %c. Processo que realizou a instrucao == %d\n", processo->contadorPrograma, instrucao.id, processo->id);
     switch (instrucao.id)
     {
     case 'N':
-        instrucaoN(processo, instrucao, alocador, tecnica);
-        if (processo->memoria == NULL)
+        instrucaoN(processo, instrucao, alocador, tecnica, memvirtual, gerenciadorVirtual);
+        if (processo->memoria == NULL && memvirtual == 0)
         {
+            printf(BLUE "Alocação negada!\n" RESET);
             fprintf(stderr, "Erro ao alocar memoria para o processo %d -- Processo adicionado na lista de bloqueados por memoria", processo->id);
             if (processo->prioridade > 0)
                 processo->prioridade--;
             alocador->qtalocsnegadas++;
             return 'M';
         }
-        calc_qtfragmentos(alocador);
-        printf("ProcessoSimulado.c - ExecutaInstrucao -  qt frags = %d", alocador->qtfragmentos);
+        alocador->qtalocs++;
         processo->contadorPrograma++;
         break;
     case 'D':
-        instrucaoD(processo, instrucao);
+        instrucaoD(processo, instrucao, memvirtual, gerenciadorVirtual);
         processo->contadorPrograma++;
         break;
     case 'V':
-        instrucaoV(processo, instrucao);
+        instrucaoV(processo, instrucao, memvirtual, gerenciadorVirtual);
         processo->contadorPrograma++;
         break;
     case 'A':
-        instrucaoA(processo, instrucao);
+        instrucaoA(processo, instrucao, memvirtual, gerenciadorVirtual);
         processo->contadorPrograma++;
         break;
     case 'S':
-        instrucaoS(processo, instrucao);
+        instrucaoS(processo, instrucao, memvirtual, gerenciadorVirtual);
         processo->contadorPrograma++;
         break;
     case 'B':
@@ -71,7 +71,7 @@ char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecn
         // Não alterar contador de programa aqui
         return 'F';
     case 'R':
-        instrucaoR(processo, instrucao);
+        instrucaoR(processo, instrucao, gerenciadorVirtual);
         break;
     default:
         break;
@@ -79,52 +79,78 @@ char executaInstrucao(processoSimulado *processo, alocador_t *alocador, int tecn
     return ' ';
 }
 
-void instrucaoN(processoSimulado *processo, instrucao instrucao, alocador_t *alocador, int tecnica)
+void instrucaoN(processoSimulado *processo, instrucao instrucao, alocador_t *alocador, int tecnica, int memvirtual, gerenciador_virtual_t *gerenciadorVirtual)
 {
-    if (tecnica == 1)
+    if (memvirtual == 1)
     {
-        alocador->qtalocs++;
-        processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, first_fit);
+        aloca_memoria_virtual(gerenciadorVirtual, processo->id, instrucao.var1);
     }
-    else if (tecnica == 2)
+    else
     {
-        alocador->qtalocs++;
-        processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, next_fit);
-    }
-    else if (tecnica == 3)
-    {
-        alocador->qtalocs++;
-        processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, best_fit);
-    }
-    else if (tecnica == 4)
-    {
-        alocador->qtalocs++;
-        processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, worst_fit);
+        if (tecnica == 1)
+        {
+            processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, first_fit);
+        }
+        else if (tecnica == 2)
+        {
+            processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, next_fit);
+        }
+        else if (tecnica == 3)
+        {
+            processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, best_fit);
+        }
+        else if (tecnica == 4)
+        {
+            processo->memoria = aloca_memoria_simulada(alocador, instrucao.var1, worst_fit);
+        }
     }
 
-    printf(RED"Alocando processo: %d\n"RESET,processo->id);
-    
+    printf(RED "Alocando processo: %d\n" RESET, processo->id);
     processo->tammem = instrucao.var1;
 }
 
-void instrucaoD(processoSimulado *processo, instrucao instrucao)
+void instrucaoD(processoSimulado *processo, instrucao instrucao, int memvirtual, gerenciador_virtual_t *gerenciadorVirtual)
 {
-    processo->memoria[instrucao.var1] = 0;
+    if (memvirtual != 0)
+    {
+        int *posicao = acessa_memoria_virtual(gerenciadorVirtual, processo->id, instrucao.var1);
+        *posicao = 0;
+    }
+    else
+        processo->memoria[instrucao.var1] = 0;
 }
 
-void instrucaoV(processoSimulado *processo, instrucao instrucao)
+void instrucaoV(processoSimulado *processo, instrucao instrucao, int memvirtual, gerenciador_virtual_t *gerenciadorVirtual)
 {
-    processo->memoria[instrucao.var1] = instrucao.var2;
+    if (memvirtual != 0)
+    {
+        int *posicao = acessa_memoria_virtual(gerenciadorVirtual, processo->id, instrucao.var1);
+        *posicao = instrucao.var2;
+    }
+    else
+        processo->memoria[instrucao.var1] = instrucao.var2;
 }
 
-void instrucaoA(processoSimulado *processo, instrucao instrucao)
+void instrucaoA(processoSimulado *processo, instrucao instrucao, int memvirtual, gerenciador_virtual_t *gerenciadorVirtual)
 {
-    processo->memoria[instrucao.var1] += instrucao.var2;
+    if (memvirtual != 0)
+    {
+        int *posicao = acessa_memoria_virtual(gerenciadorVirtual, processo->id, instrucao.var1);
+        *posicao += instrucao.var2;
+    }
+    else
+        processo->memoria[instrucao.var1] += instrucao.var2;
 }
 
-void instrucaoS(processoSimulado *processo, instrucao instrucao)
+void instrucaoS(processoSimulado *processo, instrucao instrucao, int memvirtual, gerenciador_virtual_t *gerenciadorVirtual)
 {
-    processo->memoria[instrucao.var1] -= instrucao.var2;
+    if (memvirtual != 0)
+    {
+        int *posicao = acessa_memoria_virtual(gerenciadorVirtual, processo->id, instrucao.var1);
+        *posicao -= instrucao.var2;
+    }
+    else
+        processo->memoria[instrucao.var1] -= instrucao.var2;
 }
 
 void instrucaoB(processoSimulado *processo)
@@ -137,8 +163,13 @@ void instrucaoT(processoSimulado *processo)
     processo->estado = 3;
 }
 
-void instrucaoR(processoSimulado *processo, instrucao instrucao)
+void instrucaoR(processoSimulado *processo, instrucao instrucao, gerenciador_virtual_t *gerenciadorVirtual)
 {
+    if (gerenciadorVirtual)
+    {
+        desaloca_memoria_virtual(gerenciadorVirtual, processo->id);
+        processo->tammem = 0;
+    }
     char caminho[100] = "files/";
     strcat(caminho, instrucao.arqv);
     fprintf(stderr, "processosimulado.c - instrucao R - nome arq filho == %s\n", caminho);
@@ -150,7 +181,7 @@ void calculaTempo(processoSimulado *processo)
 {
     processo->tempoAtual++;
 }
-void mostrarRelatorioProcesso(processoSimulado *processo)
+void mostrarRelatorioProcesso(processoSimulado *processo, gerenciador_virtual_t *gerenciadorVitual, int memvirtual)
 {
     int tammem = 0;
     printf(BLUE "\n----- Relatorio de processo -----\n" RESET);
@@ -195,18 +226,23 @@ void mostrarRelatorioProcesso(processoSimulado *processo)
     printf("Tempo em processamento: %d\n", processo->tempoCPU + processo->tempoAtual);
     printf("-----------------------------------------------------------------\n\n");
     printf("Memoria do Processo: %d\n", processo->id);
-    if (processo->memoria != NULL && processo->tammem > 0)
+    if (tammem == 0)
     {
-        for (int i = 0; i < processo->tammem; i++)
+        if (processo->memoria != NULL && processo->tammem > 0)
         {
-            printf("Variavel %d\n", i);
-            printf("%d\n", processo->memoria[i]);
+            for (int i = 0; i < processo->tammem; i++)
+            {
+                printf("Variavel %d\n", i);
+                printf("%d\n", processo->memoria[i]);
+            }
+        }
+        else
+        {
+            printf("Memoria Vazia\n");
         }
     }
     else
-    {
-        printf("Memoria Vazia\n");
-    }
+        mostrarVariaveisProcesso(gerenciadorVitual, processo->id, processo->tammem);
 }
 
 void incrementaTempoCPU(processoSimulado *processo)
