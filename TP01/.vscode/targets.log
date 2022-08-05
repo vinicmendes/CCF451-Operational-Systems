@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun 20 13:46:48 2022
+# Make data base, printed on Thu Aug  4 20:56:37 2022
 
 # Variables
 
@@ -18,8 +20,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 WSLENV = ELECTRON_RUN_AS_NODE/w:WT_SESSION::WT_PROFILE_ID
 # default
 .SHELLFLAGS := -c
-# environment
-VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -27,33 +27,29 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /home/vinicius/TP01-CCF451
+CURDIR := /home/vinicius/TPS-SO/CCF451-Operational-Systems/TP01
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"195456cb6bc5e7dd989215cd334fb359.pt-br","_translationsConfigFile":"/home/vinicius/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/tcf.json","_cacheRoot":"/home/vinicius/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br","_resolvedLanguagePackCoreLocation":"/home/vinicius/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/vinicius/.vscode-server/data/clp/195456cb6bc5e7dd989215cd334fb359.pt-br/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"99f206782a767a6d08ad4d4418aea476.pt-br","_translationsConfigFile":"/home/vinicius/.vscode-server/data/clp/99f206782a767a6d08ad4d4418aea476.pt-br/tcf.json","_cacheRoot":"/home/vinicius/.vscode-server/data/clp/99f206782a767a6d08ad4d4418aea476.pt-br","_resolvedLanguagePackCoreLocation":"/home/vinicius/.vscode-server/data/clp/99f206782a767a6d08ad4d4418aea476.pt-br/da76f93349a72022ca4670c1b84860304616aaa2","_corruptedFile":"/home/vinicius/.vscode-server/data/clp/99f206782a767a6d08ad4d4418aea476.pt-br/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /mnt/c/Users/vinic/AppData/Local/Programs/Microsoft VS Code/bin/code
-# makefile (from 'makefile', line 1)
-MAKEFILE_LIST :=  makefile
+_ = /mnt/c/Users/Vinicius/AppData/Local/Programs/Microsoft VS Code/bin/code
+# makefile
+MAKEFILE_LIST := 
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
-VSCODE_VERBOSE_LOGGING = true
-# environment
-VSCODE_CWD = /mnt/c/Users/vinic/AppData/Local/Programs/Microsoft VS Code
+VSCODE_CWD = /mnt/c/Users/Vinicius/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/vinicius/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Users/vinic/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/vinic/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/vinic/AppData/Local/GitHubDesktop/bin
+PATH = /home/vinicius/.vscode-server/bin/da76f93349a72022ca4670c1b84860304616aaa2/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/iCLS/:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/iCLS/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/dotnet/:/mnt/c/Program Files/dotnet/:/mnt/c/Users/Vinicius/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Vinicius/AppData/Local/Programs/Microsoft VS Code/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
+ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_LOG_STACK = false
-# environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-04f74f79-1720-4c01-ad78-8ef1bd814163.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-00949f51-f235-49e1-b533-297f7886ec50.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -61,19 +57,13 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # automatic
 %F = $(notdir $%)
 # environment
-DISPLAY = :0
-# environment
-VSCODE_PIPE_LOGGING = true
-# environment
-PWD = /home/vinicius/TP01-CCF451
+PWD = /home/vinicius/TPS-SO/CCF451-Operational-Systems/TP01
 # default
 .LOADED := 
 # environment
 WSL_INTEROP = /run/WSL/8_interop
 # environment
-PULSE_SERVER = /mnt/wslg/PulseServer
-# environment
-WT_SESSION = d12da1df-9b11-4267-8f00-6829667ae72a
+WT_SESSION = bd25ba2f-eee7-4fc1-84a0-3e408e91fe8d
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -101,7 +91,7 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = vinicius
 # makefile
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := 
 # environment
 NAME = Code
 # environment
@@ -109,11 +99,11 @@ LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
-VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/vinic/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/Vinicius/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /mnt/c/Users/vinic/AppData/Local/Programs/Microsoft VS Code
+OLDPWD = /mnt/c/Users/Vinicius/AppData/Local/Programs/Microsoft VS Code
 # default
 .VARIABLES := 
 # automatic
@@ -146,8 +136,6 @@ HOSTTYPE = x86_64
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
-# environment
-WAYLAND_DISPLAY = wayland-0
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # default
@@ -157,11 +145,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_EXTHOST_WILL_SEND_SOCKET = true
-# environment
 WSL_DISTRO_NAME = Ubuntu
 # variable set hash-table stats:
-# Load=75/1024=7%, Rehash=0, Collisions=4/103=4%
+# Load=67/1024=7%, Rehash=0, Collisions=4/89=4%
 
 # Pattern-specific Variable Values
 
@@ -169,9 +155,9 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Directories
 
-# . (device 2080, inode 45282): 11 files, no impossibilities.
+# . (device 2064, inode 67772): 6 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 6 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -179,53 +165,26 @@ WSL_DISTRO_NAME = Ubuntu
 
 # Files
 
+# Not a target:
 all:
 #  Command line target.
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
+#  Implicit rule search has been done.
 #  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := all
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := 
-# automatic
-# | := 
-# automatic
-# < := 
-# automatic
-# ^ := 
-# automatic
-# ? := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from 'makefile', line 2):
-	gcc src/main.c src/menu.c src/processo/processoControle.c src/processo/processoSimulado.c src/estruturas/cpu.c src/estruturas/estadoBloqueado.c src/estruturas/estadoPronto.c src/estruturas/leitor.c src/estruturas/pipe.c src/estruturas/tempo.c -o main
+#  File has not been updated.
 
 # Not a target:
-.SUFFIXES:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-debug:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 8):
-	gcc src/main.c src/menu.c src/processo/processoControle.c src/processo/processoSimulado.c src/estruturas/cpu.c src/estruturas/estadoBloqueado.c src/estruturas/estadoPronto.c src/estruturas/leitor.c src/estruturas/pipe.c src/estruturas/tempo.c -o main && ./main < input 2> debug
+Makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-20 13:43:39.731947548
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Failed to be updated.
 
 # Not a target:
 .DEFAULT:
@@ -233,34 +192,27 @@ makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
-run:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 4):
-	./main
-
-clean:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 6):
-	rm main
+# Not a target:
+GNUmakefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 
 # files hash-table stats:
-# Load=7/1024=1%, Rehash=0, Collisions=0/19=0%
+# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 19 / storage = 132 B / avg = 6 B
-# current buf: size = 8162 B / used = 132 B / count = 19 / avg = 6 B
+# strcache buffers: 1 (0) / strings = 14 / storage = 113 B / avg = 8 B
+# current buf: size = 8162 B / used = 113 B / count = 14 / avg = 8 B
 
-# strcache performance: lookups = 29 / hit rate = 34%
+# strcache performance: lookups = 17 / hit rate = 17%
 # hash-table stats:
-# Load=19/8192=0%, Rehash=0, Collisions=1/29=3%
-# Finished Make data base on Mon Jun 20 13:46:48 2022
+# Load=14/8192=0%, Rehash=0, Collisions=1/17=6%
+# Finished Make data base on Thu Aug  4 20:56:37 2022
 
  
