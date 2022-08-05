@@ -118,7 +118,7 @@ void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe
         {
             printf("\nComando M\n");
             // Imprime o tempo médio do ciclo e finaliza o sistema
-            printf(MAGENTA"\n Tempo medio de ciclo = %.2f"RESET,(float)(gerenciador->cpu.unidTempo/gerenciador->cpu.qtdprocessos));
+            printf(MAGENTA "\n Tempo medio de ciclo = %.2f" RESET, (float)(gerenciador->cpu.unidTempo / gerenciador->cpu.qtdprocessos));
             processoImpressao(gerenciador);
             exit(0);
         }
@@ -144,7 +144,7 @@ void comandoB(processoControle *gerenciador)
 {
     processoSimulado p;
     int i, retorno;
-    pararProcesso(&gerenciador->cpu, &p,2);
+    pararProcesso(&gerenciador->cpu, &p, 2);
     if (p.prioridade != 0)
         p.prioridade--;
     gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao] = p;
@@ -162,10 +162,10 @@ void comandoB(processoControle *gerenciador)
 
 int trocaContexto(processoControle *gerenciador)
 {
-    printf(RED"Trocando contexto\n"RESET);
+    printf(RED "Trocando contexto\n" RESET);
     processoSimulado p;
     int i;
-    pararProcesso(&gerenciador->cpu, &p,0);
+    pararProcesso(&gerenciador->cpu, &p, 0);
     if (p.id != -1)
     {
         gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao] = p;
@@ -174,7 +174,8 @@ int trocaContexto(processoControle *gerenciador)
         else
             insereItemOrdenadoEP(&gerenciador->estadoPronto, gerenciador->estadoExecucao, gerenciador->tabelaDeProcessos[gerenciador->estadoExecucao].prioridade);
     }
-    if (lEhVaziaEP(&gerenciador->estadoPronto)){
+    if (lEhVaziaEP(&gerenciador->estadoPronto))
+    {
         gerenciador->cpu.procexec.id = -1;
         return -1;
     }

@@ -21,13 +21,13 @@ typedef struct
     int tipoEscalonamento;
 } processoControle;
 
-void inicializaProcessoC(processoControle *gerenciador,int tipo);
+void inicializaProcessoC(processoControle *gerenciador, int tipo);
 void executaProcessoC(processoControle *gerenciador, Pipe *p);
-void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe,int tam);
+void executarProcessoSimulado(processoControle *gerenciador, char *instrucaoPipe, int tam);
 void comandoL(processoControle *gerenciador);
 void comandoB(processoControle *gerenciador);
 int trocaContexto(processoControle *gerenciador);
-void escalonarTempo(processoControle *gerenciador); 
+void escalonarTempo(processoControle *gerenciador);
 void escalonarProcessos(processoControle *gerenciador);
 void processoImpressao(processoControle *gerenciador);
 void insereProgramaNoProcessoSimulado(instrucao *instProcess, instrucao *ins);
